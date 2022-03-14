@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "sokol_app.h": "c",
+        "sokol_gfx.h": "c",
+        "sokol_imgui.h": "c",
+        "cimgui.h": "c",
+        "sokol_glue.h": "c",
+        "ermine.h": "c",
+        "sokol_gfx_imgui.h": "c",
+        "sokol_time.h": "c",
+        "sokol_gl.h": "c"
+    }
+}
