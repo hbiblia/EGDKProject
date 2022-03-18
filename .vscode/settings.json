@@ -8,6 +8,13 @@
         "ermine.h": "c",
         "sokol_gfx_imgui.h": "c",
         "sokol_time.h": "c",
-        "sokol_gl.h": "c"
+        "sokol_gl.h": "c",
+        "stb_image.h": "c",
+        "einput.h": "c",
+        "eactor.h": "c",
+        "flecs.h": "c",
+        "component.transform.h": "c",
+        "stdbool.h": "c",
+        "component.sprites.h": "c"
     }
 }

@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/esprite.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/esprite.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj.d"
+  "EGDKEditor"
+  "EGDKEditor.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/EGDKEditor.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
