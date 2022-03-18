@@ -8,7 +8,7 @@
 static ecs_world_t *world;
 static GHashTable *hash_table;
 
-void eactor_ecs_init(void)
+void ecs_flecs_init(void)
 {
     world = ecs_init();
 
@@ -18,9 +18,14 @@ void eactor_ecs_init(void)
     ComponentSpritesImport(world);
 }
 
-void eactor_ecs_update(void)
+void ecs_flecs_update(void)
 {
     ecs_progress(world, 0);
+}
+
+void ecs_flecs_close(void)
+{
+    g_hash_table_destroy(hash_table);
 }
 
 ecs_world_t *eactor_get_world(void)
@@ -33,6 +38,11 @@ ecs_world_t *eactor_get_world(void)
 void component_custom_register_global(const char *name, ecs_entity_t id)
 {
     g_hash_table_insert(hash_table, name, id);
+}
+
+ecs_entity_t component_custom_load_global(const char *name)
+{
+    return g_hash_table_lookup(hash_table, name);
 }
 
 // ESYSTEM

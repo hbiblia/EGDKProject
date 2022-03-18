@@ -30,7 +30,8 @@ static void init_default(void)
     wdefault.pass_action = (sg_pass_action){
         .colors[0] = {.action = SG_ACTION_CLEAR, .value = {0.0f, 0.0f, 0.0f, 1.0}}};
 
-    eactor_ecs_init();
+    ecs_flecs_init();
+    eresource_init();
     
     if (wdefault.init_fn)
         wdefault.init_fn();
@@ -74,6 +75,8 @@ static void shutdown_default(void)
 {
     if (wdefault.shutdown_fn)
         wdefault.shutdown_fn();
+
+    ecs_flecs_close();
     simgui_shutdown();
     sgl_shutdown();
     sg_shutdown();

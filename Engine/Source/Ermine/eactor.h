@@ -6,11 +6,11 @@
 
 // 
 
-void eactor_ecs_init(void);
+void ecs_flecs_init(void);
 
-void eactor_ecs_update(void);
+void ecs_flecs_update(void);
 
-ecs_world_t *eactor_get_world(void);
+void ecs_flecs_close(void);
 
 // ECOMPONENT
 

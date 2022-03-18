@@ -1,5 +1,7 @@
 #include "ermine.h"
 #include <stdarg.h>
+#include <string.h>
+#include <glib.h>
 
 /*
  * Utility
@@ -32,6 +34,28 @@ unsigned char *eutil_loadfile_data(const char *filename, unsigned int *bytes)
     }
 
     return data;
+}
+
+/*
+ * GET FILE EXTENSION
+ *
+ */
+
+const char *eutil_file_get_extension(const char *filename)
+{
+    const char *d = strrchr(filename, '.');
+    return (!d || d == filename) ? NULL : d;
+}
+
+bool eutil_isfile_extension(const char *filename, const char *ext)
+{
+    char *ext_o = eutil_file_get_extension(filename);
+    return strcmp(ext_o, ext) == 0 ? true : false;
+}
+
+const char *eutil_file_get_name(const char *filepath)
+{
+    return g_path_get_basename(filepath);
 }
 
 /*

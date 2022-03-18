@@ -146,6 +146,9 @@ typedef struct ewindow_desc
 
 EAPI unsigned char *eutil_loadfile_data(const char *filename, unsigned int *bytes);
 EAPI void etracelog(int t, const char *text, ...);
+const char *eutil_file_get_extension(const char *filename);
+bool eutil_isfile_extension(const char *filename, const char *ext);
+const char *eutil_file_get_name(const char *filepath);
 
 // EWINDOW
 
@@ -175,5 +178,11 @@ EAPI void eshape_rectangle_draw(eshape_desc shape);
 // ECOLOR
 
 EAPI bool ecolor_empty(ecolor color);
+
+// ERESOURCE
+
+EAPI void eresource_close(void);
+EAPI void eresource_init(void);
+EAPI etexture eresource_get_texture(const char *key);
 
 #endif // ERMINE_H+

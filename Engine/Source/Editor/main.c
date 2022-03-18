@@ -13,10 +13,13 @@ void init()
 {
     default_cam = ecamera_make();
 
+    eresource_assets_load("background.png");
+
     actor e = actor_new("Entity11");
-    actor_set(e, EcsPosition, {.x=10, .y=0, .z=10});
-    actor_set(e, EcsScale, {.x=1, .y=1, .z=1});
-    actor_set(e, EcsSprites, {.path = "background.png"});
+    actor_set(e, EcsPosition, {0});
+    actor_set(e, EcsScale, {0});
+    actor_set(e, EcsRotation, {0});
+    actor_set(e, EcsSprites, {.key = "background.png"});
 
     // actor e = actor_deserialize_data("");
     // char *data = actor_serialize_data(e);
@@ -27,7 +30,7 @@ void update()
 {
     ebegin_mode(default_cam);
     {
-        eactor_ecs_update();
+        ecs_flecs_update();
     }
     eend_mode();
 }
