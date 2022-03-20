@@ -30,6 +30,10 @@ Engine/Source/Ermine/component.sprites.c
 # EDITOR
 set(SOUCE_EDITOR
 Engine/Source/Editor/main.c
+Engine/Source/Editor/panel_assets.c
+Engine/Source/Editor/panel_hierarchy.c
+Engine/Source/Editor/panel_inspector.c
+Engine/Source/Editor/panel_viewport.c
 )
 
 # GAME

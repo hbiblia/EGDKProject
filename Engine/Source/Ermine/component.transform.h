@@ -3,6 +3,7 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
+#include "eactor.h"
 
 typedef struct {
     float x;

@@ -293,6 +293,62 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/main.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.s
 
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: ../Engine/Source/Editor/panel_assets.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.s
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/Source/Editor/panel_hierarchy.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.s
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/Source/Editor/panel_inspector.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.s
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/Source/Editor/panel_viewport.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s
+
 # Object files for target EGDKEditor
 EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj" \
@@ -310,7 +366,11 @@ EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj" \
-"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj"
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj"
 
 # External object files for target EGDKEditor
 EGDKEditor_EXTERNAL_OBJECTS =
@@ -331,9 +391,13 @@ EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/build.make
 EGDKEditor: CMakeFiles/EGDKEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable EGDKEditor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C executable EGDKEditor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EGDKEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

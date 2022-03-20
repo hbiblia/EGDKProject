@@ -153,6 +153,102 @@ Engine/Source/Editor/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.s
 .PHONY : Engine/Source/Editor/main.c.s
 
+Engine/Source/Editor/panel_assets.obj: Engine/Source/Editor/panel_assets.c.obj
+.PHONY : Engine/Source/Editor/panel_assets.obj
+
+# target to build an object file
+Engine/Source/Editor/panel_assets.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
+.PHONY : Engine/Source/Editor/panel_assets.c.obj
+
+Engine/Source/Editor/panel_assets.i: Engine/Source/Editor/panel_assets.c.i
+.PHONY : Engine/Source/Editor/panel_assets.i
+
+# target to preprocess a source file
+Engine/Source/Editor/panel_assets.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.i
+.PHONY : Engine/Source/Editor/panel_assets.c.i
+
+Engine/Source/Editor/panel_assets.s: Engine/Source/Editor/panel_assets.c.s
+.PHONY : Engine/Source/Editor/panel_assets.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/panel_assets.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.s
+.PHONY : Engine/Source/Editor/panel_assets.c.s
+
+Engine/Source/Editor/panel_hierarchy.obj: Engine/Source/Editor/panel_hierarchy.c.obj
+.PHONY : Engine/Source/Editor/panel_hierarchy.obj
+
+# target to build an object file
+Engine/Source/Editor/panel_hierarchy.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
+.PHONY : Engine/Source/Editor/panel_hierarchy.c.obj
+
+Engine/Source/Editor/panel_hierarchy.i: Engine/Source/Editor/panel_hierarchy.c.i
+.PHONY : Engine/Source/Editor/panel_hierarchy.i
+
+# target to preprocess a source file
+Engine/Source/Editor/panel_hierarchy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.i
+.PHONY : Engine/Source/Editor/panel_hierarchy.c.i
+
+Engine/Source/Editor/panel_hierarchy.s: Engine/Source/Editor/panel_hierarchy.c.s
+.PHONY : Engine/Source/Editor/panel_hierarchy.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/panel_hierarchy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.s
+.PHONY : Engine/Source/Editor/panel_hierarchy.c.s
+
+Engine/Source/Editor/panel_inspector.obj: Engine/Source/Editor/panel_inspector.c.obj
+.PHONY : Engine/Source/Editor/panel_inspector.obj
+
+# target to build an object file
+Engine/Source/Editor/panel_inspector.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
+.PHONY : Engine/Source/Editor/panel_inspector.c.obj
+
+Engine/Source/Editor/panel_inspector.i: Engine/Source/Editor/panel_inspector.c.i
+.PHONY : Engine/Source/Editor/panel_inspector.i
+
+# target to preprocess a source file
+Engine/Source/Editor/panel_inspector.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.i
+.PHONY : Engine/Source/Editor/panel_inspector.c.i
+
+Engine/Source/Editor/panel_inspector.s: Engine/Source/Editor/panel_inspector.c.s
+.PHONY : Engine/Source/Editor/panel_inspector.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/panel_inspector.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.s
+.PHONY : Engine/Source/Editor/panel_inspector.c.s
+
+Engine/Source/Editor/panel_viewport.obj: Engine/Source/Editor/panel_viewport.c.obj
+.PHONY : Engine/Source/Editor/panel_viewport.obj
+
+# target to build an object file
+Engine/Source/Editor/panel_viewport.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
+.PHONY : Engine/Source/Editor/panel_viewport.c.obj
+
+Engine/Source/Editor/panel_viewport.i: Engine/Source/Editor/panel_viewport.c.i
+.PHONY : Engine/Source/Editor/panel_viewport.i
+
+# target to preprocess a source file
+Engine/Source/Editor/panel_viewport.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.i
+.PHONY : Engine/Source/Editor/panel_viewport.c.i
+
+Engine/Source/Editor/panel_viewport.s: Engine/Source/Editor/panel_viewport.c.s
+.PHONY : Engine/Source/Editor/panel_viewport.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/panel_viewport.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s
+.PHONY : Engine/Source/Editor/panel_viewport.c.s
+
 Engine/Source/Ermine/component.sprites.obj: Engine/Source/Ermine/component.sprites.c.obj
 .PHONY : Engine/Source/Ermine/component.sprites.obj
 
@@ -525,6 +621,18 @@ help:
 	@echo "... Engine/Source/Editor/main.obj"
 	@echo "... Engine/Source/Editor/main.i"
 	@echo "... Engine/Source/Editor/main.s"
+	@echo "... Engine/Source/Editor/panel_assets.obj"
+	@echo "... Engine/Source/Editor/panel_assets.i"
+	@echo "... Engine/Source/Editor/panel_assets.s"
+	@echo "... Engine/Source/Editor/panel_hierarchy.obj"
+	@echo "... Engine/Source/Editor/panel_hierarchy.i"
+	@echo "... Engine/Source/Editor/panel_hierarchy.s"
+	@echo "... Engine/Source/Editor/panel_inspector.obj"
+	@echo "... Engine/Source/Editor/panel_inspector.i"
+	@echo "... Engine/Source/Editor/panel_inspector.s"
+	@echo "... Engine/Source/Editor/panel_viewport.obj"
+	@echo "... Engine/Source/Editor/panel_viewport.i"
+	@echo "... Engine/Source/Editor/panel_viewport.s"
 	@echo "... Engine/Source/Ermine/component.sprites.obj"
 	@echo "... Engine/Source/Ermine/component.sprites.i"
 	@echo "... Engine/Source/Ermine/component.sprites.s"

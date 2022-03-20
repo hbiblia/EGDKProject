@@ -1,5 +1,5 @@
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: \
- D:/Github/EGDKProyect/Engine/Source/Editor/main.c \
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: \
+ D:/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c \
  C:/msys64/mingw64/include/stdio.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
@@ -36,5 +36,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
- C:/msys64/mingw64/include/sec_api/string_s.h \
- D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
+ C:/msys64/mingw64/include/sec_api/string_s.h

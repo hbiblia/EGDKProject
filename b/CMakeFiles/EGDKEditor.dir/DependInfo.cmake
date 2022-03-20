@@ -9,6 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/Github/EGDKProyect/Engine/Source/Editor/main.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/eactor.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj.d"

@@ -35,4 +35,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h

@@ -20,7 +20,7 @@ void ComponentTransformImport(ecs_world_t *world)
         },
     });
 
-    component_custom_register_global("EcsPosition", IdEscPosition);
+    ecs_component("EcsPosition", IdEscPosition);
 
     // COMPONENTE SCALE
     // ---------------------
@@ -39,7 +39,7 @@ void ComponentTransformImport(ecs_world_t *world)
         },
     });
 
-    component_custom_register_global("EcsScale", IdEscScale);
+    ecs_component("EcsScale", IdEscScale);
 
     // COMPONENTE ROTATION
     // ---------------------
@@ -58,7 +58,7 @@ void ComponentTransformImport(ecs_world_t *world)
         },
     });
 
-    component_custom_register_global("EcsRotation", IdEscRotation);
+    ecs_component("EcsRotation", IdEscRotation);
 
     // COMPONENTE TRANSFORM
     // ---------------------
@@ -77,5 +77,5 @@ void ComponentTransformImport(ecs_world_t *world)
         },
     });
 
-    component_custom_register_global("EcsTransform", IdEscTransform);
+    ecs_component("EcsTransform", IdEscTransform);
 }

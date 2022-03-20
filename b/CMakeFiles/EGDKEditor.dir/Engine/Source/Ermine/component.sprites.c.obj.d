@@ -36,4 +36,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h

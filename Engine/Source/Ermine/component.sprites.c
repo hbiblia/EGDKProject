@@ -47,7 +47,7 @@ void ComponentSpritesImport(ecs_world_t *world)
         },
     });
 
-    component_custom_register_global("EcsSprites", IdEscSprites);
+    ecs_component("EcsSprites", IdEscSprites);
 
     // SYSTEM & OBSERVER COMPONENTE SPRITES
     // ---------------------
@@ -57,14 +57,16 @@ void ComponentSpritesImport(ecs_world_t *world)
         .callback = system__init_fn
     });
 
+    ECS_TAG(world, EventSystemOnRender);
+
     ecs_system_init(world, &(ecs_system_desc_t){
-        .entity = {.add = {EcsOnStore} },
+        .entity = {.name = "EventSystemOnRender", .add = {EventSystemOnRender}},
         .query.filter.terms = {
-                {.id = IdEscSprites},
-                {.id = component_custom_load_global("EcsPosition")},
-                {.id = component_custom_load_global("EcsScale")},
-                {.id = component_custom_load_global("EcsRotation")},
-            },
+                {.id = IdEscSprites, .inout = EcsIn},
+                {.id = ecs_component_lookup("EcsPosition")},
+                {.id = ecs_component_lookup("EcsScale")},
+                {.id = ecs_component_lookup("EcsRotation")},
+        },
         .callback = system__render_fn
     });
 }

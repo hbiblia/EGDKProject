@@ -113,6 +113,12 @@ typedef struct ecamera
     evect3 position;
     evect3 rotation;
     sgl_pipeline pip;
+    // viewport
+    int viewport_w;
+    int viewport_h;
+    int viewport_x;
+    int viewport_y;
+    bool scissor;
 }ecamera;
 
 typedef struct etexture
@@ -158,6 +164,7 @@ EAPI int ewindow_height(void);
 EAPI void ewindow_set_color(float r, float g, float b);
 EAPI ecolor ewindow_color(void);
 EAPI void ewindow_set_title(const char *title);
+EAPI void ewindow_close(void);
 
 // ETEXTURE
 
@@ -169,6 +176,7 @@ EAPI etexture etexture_load(const char *filename);
 EAPI void ebegin_mode(ecamera cam);
 EAPI void eend_mode(void);
 EAPI ecamera ecamera_make(void);
+void erender_camera_set_viewport(ecamera *cam, int x, int y, int w, int h, bool scissor);
 
 // ESHAPE
 

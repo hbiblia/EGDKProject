@@ -48,9 +48,11 @@ static void frame_default(void)
     if (wdefault.update_fn)
         wdefault.update_fn();
 
+    ecs_flecs_progress();
+
     sg_begin_default_pass(&wdefault.pass_action, ewindow_width(), ewindow_height());
-    simgui_render();
     sgl_draw();
+    simgui_render();
     sg_end_pass();
     sg_commit();
 
@@ -120,4 +122,9 @@ ecolor ewindow_color(void)
 void ewindow_set_title(const char *title)
 {
     sapp_set_window_title(title);
+}
+
+void ewindow_close(void)
+{
+    sapp_quit();
 }
