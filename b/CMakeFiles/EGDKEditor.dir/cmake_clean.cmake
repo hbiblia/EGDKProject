@@ -39,6 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj.d"
   "EGDKEditor"
   "EGDKEditor.pdb"
 )

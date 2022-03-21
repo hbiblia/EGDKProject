@@ -131,4 +131,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
- C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+ C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h

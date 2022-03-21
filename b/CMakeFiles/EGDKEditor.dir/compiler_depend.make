@@ -366,7 +366,11 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/Source/Editor/panel_viewport.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c \
@@ -1639,6 +1643,37 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/
   C:/msys64/mingw64/include/mstcpip.h \
   C:/msys64/mingw64/include/Windows.h
 
+CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj: ../Engine/Source/ThirdParty/parson/parson.c \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/ctype.h \
+  C:/msys64/mingw64/include/math.h
+
+
+../Engine/Source/ThirdParty/parson/parson.c:
 
 C:/msys64/mingw64/include/Windows.h:
 
@@ -1681,6 +1716,8 @@ C:/msys64/mingw64/include/wnnc.h:
 C:/msys64/mingw64/include/reason.h:
 
 C:/msys64/mingw64/include/stringapiset.h:
+
+D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c:
 
 C:/msys64/mingw64/include/winuser.h:
 
@@ -1774,6 +1811,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/shaintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vnnivlintrin.h:
 
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vnniintrin.h:
+
 C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/grefcount.h:
@@ -1845,8 +1884,6 @@ C:/msys64/mingw64/include/glib-2.0/glib/genviron.h:
 C:/msys64/mingw64/include/stdint.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gscanner.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vnniintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gdate.h:
 
@@ -2100,8 +2137,6 @@ C:/msys64/mingw64/include/windef.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib.h:
 
-../Engine/Source/Ermine/eanimate.c:
-
 C:/msys64/mingw64/include/sys/timeb.h:
 
 C:/msys64/mingw64/include/_timeval.h:
@@ -2152,6 +2187,14 @@ D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
 
 D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c:
 
+../Engine/Source/Ermine/eanimate.c:
+
+D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h:
+
+C:/msys64/mingw64/include/concurrencysal.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/eresource.c:
+
 ../Engine/Source/Editor/panel_viewport.c:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/escripts.c:
@@ -2187,10 +2230,6 @@ C:/msys64/mingw64/include/namedpipeapi.h:
 ../Engine/Source/Ermine/erender.c:
 
 ../Engine/Source/Ermine/eresource.c:
-
-C:/msys64/mingw64/include/concurrencysal.h:
-
-D:/Github/EGDKProyect/Engine/Source/Ermine/eresource.c:
 
 ../Engine/Source/Ermine/escripts.c:
 

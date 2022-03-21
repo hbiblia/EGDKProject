@@ -59,9 +59,14 @@ void panel_hierarchy_main(void)
     igEnd();
 }
 
-const char *hierarchy_get_selected(void)
+const char *hierarchy_get_selected_name(void)
 {
     if(actor_selected == -1)return "None";
     ecs_world_t *world = eactor_get_world();
     return ecs_get_name(world, actor_selected);
+}
+
+actor hierarchy_get_selected(void)
+{
+    return actor_selected;
 }

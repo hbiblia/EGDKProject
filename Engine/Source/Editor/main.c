@@ -29,6 +29,7 @@ void init()
     // -------------
     panel_viewport_init();
     panel_hierarchy_init();
+    panel_inspector_init();
 
     // OTROS
     // -------------

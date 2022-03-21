@@ -371,6 +371,10 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c
@@ -1658,4 +1662,34 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/mstcpip.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/Windows.h
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj
+ /d/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/crtdefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_mac.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_secapi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/vadefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sdks/_mingw_ddk.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdio.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_stdio_config.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_off_t.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/swprintf.inl
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdio_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_wstdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/limits.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdlib_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/errno.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/ctype.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/math.h
 

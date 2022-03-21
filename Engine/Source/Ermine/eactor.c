@@ -96,7 +96,10 @@ void actor_system_run(const char *query)
 actor actor_new(const char *name)
 {
     actor e = ecs_new_entity(world, name);
-    ecs_add_pair(world, e, EcsIsA, prefab_default);
+    // ecs_add_pair(world, e, EcsIsA, prefab_default);
+    actor_set(e, EcsPosition, {0});
+    actor_set(e, EcsScale, {1, 1, 1});
+    actor_set(e, EcsRotation, {0});
     return e;
 }
 

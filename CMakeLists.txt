@@ -23,6 +23,7 @@ Engine/Source/Ermine/einput.c
 Engine/Source/Ermine/eanimate.c
 Engine/Source/Ermine/eactor.c
 Engine/Source/ThirdParty/flecs/flecs.c
+Engine/Source/ThirdParty/parson/parson.c
 Engine/Source/Ermine/component.transform.c
 Engine/Source/Ermine/component.sprites.c
 )

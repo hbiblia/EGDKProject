@@ -41,6 +41,11 @@
         "xtree": "c",
         "xutility": "c",
         "thread": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "xstring": "c",
+        "xtr1common": "c",
+        "initializer_list": "c",
+        "list": "c",
+        "optional": "c"
     }
 }

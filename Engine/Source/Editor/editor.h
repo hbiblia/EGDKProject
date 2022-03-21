@@ -9,13 +9,15 @@ void panel_viewport_main(void);
 
 // INSPECTOR
 // -------------
-void panel_hierarchy_init(void);
+void panel_inspector_init(void);
 void panel_inspector_main(void);
-const char *hierarchy_get_selected(void);
 
 // HIERARCHY
 // -------------
+void panel_hierarchy_init(void);
 void panel_hierarchy_main(void);
+actor hierarchy_get_selected(void);
+const char *hierarchy_get_selected_name(void);
 
 // ASSETS
 // -------------

@@ -609,6 +609,30 @@ Engine/Source/ThirdParty/flecs/flecs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.s
 .PHONY : Engine/Source/ThirdParty/flecs/flecs.c.s
 
+Engine/Source/ThirdParty/parson/parson.obj: Engine/Source/ThirdParty/parson/parson.c.obj
+.PHONY : Engine/Source/ThirdParty/parson/parson.obj
+
+# target to build an object file
+Engine/Source/ThirdParty/parson/parson.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj
+.PHONY : Engine/Source/ThirdParty/parson/parson.c.obj
+
+Engine/Source/ThirdParty/parson/parson.i: Engine/Source/ThirdParty/parson/parson.c.i
+.PHONY : Engine/Source/ThirdParty/parson/parson.i
+
+# target to preprocess a source file
+Engine/Source/ThirdParty/parson/parson.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.i
+.PHONY : Engine/Source/ThirdParty/parson/parson.c.i
+
+Engine/Source/ThirdParty/parson/parson.s: Engine/Source/ThirdParty/parson/parson.c.s
+.PHONY : Engine/Source/ThirdParty/parson/parson.s
+
+# target to generate assembly for a file
+Engine/Source/ThirdParty/parson/parson.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.s
+.PHONY : Engine/Source/ThirdParty/parson/parson.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -678,6 +702,9 @@ help:
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.obj"
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.i"
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.s"
+	@echo "... Engine/Source/ThirdParty/parson/parson.obj"
+	@echo "... Engine/Source/ThirdParty/parson/parson.i"
+	@echo "... Engine/Source/ThirdParty/parson/parson.s"
 .PHONY : help
 
 

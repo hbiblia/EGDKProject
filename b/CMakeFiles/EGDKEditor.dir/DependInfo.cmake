@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/Github/EGDKProyect/Engine/Source/Ermine/eutil.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/ewindow.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj.d"
   )
 
 # Targets to which this target links.
