@@ -19,6 +19,8 @@ static ecs_world_t *world;
 // static JSON_Array *jarray;
 // static JSON_Object *jobject;
 
+static void inspector_draw_component(const char *name, ecs_entity_t component, ecs_id_t id);
+
 void panel_inspector_init(void)
 {
     world = eactor_get_world();
@@ -32,9 +34,9 @@ void panel_inspector_main(void)
         if (actor_seleted != -1)
         {
             // ecs_world_t *world = eactor_get_world();
-            printf("Selected: %u\n", actor_seleted);
+            // printf("Selected: %u\n", actor_seleted);
 
-            // char *data = actor_serialize_data(actor_seleted);
+            char *data = actor_serialize_data(actor_seleted);
             // printf("Data: %s\n", data);
 
             // jroot = json_parse_string(data);
@@ -67,29 +69,33 @@ void panel_inspector_main(void)
         igSeparator();
         igPushItemWidth(-1);
 
-        // Add components buttons
-        // ---------------------
-        if (igButton("Add Component", (ImVec2){0, 0}))
+        if (actor_seleted != -1)
         {
-            igOpenPopup_Str("AddComponent", 0);
-        }
 
-        // Add components menu-popups
-        // ---------------------
-        if (igBeginPopup("AddComponent", 0))
-        {
-            actor seleted = hierarchy_get_selected();
+            // Add components buttons
+            // ---------------------
+            if (igButton("Add Component", (ImVec2){0, 0}))
+            {
+                igOpenPopup_Str("AddComponent", 0);
+            }
 
-            if (igMenuItem_Bool("Camera", "", false, true))
+            // Add components menu-popups
+            // ---------------------
+            if (igBeginPopup("AddComponent", 0))
             {
+                actor seleted = hierarchy_get_selected();
+
+                if (igMenuItem_Bool("Camera", "", false, true))
+                {
+                }
+                if (igMenuItem_Bool("SpriteRender", "", false, true))
+                {
+                    actor_set(seleted, EcsSprites, {.key = "background.png"});
+                }
+                igEndPopup();
             }
-            if (igMenuItem_Bool("SpriteRender", "", false, true))
-            {
-                actor_set(seleted, EcsSprites, {.key = "background.png"});
-            }
-            igEndPopup();
+            igPopItemWidth();
         }
-        igPopItemWidth();
 
         // List Components Properties
         // ---------------------
@@ -98,49 +104,58 @@ void panel_inspector_main(void)
         if (actor_seleted != -1)
         {
             ecs_type_t type = ecs_get_type(world, actor_seleted);
-            ecs_id_t *ids = ecs_vector_first(type, ecs_id_t);
+            const ecs_id_t *ids = ecs_vector_first(type, ecs_id_t);
             int32_t count = ecs_vector_count(type);
 
             for (int i = 0; i < count; i++)
             {
                 ecs_id_t id = ids[i];
                 ecs_entity_t component = ecs_pair_second(world, id);
-                const char *name = ecs_get_name(world, component);
+                const char *name_component = ecs_get_name(world, component);
 
                 // Component data
                 // ---------------------
-                void *component_data = ecs_get_mut_id(world, actor_seleted, id, false);
-                inspector_draw_component(name, component_data);
+                inspector_draw_component(name_component, component, id);
             }
         }
     }
     igEnd();
 }
 
-// #define COMPONENT_TEMP_NEW(component) INSPECTOR_VALUE
-
-#define COMPONENT_FORMAT(component, data)\
-    component *value = (component*)data
-
-// #define ECS_STRUCT(name, ...)\
-//     ECS_STRUCT_TYPE(name, __VA_ARGS__);\
-//     ECS_META_IMPL_CALL(ECS_STRUCT_, ECS_META_IMPL, name, #__VA_ARGS__)
-
-// #define ecs_id(T) FLECS__E##T
-
-void inspector_draw_component(const char *name, void *data)
+void inspector_draw_component(const char *name, ecs_entity_t component, ecs_id_t id)
 {
     bool open = igTreeNodeEx_Str(name, 0);
-
     if (open)
     {
-        if (strcmp(name, "Scale") == 0)
-        {
-            COMPONENT_FORMAT(EcsScale, data);
+        // obtenemos los field de la entidad componente
+        // que estan registrados en el meta.
+        //  ---------------------
+        const EcsMetaTypeSerialized *ser = ecs_get(world, component, EcsMetaTypeSerialized);
+        ecs_meta_type_op_t *ops = ecs_vector_first(ser->ops, ecs_meta_type_op_t);
 
-            igDragFloat("X", &value->x, 0.1f, 0.0f, 0.0f, "%.2f", 0);
-            igDragFloat("Y", &value->y, 0.1f, 0.0f, 0.0f, "%.2f", 0);
-            igDragFloat("Z", &value->z, 0.1f, 0.0f, 0.0f, "%.2f", 0);
+        int32_t field_count = ecs_vector_count(ser->ops);
+        for (int i = 0; i < field_count; i++)
+        {
+            ecs_meta_type_op_t *op = &ops[i];
+            if (op->name)
+            {
+                ecs_entity_t element_type = op->type;
+                const char *field_type_name = ecs_get_name(world, element_type);
+                const char *field_label = op->name;
+
+                // printf("Field Name: %s => %s\n", field_label, field_type_name);
+
+                // Tipos de datos
+                // ---------------------
+                if (strcmp(field_type_name, "f32") == 0)
+                {
+                    static float value = 0.0f;
+                    igDragFloat(field_label, &value, 0.1f, 0.0f, 0.0f, "%.2f", 0);
+
+                    // float *value = ecs_get_id(world, element_type, id);
+                    // printf("A: %f\n",value);
+                }
+            }
         }
         igTreePop();
     }

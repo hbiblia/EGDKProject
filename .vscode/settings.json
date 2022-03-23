@@ -46,6 +46,13 @@
         "xtr1common": "c",
         "initializer_list": "c",
         "list": "c",
-        "optional": "c"
+        "optional": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "utility": "c",
+        "xmemory": "c",
+        "locale": "c",
+        "xlocmes": "c",
+        "xlocnum": "c"
     }
 }
