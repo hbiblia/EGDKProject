@@ -19,7 +19,7 @@ static ecs_world_t *world;
 // static JSON_Array *jarray;
 // static JSON_Object *jobject;
 
-static void inspector_draw_component(const char *name, ecs_entity_t component, ecs_id_t id);
+static void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component, ecs_id_t id);
 
 void panel_inspector_init(void)
 {
@@ -112,17 +112,18 @@ void panel_inspector_main(void)
                 ecs_id_t id = ids[i];
                 ecs_entity_t component = ecs_pair_second(world, id);
                 const char *name_component = ecs_get_name(world, component);
+                void *component_ptr = ecs_get_id(world, actor_seleted, component);
 
                 // Component data
                 // ---------------------
-                inspector_draw_component(name_component, component, id);
+                inspector_draw_component(name_component, component_ptr, component, id);
             }
         }
     }
     igEnd();
 }
 
-void inspector_draw_component(const char *name, ecs_entity_t component, ecs_id_t id)
+void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component, ecs_id_t id)
 {
     bool open = igTreeNodeEx_Str(name, 0);
     if (open)
@@ -140,20 +141,21 @@ void inspector_draw_component(const char *name, ecs_entity_t component, ecs_id_t
             if (op->name)
             {
                 ecs_entity_t element_type = op->type;
-                const char *field_type_name = ecs_get_name(world, element_type);
+                // const char *field_type_name = ecs_get_name(world, element_type);
                 const char *field_label = op->name;
-
-                // printf("Field Name: %s => %s\n", field_label, field_type_name);
 
                 // Tipos de datos
                 // ---------------------
-                if (strcmp(field_type_name, "f32") == 0)
+                switch (op->kind)
                 {
-                    static float value = 0.0f;
-                    igDragFloat(field_label, &value, 0.1f, 0.0f, 0.0f, "%.2f", 0);
-
-                    // float *value = ecs_get_id(world, element_type, id);
-                    // printf("A: %f\n",value);
+                case EcsOpF32:
+                    float *value = (float *)ECS_OFFSET(ptr, op->offset);
+                    igDragFloat(field_label, value, 0.1f, 0.0f, 0.0f, "%.2f", 0);
+                    break;
+                case EcsOpString:
+                    char *value = *(char **)ECS_OFFSET(ptr, op->offset);
+                    igInputText(field_label, value, 256, ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL);
+                    break;
                 }
             }
         }
