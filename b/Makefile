@@ -249,6 +249,30 @@ Engine/Source/Editor/panel_viewport.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s
 .PHONY : Engine/Source/Editor/panel_viewport.c.s
 
+Engine/Source/Ermine/component.base.obj: Engine/Source/Ermine/component.base.c.obj
+.PHONY : Engine/Source/Ermine/component.base.obj
+
+# target to build an object file
+Engine/Source/Ermine/component.base.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj
+.PHONY : Engine/Source/Ermine/component.base.c.obj
+
+Engine/Source/Ermine/component.base.i: Engine/Source/Ermine/component.base.c.i
+.PHONY : Engine/Source/Ermine/component.base.i
+
+# target to preprocess a source file
+Engine/Source/Ermine/component.base.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.i
+.PHONY : Engine/Source/Ermine/component.base.c.i
+
+Engine/Source/Ermine/component.base.s: Engine/Source/Ermine/component.base.c.s
+.PHONY : Engine/Source/Ermine/component.base.s
+
+# target to generate assembly for a file
+Engine/Source/Ermine/component.base.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.s
+.PHONY : Engine/Source/Ermine/component.base.c.s
+
 Engine/Source/Ermine/component.sprites.obj: Engine/Source/Ermine/component.sprites.c.obj
 .PHONY : Engine/Source/Ermine/component.sprites.obj
 
@@ -392,6 +416,30 @@ Engine/Source/Ermine/einput.s: Engine/Source/Ermine/einput.c.s
 Engine/Source/Ermine/einput.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.s
 .PHONY : Engine/Source/Ermine/einput.c.s
+
+Engine/Source/Ermine/emath.obj: Engine/Source/Ermine/emath.c.obj
+.PHONY : Engine/Source/Ermine/emath.obj
+
+# target to build an object file
+Engine/Source/Ermine/emath.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj
+.PHONY : Engine/Source/Ermine/emath.c.obj
+
+Engine/Source/Ermine/emath.i: Engine/Source/Ermine/emath.c.i
+.PHONY : Engine/Source/Ermine/emath.i
+
+# target to preprocess a source file
+Engine/Source/Ermine/emath.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.i
+.PHONY : Engine/Source/Ermine/emath.c.i
+
+Engine/Source/Ermine/emath.s: Engine/Source/Ermine/emath.c.s
+.PHONY : Engine/Source/Ermine/emath.s
+
+# target to generate assembly for a file
+Engine/Source/Ermine/emath.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s
+.PHONY : Engine/Source/Ermine/emath.c.s
 
 Engine/Source/Ermine/erender.obj: Engine/Source/Ermine/erender.c.obj
 .PHONY : Engine/Source/Ermine/erender.obj
@@ -657,6 +705,9 @@ help:
 	@echo "... Engine/Source/Editor/panel_viewport.obj"
 	@echo "... Engine/Source/Editor/panel_viewport.i"
 	@echo "... Engine/Source/Editor/panel_viewport.s"
+	@echo "... Engine/Source/Ermine/component.base.obj"
+	@echo "... Engine/Source/Ermine/component.base.i"
+	@echo "... Engine/Source/Ermine/component.base.s"
 	@echo "... Engine/Source/Ermine/component.sprites.obj"
 	@echo "... Engine/Source/Ermine/component.sprites.i"
 	@echo "... Engine/Source/Ermine/component.sprites.s"
@@ -675,6 +726,9 @@ help:
 	@echo "... Engine/Source/Ermine/einput.obj"
 	@echo "... Engine/Source/Ermine/einput.i"
 	@echo "... Engine/Source/Ermine/einput.s"
+	@echo "... Engine/Source/Ermine/emath.obj"
+	@echo "... Engine/Source/Ermine/emath.i"
+	@echo "... Engine/Source/Ermine/emath.s"
 	@echo "... Engine/Source/Ermine/erender.obj"
 	@echo "... Engine/Source/Ermine/erender.i"
 	@echo "... Engine/Source/Ermine/erender.s"

@@ -37,6 +37,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -132,5 +134,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h

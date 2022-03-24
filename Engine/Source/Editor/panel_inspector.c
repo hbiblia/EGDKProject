@@ -114,6 +114,8 @@ void panel_inspector_main(void)
                 const char *name_component = ecs_get_name(world, component);
                 void *component_ptr = ecs_get_id(world, actor_seleted, component);
 
+                if (!component_ptr)continue;
+
                 // Component data
                 // ---------------------
                 inspector_draw_component(name_component, component_ptr, component, id);
@@ -138,24 +140,72 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
         for (int i = 0; i < field_count; i++)
         {
             ecs_meta_type_op_t *op = &ops[i];
+
             if (op->name)
             {
                 ecs_entity_t element_type = op->type;
-                // const char *field_type_name = ecs_get_name(world, element_type);
+                const char *field_type_name = ecs_get_name(world, element_type);
                 const char *field_label = op->name;
+
+                // DEBUG
+                // printf("DEBUG INSPECTOR: %s\n", field_label);
 
                 // Tipos de datos
                 // ---------------------
-                switch (op->kind)
+
+                if (strcmp(field_type_name, "Vect2") == 0)
                 {
-                case EcsOpF32:
-                    float *value = (float *)ECS_OFFSET(ptr, op->offset);
-                    igDragFloat(field_label, value, 0.1f, 0.0f, 0.0f, "%.2f", 0);
-                    break;
-                case EcsOpString:
-                    char *value = *(char **)ECS_OFFSET(ptr, op->offset);
-                    igInputText(field_label, value, 256, ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL);
-                    break;
+                    EcsVect2 *value = (EcsVect2 *)ECS_OFFSET(ptr, op->offset);
+                    float value_b[2] = {value->x, value->y};
+
+                    if (igDragFloat2(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
+                    {
+                        *value = evect2_new(value_b[0], value_b[1]);
+                    }
+                    i += op->op_count;
+                }
+                else if (strcmp(field_type_name, "Vect3") == 0)
+                {
+                    EcsVect3 *value = (EcsVect3 *)ECS_OFFSET(ptr, op->offset);
+                    float value_b[3] = {value->x, value->y, value->z};
+
+                    if (igDragFloat3(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
+                    {
+                        *value = evect3_new(value_b[0], value_b[1], value_b[2]);
+                    }
+                    i += op->op_count;
+                }
+                else if (strcmp(field_type_name, "Color") == 0)
+                {
+                    EcsColor *value_color = (EcsColor *)ECS_OFFSET(ptr, op->offset);
+                    float color_buffer[4] = {value_color->r, value_color->g, value_color->b, value_color->a};
+
+                    if (igColorEdit4(field_label, color_buffer, ImGuiColorEditFlags_Float))
+                    {
+                        *value_color = ecolor_new(color_buffer[0], color_buffer[1], color_buffer[2], color_buffer[3]);
+                    }
+                    i += (op->op_count-1);
+                }
+                else if (strcmp(field_type_name, "f32") == 0)
+                {
+                    float *value_f = (float *)ECS_OFFSET(ptr, op->offset);
+                    igDragFloat(field_label, value_f, 0.1f, 0.0f, 0.0f, "%.2f", 0);
+                }
+                else if (strcmp(field_type_name, "bool") == 0)
+                {
+                    bool *value_b = (bool *)ECS_OFFSET(ptr, op->offset);
+                    igCheckbox(field_label, value_b);
+                }
+                else if (strcmp(field_type_name, "string") == 0)
+                {
+                    char buffer[100];
+                    strcpy(buffer, *(char **)ECS_OFFSET(ptr, op->offset));
+
+                    if (igInputText(field_label, buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
+                    {
+                        // char *nbuffer = (char *)ECS_OFFSET(ptr, op->offset);
+                        // nbuffer = g_strdup(buffer);
+                    }
                 }
             }
         }

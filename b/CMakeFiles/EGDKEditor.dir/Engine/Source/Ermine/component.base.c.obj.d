@@ -1,6 +1,6 @@
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h \
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj: \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.c \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/crtdefs.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
@@ -36,6 +36,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h

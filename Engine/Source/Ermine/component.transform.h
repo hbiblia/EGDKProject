@@ -5,29 +5,10 @@
 #include <ermine.h>
 #include "eactor.h"
 
-typedef struct {
-    float x;
-    float y;
-    float z;
-}EcsPosition;
-
-typedef struct {
-    float x;
-    float y;
-    float z;
-}EcsScale;
-
-typedef struct {
-    float x;
-    float y;
-    float z;
-}EcsRotation;
-
-typedef struct {
-    EcsPosition position;
-    EcsScale scale;
-    EcsRotation rotation;
-}EcsTransform;
+typedef struct evect3 EcsPosition;
+typedef struct evect3 EcsScale;
+typedef struct evect3 EcsRotation;
+typedef struct etransform EcsTransform;
 
 EAPI void ComponentTransformImport(ecs_world_t *world);
 

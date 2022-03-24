@@ -2,6 +2,14 @@
 #define EFLECS_H
 #include "flecs/flecs.h"
 
+// Componente base
+// ------------------------------------
+// declaramos todos los datos basicos
+// para ser utilizado en cualquier otro
+// componente y se pueda serializar.
+// ------------------------------------
+#include "component.base.h"
+
 enum {
     EventSystemOnRender
 };
@@ -26,7 +34,7 @@ void component_custom_global_registre(const char *name, ecs_entity_t id);
 ecs_entity_t component_custom_global_load(const char *name);
 
 #define ecs_component component_custom_global_registre
-#define ecs_component_lookup component_custom_global_load
+#define ECS_COMPONENT_ID component_custom_global_load
 
 // ESYSTEM
 void actor_system_run(const char *query);

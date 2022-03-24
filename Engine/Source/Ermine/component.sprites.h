@@ -7,6 +7,9 @@
 
 typedef struct {
     char *key;
+    EcsColor color;
+    bool flipX;
+    bool flipY;
 }EcsSprites;
 
 EAPI void ComponentSpritesImport(ecs_world_t *world);

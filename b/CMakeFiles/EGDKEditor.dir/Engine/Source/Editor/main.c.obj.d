@@ -37,4 +37,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h

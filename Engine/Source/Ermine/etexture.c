@@ -43,9 +43,14 @@ void etexture_draw(etexture_desc t)
             t.clip.y -= height;
         }
 
+        // FLIP
+        width   *= t.flipx ? -1 : 1;
+        height  *= t.flipy ? -1 : 1;
+
+        // 
         t.clip.width = t.clip.width == 0 ? width : t.clip.width;
         t.clip.height = t.clip.height == 0 ? height : t.clip.height;
-
+        
         evect2 uv0 = {t.clip.x / width, t.clip.y / t.clip.height};
         evect2 uv1 = {t.clip.x / width, (t.clip.y + height) / t.clip.height};
         evect2 uv2 = {(t.clip.x + width) / width, (t.clip.y + height) / t.clip.height};

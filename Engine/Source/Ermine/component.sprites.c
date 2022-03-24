@@ -7,7 +7,7 @@ void system__init_fn(ecs_iter_t *it)
     EcsSprites *sprite = ecs_term_w_size(it, sizeof(EcsSprites), 1);
 
     for (int i = 0; i < it->count; i ++) {
-        // source = etexture_load(sprite[i].path);
+        sprite[i].color = ecolor_empty(sprite[i].color) ? WHITE : sprite[i].color;
     }
 }
 
@@ -21,6 +21,9 @@ void system__render_fn(ecs_iter_t *it)
     for (int i = 0; i < it->count; i ++) {
         etexture_draw((etexture_desc){
             .source = eresource_get_texture(sprite[i].key),
+            .color = sprite[i].color,
+            .flipx = sprite[i].flipX,
+            .flipy = sprite[i].flipY,
             .transform = {
                     .position = {position[i].x, position[i].y, position[i].z},
                     .scale = {scale[i].x, scale[i].y, scale[i].z},
@@ -44,6 +47,9 @@ void ComponentSpritesImport(ecs_world_t *world)
         .entity.entity = IdEscSprites,
         .members = {
             { .name = "key", .type = ecs_id(ecs_string_t) },
+            { .name = "color", .type = ECS_COMPONENT_ID("EcsColor") },
+            { .name = "flipX", .type = ecs_id(ecs_bool_t) },
+            { .name = "flipY", .type = ecs_id(ecs_bool_t) },
         },
     });
 
@@ -63,9 +69,9 @@ void ComponentSpritesImport(ecs_world_t *world)
         .entity = {.name = "EventSystemOnRender", .add = {EventSystemOnRender}},
         .query.filter.terms = {
                 {.id = IdEscSprites, .inout = EcsIn},
-                {.id = ecs_component_lookup("EcsPosition")},
-                {.id = ecs_component_lookup("EcsScale")},
-                {.id = ecs_component_lookup("EcsRotation")},
+                {.id = ECS_COMPONENT_ID("EcsPosition")},
+                {.id = ECS_COMPONENT_ID("EcsScale")},
+                {.id = ECS_COMPONENT_ID("EcsRotation")},
         },
         .callback = system__render_fn
     });

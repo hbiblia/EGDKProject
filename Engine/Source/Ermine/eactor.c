@@ -25,6 +25,7 @@ void ecs_flecs_init(void)
     actor_pipeline_custom_init(world);
 
     // iniciamos los componentes por defecto.
+    ComponentBaseImport(world);
     ComponentTransformImport(world);
     ComponentSpritesImport(world);
 

@@ -14,9 +14,7 @@ void ComponentTransformImport(ecs_world_t *world)
     ecs_struct_init(world, &(ecs_struct_desc_t){
         .entity.entity = IdEscPosition,
         .members = {
-            { .name = "x", .type = ecs_id(ecs_f32_t) },
-            { .name = "y", .type = ecs_id(ecs_f32_t) },
-            { .name = "z", .type = ecs_id(ecs_f32_t) },
+            { .name = "position", .type = ECS_COMPONENT_ID("EcsVect3") },
         },
     });
 
@@ -33,9 +31,7 @@ void ComponentTransformImport(ecs_world_t *world)
     ecs_struct_init(world, &(ecs_struct_desc_t){
         .entity.entity = IdEscScale,
         .members = {
-            { .name = "x", .type = ecs_id(ecs_f32_t) },
-            { .name = "y", .type = ecs_id(ecs_f32_t) },
-            { .name = "z", .type = ecs_id(ecs_f32_t) },
+            { .name = "scale", .type = ECS_COMPONENT_ID("EcsVect3") },
         },
     });
 
@@ -52,9 +48,7 @@ void ComponentTransformImport(ecs_world_t *world)
     ecs_struct_init(world, &(ecs_struct_desc_t){
         .entity.entity = IdEscRotation,
         .members = {
-            { .name = "x", .type = ecs_id(ecs_f32_t) },
-            { .name = "y", .type = ecs_id(ecs_f32_t) },
-            { .name = "z", .type = ecs_id(ecs_f32_t) },
+            { .name = "rotation", .type = ECS_COMPONENT_ID("EcsVect3") },
         },
     });
 
@@ -71,9 +65,10 @@ void ComponentTransformImport(ecs_world_t *world)
     ecs_struct_init(world, &(ecs_struct_desc_t){
         .entity.entity = IdEscTransform,
         .members = {
-            { .name = "position", .type = IdEscPosition },
-            { .name = "scale", .type = IdEscScale },
-            { .name = "rotation", .type = IdEscRotation },
+            { .name = "position", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "scale", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "rotation", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "origin", .type = ECS_COMPONENT_ID("EcsVect3") },
         },
     });
 

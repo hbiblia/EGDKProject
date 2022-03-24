@@ -36,7 +36,7 @@ void panel_hierarchy_main(void)
 
         ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
             .filter.terms = {
-                {.id = ecs_component_lookup("EcsPosition"), .inout = EcsIn}
+                {.id = ECS_COMPONENT_ID("EcsPosition"), .inout = EcsIn}
             },
         });
 

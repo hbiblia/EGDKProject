@@ -24,6 +24,19 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj: \
  C:/msys64/mingw64/include/corecrt_wstdlib.h \
  C:/msys64/mingw64/include/limits.h \
  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
+ C:/msys64/mingw64/include/stdio.h \
+ C:/msys64/mingw64/include/corecrt_stdio_config.h \
+ C:/msys64/mingw64/include/_mingw_off_t.h \
+ C:/msys64/mingw64/include/swprintf.inl \
+ C:/msys64/mingw64/include/sec_api/stdio_s.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -119,16 +132,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
- C:/msys64/mingw64/include/stdio.h \
- C:/msys64/mingw64/include/corecrt_stdio_config.h \
- C:/msys64/mingw64/include/_mingw_off_t.h \
- C:/msys64/mingw64/include/swprintf.inl \
- C:/msys64/mingw64/include/sec_api/stdio_s.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h

@@ -133,6 +133,8 @@ typedef struct etexture_desc
     etexture source;
     ecolor color;
     erect clip;
+    bool flipx;
+    bool flipy;
     etransform transform;
 } etexture_desc;
 
@@ -186,11 +188,16 @@ EAPI void eshape_rectangle_draw(eshape_desc shape);
 // ECOLOR
 
 EAPI bool ecolor_empty(ecolor color);
+EAPI ecolor ecolor_new(float r, float g, float b, float a);
 
 // ERESOURCE
 
 EAPI void eresource_close(void);
 EAPI void eresource_init(void);
 EAPI etexture eresource_get_texture(const char *key);
+
+// EMATH
+EAPI evect2 evect2_new(float x, float y);
+EAPI evect3 evect3_new(float x, float y, float z);
 
 #endif // ERMINE_H+

@@ -53,6 +53,7 @@
         "xmemory": "c",
         "locale": "c",
         "xlocmes": "c",
-        "xlocnum": "c"
+        "xlocnum": "c",
+        "cstdlib": "c"
     }
 }

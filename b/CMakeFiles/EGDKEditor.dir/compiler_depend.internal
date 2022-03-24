@@ -44,6 +44,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
@@ -89,6 +91,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c
@@ -133,6 +137,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/galloca.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h
@@ -229,7 +235,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
@@ -275,6 +280,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/galloca.h
@@ -373,7 +380,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
@@ -419,6 +425,52 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj
+ /d/Github/EGDKProyect/Engine/Source/Ermine/component.base.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/assert.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/crtdefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_mac.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_secapi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/vadefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sdks/_mingw_ddk.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdarg.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_stdarg.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/string.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/string_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdint.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/errno.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_wstdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/limits.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdlib_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdio.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_stdio_config.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_off_t.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/swprintf.inl
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdio_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj
  /d/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c
@@ -463,6 +515,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj
@@ -508,6 +561,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj
  /d/Github/EGDKProyect/Engine/Source/Ermine/eactor.c
@@ -539,6 +593,19 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_wstdlib.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/limits.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdlib_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdio.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_stdio_config.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_off_t.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/swprintf.inl
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdio_s.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/galloca.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h
@@ -635,18 +702,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
- /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdio.h
- /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_stdio_config.h
- /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_off_t.h
- /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/swprintf.inl
- /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdio_s.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
- /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj
@@ -753,6 +808,41 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj
+ /d/Github/EGDKProyect/Engine/Source/Ermine/emath.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/emath.c
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdio.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_stdio_config.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_mac.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_secapi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/vadefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sdks/_mingw_ddk.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_off_t.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/swprintf.inl
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdio_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/corecrt_wstdlib.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/limits.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/crtdefs.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/stdlib_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/errno.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stddef.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/stdint.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj
  /d/Github/EGDKProyect/Engine/Source/Ermine/erender.c
@@ -1427,6 +1517,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+ /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_imgui.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj
