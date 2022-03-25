@@ -2,11 +2,10 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eactor.h>
+#include <eflecs.h>
 
 #include "editor.h"
 #include <glib.h>
-#include "parson/parson.h"
 
 #include "component.transform.h"
 #include "component.sprites.h"
@@ -14,10 +13,6 @@
 static bool first_selected = false;
 static actor actor_seleted = -1;
 static ecs_world_t *world;
-
-// static JSON_Value *jroot;
-// static JSON_Array *jarray;
-// static JSON_Object *jobject;
 
 static void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component, ecs_id_t id);
 
@@ -61,40 +56,22 @@ void panel_inspector_main(void)
     igSetNextWindowSize((ImVec2){200, 200}, 0);
     if (igBegin("Inspector", false, ImGuiWindowFlags_NoMove))
     {
-        const char *name = hierarchy_get_selected_name();
-        igText(g_strdup_printf("Actor Selected: %s", name));
-
-        igSeparator();
-        igSameLine(0, -1);
-        igSeparator();
-        igPushItemWidth(-1);
-
         if (actor_seleted != -1)
         {
-
-            // Add components buttons
-            // ---------------------
-            if (igButton("Add Component", (ImVec2){0, 0}))
+            // Tenemos el nombre de la entida seleccionada y podemos cambiarlo.
+            // Por seguridad no permitimos el cambio de la entidad a 0.
+            char buffer[256];
+            char *ecs_name = ecs_get_name(world, actor_seleted);
+            strcpy(buffer, ecs_name);
+            if (igInputText("Name", buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
             {
-                igOpenPopup_Str("AddComponent", 0);
-            }
-
-            // Add components menu-popups
-            // ---------------------
-            if (igBeginPopup("AddComponent", 0))
-            {
-                actor seleted = hierarchy_get_selected();
-
-                if (igMenuItem_Bool("Camera", "", false, true))
+                if (strlen(buffer) > 0)
                 {
+                    ecs_set_name(world, actor_seleted, buffer);
                 }
-                if (igMenuItem_Bool("SpriteRender", "", false, true))
-                {
-                    actor_set(seleted, EcsSprites, {.key = "background.png"});
-                }
-                igEndPopup();
             }
-            igPopItemWidth();
+            igSeparator();
+            igSameLine(0, 0);
         }
 
         // List Components Properties
@@ -111,15 +88,50 @@ void panel_inspector_main(void)
             {
                 ecs_id_t id = ids[i];
                 ecs_entity_t component = ecs_pair_second(world, id);
-                const char *name_component = ecs_get_name(world, component);
+                char *name_component = ecs_get_name(world, component);
                 void *component_ptr = ecs_get_id(world, actor_seleted, component);
 
-                if (!component_ptr)continue;
+                if (!component_ptr)
+                    continue;
+
+                name_component = g_strdup(&name_component[1]);
 
                 // Component data
                 // ---------------------
                 inspector_draw_component(name_component, component_ptr, component, id);
             }
+        }
+
+        // Agregamos componentes nuevos
+        // ---------------------
+        igPushItemWidth(-1);
+        {
+            if (actor_seleted != -1)
+            {
+                // Add components buttons
+                // ---------------------
+                if (igButton("Add Component", (ImVec2){0, 0}))
+                {
+                    igOpenPopup_Str("AddComponent", 0);
+                }
+
+                // Add components menu-popups
+                // ---------------------
+                if (igBeginPopup("AddComponent", 0))
+                {
+                    actor seleted = hierarchy_get_selected();
+
+                    if (igMenuItem_Bool("Camera", "", false, true))
+                    {
+                    }
+                    if (igMenuItem_Bool("SpriteRender", "", false, true))
+                    {
+                        actor_set_empty(seleted, actor_get_lookup("CSprites"));
+                    }
+                    igEndPopup();
+                }
+            }
+            igPopItemWidth();
         }
     }
     igEnd();
@@ -153,9 +165,9 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 // Tipos de datos
                 // ---------------------
 
-                if (strcmp(field_type_name, "Vect2") == 0)
+                if (strcmp(field_type_name, "CVec2") == 0)
                 {
-                    EcsVect2 *value = (EcsVect2 *)ECS_OFFSET(ptr, op->offset);
+                    CVec2 *value = (CVec2 *)ECS_OFFSET(ptr, op->offset);
                     float value_b[2] = {value->x, value->y};
 
                     if (igDragFloat2(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
@@ -164,9 +176,9 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     }
                     i += op->op_count;
                 }
-                else if (strcmp(field_type_name, "Vect3") == 0)
+                else if (strcmp(field_type_name, "CVec3") == 0)
                 {
-                    EcsVect3 *value = (EcsVect3 *)ECS_OFFSET(ptr, op->offset);
+                    CVec3 *value = (CVec3 *)ECS_OFFSET(ptr, op->offset);
                     float value_b[3] = {value->x, value->y, value->z};
 
                     if (igDragFloat3(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
@@ -175,16 +187,16 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     }
                     i += op->op_count;
                 }
-                else if (strcmp(field_type_name, "Color") == 0)
+                else if (strcmp(field_type_name, "CColor") == 0)
                 {
-                    EcsColor *value_color = (EcsColor *)ECS_OFFSET(ptr, op->offset);
+                    CColor *value_color = (CColor *)ECS_OFFSET(ptr, op->offset);
                     float color_buffer[4] = {value_color->r, value_color->g, value_color->b, value_color->a};
 
                     if (igColorEdit4(field_label, color_buffer, ImGuiColorEditFlags_Float))
                     {
                         *value_color = ecolor_new(color_buffer[0], color_buffer[1], color_buffer[2], color_buffer[3]);
                     }
-                    i += (op->op_count-1);
+                    i += (op->op_count - 1);
                 }
                 else if (strcmp(field_type_name, "f32") == 0)
                 {
@@ -198,13 +210,25 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 }
                 else if (strcmp(field_type_name, "string") == 0)
                 {
-                    char buffer[100];
-                    strcpy(buffer, *(char **)ECS_OFFSET(ptr, op->offset));
+                    ecs_string_t *nbuffer = (ecs_string_t *)ECS_OFFSET(ptr, op->offset);
+
+                    char buffer[256];
+                    memset(buffer, 0, sizeof(buffer));
+                    strncpy(buffer, *(ecs_string_t **)ECS_OFFSET(ptr, op->offset), sizeof(buffer));
 
                     if (igInputText(field_label, buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
                     {
-                        // char *nbuffer = (char *)ECS_OFFSET(ptr, op->offset);
-                        // nbuffer = g_strdup(buffer);
+                        *nbuffer = g_strdup(buffer);
+                    }
+
+                    if (igBeginDragDropTarget())
+                    {
+                        ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_ITEM", 0);
+                        if (drop)
+                        {
+                            *nbuffer = g_strdup(drop->Data);
+                        }
+                        igEndDragDropTarget();
                     }
                 }
             }

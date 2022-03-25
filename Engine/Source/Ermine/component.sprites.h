@@ -3,14 +3,14 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "eactor.h"
+#include "eflecs.h"
 
 typedef struct {
     char *key;
-    EcsColor color;
+    CColor color;
     bool flipX;
     bool flipY;
-}EcsSprites;
+}CSprites;
 
 EAPI void ComponentSpritesImport(ecs_world_t *world);
 

@@ -10,7 +10,7 @@
 #define SOKOL_GL_IMPL
 #define CIMGUI_IMPL
 #include "ermine.h"
-#include "eactor.h"
+#include "eflecs.h"
 
 #include "sokol/sokol_imgui.h"
 
@@ -45,10 +45,10 @@ static void frame_default(void)
         .delta_time = sapp_frame_duration(),
         .dpi_scale = sapp_dpi_scale()});
 
+    ecs_flecs_progress();
     if (wdefault.update_fn)
         wdefault.update_fn();
 
-    ecs_flecs_progress();
 
     sg_begin_default_pass(&wdefault.pass_action, ewindow_width(), ewindow_height());
     sgl_draw();

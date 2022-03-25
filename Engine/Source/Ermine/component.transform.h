@@ -3,12 +3,12 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "eactor.h"
+#include "eflecs.h"
 
-typedef struct evect3 EcsPosition;
-typedef struct evect3 EcsScale;
-typedef struct evect3 EcsRotation;
-typedef struct etransform EcsTransform;
+typedef struct evect3 CPosition;
+typedef struct evect3 CScale;
+typedef struct evect3 CRotation;
+typedef struct etransform CTransform;
 
 EAPI void ComponentTransformImport(ecs_world_t *world);
 

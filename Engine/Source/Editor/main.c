@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eactor.h>
+#include <eflecs.h>
 
 #include "editor.h"
 
@@ -21,25 +21,12 @@ void init()
     io->ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     io->ConfigDockingWithShift = true;
 
-    // RESOURCE
-    // -------------
-    eresource_assets_load("background.png");
-
     // PANELS INIT
     // -------------
     panel_viewport_init();
     panel_hierarchy_init();
     panel_inspector_init();
-
-    // OTROS
-    // -------------
-    
-    // actor e = actor_new("Entity11");
-    // actor_set(e, EcsSprites, {.key = "background.png"});
-
-    // actor e = actor_deserialize_data("");
-    // char *data = actor_serialize_data(e);
-    // printf("Data: %s\n", data);
+    panel_assets_init();
 }
 
 void update()

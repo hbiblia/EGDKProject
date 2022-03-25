@@ -33,9 +33,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h

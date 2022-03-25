@@ -1,28 +1,19 @@
-#include "eactor.h"
-
-// GHASTABLE REG COMPONENTS
-#include <glib.h>
+#include "eflecs.h"
 
 #include "component.transform.h"
 #include "component.sprites.h"
 
 static ecs_world_t *world;
-static GHashTable *hash_table;
+// static GHashTable *hash_table;
 static actor prefab_default;
 static ecs_entity_t pipeline[32]; // no working
 
-// 
+//
 // ------------------
 void ecs_flecs_init(void)
 {
     // Flecs init
     world = ecs_init();
-
-    // Donde registramos los componentes.
-    hash_table = g_hash_table_new(g_str_hash, g_str_equal);
-
-    // Creamos pipeline-custom
-    actor_pipeline_custom_init(world);
 
     // iniciamos los componentes por defecto.
     ComponentBaseImport(world);
@@ -31,7 +22,6 @@ void ecs_flecs_init(void)
 
     // Creamos el prefabricado por defecto.
     prefab_default = actor_prefab_default();
-
 }
 
 void ecs_flecs_progress(void)
@@ -41,7 +31,6 @@ void ecs_flecs_progress(void)
 
 void ecs_flecs_close(void)
 {
-    g_hash_table_destroy(hash_table);
 }
 
 ecs_world_t *eactor_get_world(void)
@@ -49,31 +38,16 @@ ecs_world_t *eactor_get_world(void)
     return world;
 }
 
+ecs_entity_t actor_get_lookup(const char *name)
+{
+    return ecs_lookup(world, name);
+}
+
 // PIPELINE CUSTOM
 // ------------------
 
-void actor_pipeline_custom_init(ecs_world_t *world)
-{
-}
-ecs_entity_t actor_pipeline_get(int p)
-{
-}
-void actor_pipeline_run(int p)
-{
-}
-
 // ECOMPONENT
 // ------------------
-
-void component_custom_global_registre(const char *name, ecs_entity_t id)
-{
-    g_hash_table_insert(hash_table, name, id);
-}
-
-ecs_entity_t component_custom_global_load(const char *name)
-{
-    return g_hash_table_lookup(hash_table, name);
-}
 
 // ESYSTEM
 // ------------------
@@ -98,28 +72,33 @@ actor actor_new(const char *name)
 {
     actor e = ecs_new_entity(world, name);
     // ecs_add_pair(world, e, EcsIsA, prefab_default);
-    actor_set(e, EcsPosition, {0});
-    actor_set(e, EcsScale, {1, 1, 1});
-    actor_set(e, EcsRotation, {0});
+    actor_set(e, CPosition, {0});
+    actor_set(e, CScale, {1, 1, 1});
+    actor_set(e, CRotation, {0});
     return e;
 }
 
 actor actor_prefab_default(void)
 {
-    actor e = ecs_new_prefab(world, "Actor");
-    actor_set(e, EcsPosition, {0});
-    actor_set(e, EcsScale, {1, 1, 1});
-    actor_set(e, EcsRotation, {0});
+    actor e = ecs_new_prefab(world, "EntityPrefab");
+    actor_set(e, CPosition, {0});
+    actor_set(e, CScale, {1, 1, 1});
+    actor_set(e, CRotation, {0});
     return e;
 }
 
 void actor_set_ptr(actor a, const char *name, size_t size, void *components)
 {
-    ecs_entity_t cmp = g_hash_table_lookup(hash_table, name);
+    ecs_entity_t cmp = actor_get_lookup(name);
     if (cmp > 0)
     {
         ecs_set_id(world, a, cmp, size, components);
     }
+}
+
+void actor_set_empty(actor a, ecs_entity_t component)
+{
+    ecs_add_id(world, a, component);
 }
 
 // EACTOR SERIALIZE
@@ -145,7 +124,7 @@ actor actor_deserialize_data(const char *data)
 
     actor a = actor_new("Entity11");
     // procesador de componentes
-    ecs_entity_t cmp = g_hash_table_lookup(hash_table, "EcsPosition");
+    ecs_entity_t cmp = actor_get_lookup("CPosition");
     void *ptr = ecs_get_mut_id(world, a, cmp, 0);
 
     // procesador de datos de componentes

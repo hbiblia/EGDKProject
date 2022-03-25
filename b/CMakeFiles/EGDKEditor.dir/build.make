@@ -223,24 +223,10 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/eanimate.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.s
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj: ../Engine/Source/Ermine/eactor.c
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj -c /d/Github/EGDKProyect/Engine/Source/Ermine/eactor.c
-
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.i"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Ermine/eactor.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.i
-
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.s"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/eactor.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.s
-
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: ../Engine/Source/Ermine/emath.c
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj -c /d/Github/EGDKProyect/Engine/Source/Ermine/emath.c
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.i: cmake_force
@@ -250,6 +236,20 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.i: cmake_force
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/emath.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: ../Engine/Source/Ermine/eflecs.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj -c /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/Source/ThirdParty/flecs/flecs.c
@@ -404,8 +404,8 @@ EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj" \
-"CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj" \
@@ -431,8 +431,8 @@ EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj
-EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj

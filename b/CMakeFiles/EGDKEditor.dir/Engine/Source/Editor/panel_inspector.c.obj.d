@@ -33,12 +33,12 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
@@ -134,6 +134,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h

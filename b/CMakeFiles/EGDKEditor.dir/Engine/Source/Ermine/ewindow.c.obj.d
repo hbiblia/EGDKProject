@@ -191,7 +191,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: \
  C:/msys64/mingw64/include/math.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eactor.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \

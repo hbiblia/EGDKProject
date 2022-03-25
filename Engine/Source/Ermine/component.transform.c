@@ -5,72 +5,64 @@ void ComponentTransformImport(ecs_world_t *world)
 {
     // COMPONENTE POSITION
     // ---------------------
-    ecs_entity_t IdEscPosition = ecs_component_init(world, &(ecs_component_desc_t){
-        .entity.name = "EcsPosition",
-        .size = sizeof(EcsPosition),
-        .alignment = ECS_ALIGNOF(EcsPosition),
+    ecs_entity_t IdCPosition = ecs_component_init(world, &(ecs_component_desc_t){
+        .entity.name = "CPosition",
+        .size = sizeof(CPosition),
+        .alignment = ECS_ALIGNOF(CPosition),
     });
 
     ecs_struct_init(world, &(ecs_struct_desc_t){
-        .entity.entity = IdEscPosition,
+        .entity.entity = IdCPosition,
         .members = {
-            { .name = "position", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "position", .type = actor_get_lookup("CVec3") },
         },
     });
-
-    ecs_component("EcsPosition", IdEscPosition);
 
     // COMPONENTE SCALE
     // ---------------------
-    ecs_entity_t IdEscScale = ecs_component_init(world, &(ecs_component_desc_t){
-        .entity.name = "EcsScale",
-        .size = sizeof(EcsScale),
-        .alignment = ECS_ALIGNOF(EcsScale),
+    ecs_entity_t IdCScale = ecs_component_init(world, &(ecs_component_desc_t){
+        .entity.name = "CScale",
+        .size = sizeof(CScale),
+        .alignment = ECS_ALIGNOF(CScale),
     });
 
     ecs_struct_init(world, &(ecs_struct_desc_t){
-        .entity.entity = IdEscScale,
+        .entity.entity = IdCScale,
         .members = {
-            { .name = "scale", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "scale", .type = actor_get_lookup("CVec3") },
         },
     });
-
-    ecs_component("EcsScale", IdEscScale);
 
     // COMPONENTE ROTATION
     // ---------------------
-    ecs_entity_t IdEscRotation = ecs_component_init(world, &(ecs_component_desc_t){
-        .entity.name = "EcsRotation",
-        .size = sizeof(EcsRotation),
-        .alignment = ECS_ALIGNOF(EcsRotation),
+    ecs_entity_t IdCRotation = ecs_component_init(world, &(ecs_component_desc_t){
+        .entity.name = "CRotation",
+        .size = sizeof(CRotation),
+        .alignment = ECS_ALIGNOF(CRotation),
     });
 
     ecs_struct_init(world, &(ecs_struct_desc_t){
-        .entity.entity = IdEscRotation,
+        .entity.entity = IdCRotation,
         .members = {
-            { .name = "rotation", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "rotation", .type = actor_get_lookup("CVec3") },
         },
     });
-
-    ecs_component("EcsRotation", IdEscRotation);
 
     // COMPONENTE TRANSFORM
     // ---------------------
-    ecs_entity_t IdEscTransform = ecs_component_init(world, &(ecs_component_desc_t){
-        .entity.name = "EcsTransform",
-        .size = sizeof(EcsTransform),
-        .alignment = ECS_ALIGNOF(EcsTransform),
+    ecs_entity_t IdCTransform = ecs_component_init(world, &(ecs_component_desc_t){
+        .entity.name = "CTransform",
+        .size = sizeof(CTransform),
+        .alignment = ECS_ALIGNOF(CTransform),
     });
 
     ecs_struct_init(world, &(ecs_struct_desc_t){
-        .entity.entity = IdEscTransform,
+        .entity.entity = IdCTransform,
         .members = {
-            { .name = "position", .type = ECS_COMPONENT_ID("EcsVect3") },
-            { .name = "scale", .type = ECS_COMPONENT_ID("EcsVect3") },
-            { .name = "rotation", .type = ECS_COMPONENT_ID("EcsVect3") },
-            { .name = "origin", .type = ECS_COMPONENT_ID("EcsVect3") },
+            { .name = "position", .type = actor_get_lookup("CVec3") },
+            { .name = "scale", .type = actor_get_lookup("CVec3") },
+            { .name = "rotation", .type = actor_get_lookup("CVec3") },
+            { .name = "origin", .type = actor_get_lookup("CVec2") },
         },
     });
-
-    ecs_component("EcsTransform", IdEscTransform);
 }

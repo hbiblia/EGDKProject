@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eactor.h>
+#include <eflecs.h>
 
 void drawing_window(const ImDrawList *dl, const ImDrawCmd *cmd);
 

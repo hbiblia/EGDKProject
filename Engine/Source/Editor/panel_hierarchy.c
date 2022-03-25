@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eactor.h>
+#include <eflecs.h>
 #include <glib.h>
 
 #include "component.transform.h"
@@ -26,7 +26,6 @@ void panel_hierarchy_main(void)
         if (igButton("Agregar actor", (ImVec2){0, 0}))
         {
             actor e = actor_new(g_strdup_printf("Entity%d",actor_lengs));
-            // actor_set(e, EcsSprites, {.key = "background.png"});
             actor_lengs++;
         }
 
@@ -36,7 +35,7 @@ void panel_hierarchy_main(void)
 
         ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
             .filter.terms = {
-                {.id = ECS_COMPONENT_ID("EcsPosition"), .inout = EcsIn}
+                {.id = actor_get_lookup("CPosition"), .inout = EcsIn}
             },
         });
 

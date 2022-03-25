@@ -194,6 +194,7 @@ EAPI ecolor ecolor_new(float r, float g, float b, float a);
 
 EAPI void eresource_close(void);
 EAPI void eresource_init(void);
+EAPI void eresource_assets_load(const char *filename, const char *key);
 EAPI etexture eresource_get_texture(const char *key);
 
 // EMATH

@@ -25,7 +25,7 @@ void eresource_init(void)
 }
 
 // cargamos los archivos soportados
-void eresource_assets_load(const char *filename)
+void eresource_assets_load(const char *filename, const char *key)
 {
     int id_temporal = -1;
 
@@ -37,7 +37,7 @@ void eresource_assets_load(const char *filename)
     }
 
     if (id_temporal != -1){
-        g_hash_table_insert(hash_table, filename, id_temporal);
+        g_hash_table_insert(hash_table, key, id_temporal);
     }
 }
 

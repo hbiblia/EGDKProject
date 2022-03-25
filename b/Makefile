@@ -321,30 +321,6 @@ Engine/Source/Ermine/component.transform.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.s
 .PHONY : Engine/Source/Ermine/component.transform.c.s
 
-Engine/Source/Ermine/eactor.obj: Engine/Source/Ermine/eactor.c.obj
-.PHONY : Engine/Source/Ermine/eactor.obj
-
-# target to build an object file
-Engine/Source/Ermine/eactor.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.obj
-.PHONY : Engine/Source/Ermine/eactor.c.obj
-
-Engine/Source/Ermine/eactor.i: Engine/Source/Ermine/eactor.c.i
-.PHONY : Engine/Source/Ermine/eactor.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/eactor.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.i
-.PHONY : Engine/Source/Ermine/eactor.c.i
-
-Engine/Source/Ermine/eactor.s: Engine/Source/Ermine/eactor.c.s
-.PHONY : Engine/Source/Ermine/eactor.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/eactor.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eactor.c.s
-.PHONY : Engine/Source/Ermine/eactor.c.s
-
 Engine/Source/Ermine/eanimate.obj: Engine/Source/Ermine/eanimate.c.obj
 .PHONY : Engine/Source/Ermine/eanimate.obj
 
@@ -392,6 +368,30 @@ Engine/Source/Ermine/ecolor.s: Engine/Source/Ermine/ecolor.c.s
 Engine/Source/Ermine/ecolor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.s
 .PHONY : Engine/Source/Ermine/ecolor.c.s
+
+Engine/Source/Ermine/eflecs.obj: Engine/Source/Ermine/eflecs.c.obj
+.PHONY : Engine/Source/Ermine/eflecs.obj
+
+# target to build an object file
+Engine/Source/Ermine/eflecs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj
+.PHONY : Engine/Source/Ermine/eflecs.c.obj
+
+Engine/Source/Ermine/eflecs.i: Engine/Source/Ermine/eflecs.c.i
+.PHONY : Engine/Source/Ermine/eflecs.i
+
+# target to preprocess a source file
+Engine/Source/Ermine/eflecs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i
+.PHONY : Engine/Source/Ermine/eflecs.c.i
+
+Engine/Source/Ermine/eflecs.s: Engine/Source/Ermine/eflecs.c.s
+.PHONY : Engine/Source/Ermine/eflecs.s
+
+# target to generate assembly for a file
+Engine/Source/Ermine/eflecs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s
+.PHONY : Engine/Source/Ermine/eflecs.c.s
 
 Engine/Source/Ermine/einput.obj: Engine/Source/Ermine/einput.c.obj
 .PHONY : Engine/Source/Ermine/einput.obj
@@ -714,15 +714,15 @@ help:
 	@echo "... Engine/Source/Ermine/component.transform.obj"
 	@echo "... Engine/Source/Ermine/component.transform.i"
 	@echo "... Engine/Source/Ermine/component.transform.s"
-	@echo "... Engine/Source/Ermine/eactor.obj"
-	@echo "... Engine/Source/Ermine/eactor.i"
-	@echo "... Engine/Source/Ermine/eactor.s"
 	@echo "... Engine/Source/Ermine/eanimate.obj"
 	@echo "... Engine/Source/Ermine/eanimate.i"
 	@echo "... Engine/Source/Ermine/eanimate.s"
 	@echo "... Engine/Source/Ermine/ecolor.obj"
 	@echo "... Engine/Source/Ermine/ecolor.i"
 	@echo "... Engine/Source/Ermine/ecolor.s"
+	@echo "... Engine/Source/Ermine/eflecs.obj"
+	@echo "... Engine/Source/Ermine/eflecs.i"
+	@echo "... Engine/Source/Ermine/eflecs.s"
 	@echo "... Engine/Source/Ermine/einput.obj"
 	@echo "... Engine/Source/Ermine/einput.i"
 	@echo "... Engine/Source/Ermine/einput.s"

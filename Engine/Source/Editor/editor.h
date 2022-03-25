@@ -21,6 +21,7 @@ const char *hierarchy_get_selected_name(void);
 
 // ASSETS
 // -------------
+void panel_assets_init(void);
 void panel_assets_main(void);
 
 #endif // EDITOR_MAIN_H
