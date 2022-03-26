@@ -49,6 +49,9 @@ static void frame_default(void)
 
     ecs_flecs_progress();
 
+    if(wdefault.before_update)
+        wdefault.before_update();
+
     sg_begin_default_pass(&wdefault.pass_action, ewindow_width(), ewindow_height());
     sgl_draw();
     simgui_render();

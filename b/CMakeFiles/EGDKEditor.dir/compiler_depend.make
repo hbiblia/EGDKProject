@@ -435,6 +435,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   C:/msys64/mingw64/include/_mingw_off_t.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
   C:/msys64/mingw64/include/stdlib.h \
   C:/msys64/mingw64/include/corecrt_wstdlib.h \
@@ -444,7 +445,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   C:/msys64/mingw64/include/malloc.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -560,9 +560,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/Source/Editor/panel_inspector.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c \
@@ -3986,6 +3984,12 @@ C:/msys64/mingw64/include/wchar.h:
 
 ../Engine/Source/Editor/panel_hierarchy.c:
 
+../Engine/Source/Editor/panel_inspector.c:
+
+D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
+
+D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c:
+
 C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
 
 C:/msys64/mingw64/include/apiset.h:
@@ -3995,12 +3999,6 @@ D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
 C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
 
 C:/msys64/mingw64/include/windows.h:
-
-../Engine/Source/Editor/panel_inspector.c:
-
-D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
-
-D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c:
 
 ../Engine/Source/Editor/panel_viewport.c:
 

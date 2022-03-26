@@ -36,6 +36,10 @@ void update()
     editor_main_render();
 }
 
+void before_update()
+{
+}
+
 int main(int argc, char *argv[])
 {
     printf("EGDKEditor v1.0-dev \n");
@@ -46,6 +50,7 @@ int main(int argc, char *argv[])
         .height = 700,
         .init_fn = init,
         .update_fn = update,
+        .before_update = before_update,
         .path_project = argv[1],
     });
 }

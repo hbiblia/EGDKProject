@@ -154,6 +154,7 @@ typedef struct ewindow_desc
     int height;
     void (*init_fn)();
     void (*update_fn)();
+    void (*before_update)();
     void (*shutdown_fn)();
     void (*event_fn)(void *);
     sg_pass_action pass_action;

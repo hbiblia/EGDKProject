@@ -22,7 +22,7 @@ enum
 void ecs_flecs_init(void);
 void ecs_flecs_progress(void);
 void ecs_flecs_close(void);
-ecs_world_t *eactor_get_world(void);
+ecs_world_t *flower_get_world(void);
 ecs_entity_t actor_get_lookup(const char *name);
 
 // PIPELINE CUSTOM
@@ -47,11 +47,20 @@ actor actor_new(const char *name);
 
 actor actor_prefab_default(void);
 
-void actor_set_ptr(actor a, const char *name, size_t size, void *components);
+/*
+ * Asignamos un componente con un valor.
+ *
+ */
 
-#define actor_set(a, c, ...) actor_set_ptr(a, #c, sizeof(c), &(c)__VA_ARGS__)
+void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size, void *components);
+#define actor_set(a, c, ...) flower_set_component_ptr(a, #c, sizeof(c), &(c)__VA_ARGS__)
 
-void actor_set_empty(actor a, ecs_entity_t component);
+/*
+ * Creamos un componente vacio sin valores.
+ *
+ */
+
+void flower_set_component_empty(actor a, ecs_entity_t component);
 
 /*
  * Clonamos una entidad y sus componentes.
@@ -72,7 +81,7 @@ void flower_entity_remove(ecs_entity_t entity);
  *
  */
 
-ecs_entity_t flower_entity_new(const char *name, bool uid);
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid);
 
 // ------------------
 //

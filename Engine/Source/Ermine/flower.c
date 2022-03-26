@@ -27,9 +27,10 @@ void ecs_flecs_progress(void)
 
 void ecs_flecs_close(void)
 {
+    ecs_fini(world);
 }
 
-ecs_world_t *eactor_get_world(void)
+ecs_world_t *flower_get_world(void)
 {
     return world;
 }
@@ -43,25 +44,16 @@ ecs_entity_t actor_get_lookup(const char *name)
 // FLOWER:ENTITY
 // ------------------
 
-actor actor_new(const char *name)
-{
-    actor e = ecs_new_entity(world, name);
-    actor_set(e, TransformComponent, {.scale = {1, 1, 1}});
-    entity_len_world++;
-
-    return e;
-}
-
-void actor_set_ptr(actor a, const char *name, size_t size, void *components)
+void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size, void *components)
 {
     ecs_entity_t cmp = actor_get_lookup(name);
     if (cmp > 0)
     {
-        ecs_set_id(world, a, cmp, size, components);
+        ecs_set_id(world, entity, cmp, size, components);
     }
 }
 
-void actor_set_empty(actor a, ecs_entity_t component)
+void flower_set_component_empty(actor a, ecs_entity_t component)
 {
     ecs_add_id(world, a, component);
 }
@@ -88,7 +80,10 @@ void flower_entity_clone_new(ecs_entity_t source)
 
 void flower_entity_remove(ecs_entity_t entity)
 {
-    ecs_delete(world, entity);
+    if(ecs_is_alive(world, entity) && ecs_is_valid(world, entity)){
+        printf("INFO: Delete entity [ID:%d][NAME:%s]\n", entity, ecs_get_name(world, entity));
+        ecs_delete(world, entity);
+    }
 }
 
 /*
@@ -96,11 +91,16 @@ void flower_entity_remove(ecs_entity_t entity)
  *
  */
 
-ecs_entity_t flower_entity_new(const char *name, bool uid)
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid)
 {
     char *new_name = uid ? STRDUPPF("%s%d",name, entity_len_world) : name;
 
     ecs_entity_t entity = ecs_new_entity(world, new_name);
+    // Siempre se agrega a un padre Root o otra entidad.
+    if (parent > 0){
+        ecs_add_pair(world, entity, EcsChildOf, parent);
+    }
+    // Todos tienen el mismo componente si esta en la escena.
     actor_set(entity, TransformComponent, {.scale = {1, 1, 1}});
 
     entity_len_world++;
@@ -108,6 +108,7 @@ ecs_entity_t flower_entity_new(const char *name, bool uid)
     return entity;
 }
 
+// ------------------
 //
 // ------------------
 
@@ -196,21 +197,21 @@ void flower_internal_deserialize(const char *filename)
     // {"path":"Entity11", "ids":[["Position"], ["Scale"]], "values":[{"x":10, "y":0, "z":10}, {"x":1, "y":1, "z":1}]}
     // const char *buffer = ecs_parse_json(world, data, )
 
-    actor a = actor_new("Entity11");
-    // procesador de componentes
-    ecs_entity_t cmp = actor_get_lookup("CPosition");
-    void *ptr = ecs_get_mut_id(world, a, cmp, 0);
+    // actor a = actor_new("Entity11");
+    // // procesador de componentes
+    // ecs_entity_t cmp = actor_get_lookup("CPosition");
+    // void *ptr = ecs_get_mut_id(world, a, cmp, 0);
 
-    // procesador de datos de componentes
-    ecs_meta_cursor_t cur = ecs_meta_cursor(world, cmp, ptr);
-    ecs_meta_push(&cur);
-    ecs_meta_set_float(&cur, 10);
-    ecs_meta_next(&cur);
-    ecs_meta_set_float(&cur, 0);
-    ecs_meta_next(&cur);
-    ecs_meta_set_float(&cur, 10);
-    ecs_meta_pop(&cur);
+    // // procesador de datos de componentes
+    // ecs_meta_cursor_t cur = ecs_meta_cursor(world, cmp, ptr);
+    // ecs_meta_push(&cur);
+    // ecs_meta_set_float(&cur, 10);
+    // ecs_meta_next(&cur);
+    // ecs_meta_set_float(&cur, 0);
+    // ecs_meta_next(&cur);
+    // ecs_meta_set_float(&cur, 10);
+    // ecs_meta_pop(&cur);
 
-    // aplicamos el proceso
-    ecs_meta_set_entity(&cur, a);
+    // // aplicamos el proceso
+    // ecs_meta_set_entity(&cur, a);
 }

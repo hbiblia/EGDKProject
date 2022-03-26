@@ -17,7 +17,7 @@ static void inspector_draw_component(const char *name, void *ptr, ecs_entity_t c
 
 void panel_inspector_init(void)
 {
-    world = eactor_get_world();
+    world = flower_get_world();
 }
 
 void panel_inspector_main(void)
@@ -106,7 +106,7 @@ void panel_inspector_main(void)
                     }
                     if (igMenuItem_Bool("SpriteRendererComponent", "", false, true))
                     {
-                        actor_set_empty(seleted, actor_get_lookup("SpriteRendererComponent"));
+                        flower_set_component_empty(seleted, actor_get_lookup("SpriteRendererComponent"));
                     }
                     igEndPopup();
                 }

@@ -1,6 +1,16 @@
 
 #include "component.transform.h"
 
+void system__update_fn(ecs_iter_t *it)
+{
+    TransformComponent *transform = ecs_term_w_size(it, sizeof(TransformComponent), 1);
+
+    for (int i = 0; i < it->count; i++)
+    {
+        printf("Entity transform\n");
+    }
+}
+
 void ComponentTransformImport(ecs_world_t *world)
 {
     // COMPONENTE POSITION
@@ -64,5 +74,16 @@ void ComponentTransformImport(ecs_world_t *world)
             { .name = "rotation", .type = actor_get_lookup("CVec3") },
             { .name = "origin", .type = actor_get_lookup("CVec2") },
         },
+    });
+
+
+    // SYSTEM COMPONENTE
+    // ---------------------
+    ecs_system_init(world, &(ecs_system_desc_t){
+        .entity = {.add = {EcsOnUpdate}},
+        .query.filter.terms = {
+            {.id = actor_get_lookup("TransformComponent")},
+        },
+       .callback = system__update_fn,
     });
 }
