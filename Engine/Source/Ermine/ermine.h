@@ -29,6 +29,7 @@
 #endif
 
 #include "einput.h"
+#include <glib.h>
 
 enum
 {
@@ -38,6 +39,14 @@ enum
     ELOG_WARN,
     ELOG_ERROR,
     ELOG_FATAL
+};
+
+enum
+{
+    RESOURCE_PATH_PROJECT,
+    RESOURCE_PATH,
+    RESOURCE_PATH_ENGINE,
+    RESOURCE_LAST
 };
 
 #define VD(v, m, d) v == m ? d : v
@@ -148,6 +157,7 @@ typedef struct ewindow_desc
     void (*shutdown_fn)();
     void (*event_fn)(void *);
     sg_pass_action pass_action;
+    char *path_project;
 } ewindow_desc;
 
 // EUTILITY
@@ -157,6 +167,9 @@ EAPI void etracelog(int t, const char *text, ...);
 const char *eutil_file_get_extension(const char *filename);
 bool eutil_isfile_extension(const char *filename, const char *ext);
 const char *eutil_file_get_name(const char *filepath);
+char *eutil_path_normalize(const char *path);
+#define PATH_BUILD(...) eutil_path_normalize(g_build_filename(__VA_ARGS__, NULL))
+#define STRDUPPF g_strdup_printf
 
 // EWINDOW
 
@@ -193,9 +206,10 @@ EAPI ecolor ecolor_new(float r, float g, float b, float a);
 // ERESOURCE
 
 EAPI void eresource_close(void);
-EAPI void eresource_init(void);
+EAPI void eresource_init(const char *path_project);
 EAPI void eresource_assets_load(const char *filename, const char *key);
 EAPI etexture eresource_get_texture(const char *key);
+EAPI const char *eresource_get_path(int path_id);
 
 // EMATH
 EAPI evect2 evect2_new(float x, float y);

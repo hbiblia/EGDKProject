@@ -37,6 +37,18 @@ unsigned char *eutil_loadfile_data(const char *filename, unsigned int *bytes)
 }
 
 /*
+ * PATH STRING
+ *
+ */
+
+char *eutil_path_normalize(const char *path)
+{
+    GString *str = g_string_new(path);
+    g_string_replace(str, "/", "\\", 0);
+    return g_string_free(str, false);
+}
+
+/*
  * GET FILE EXTENSION
  *
  */

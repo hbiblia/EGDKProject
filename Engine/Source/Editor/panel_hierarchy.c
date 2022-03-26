@@ -2,20 +2,19 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eflecs.h>
+#include <flower.h>
 #include <glib.h>
 
 #include "component.transform.h"
 #include "component.sprites.h"
 
-static actor actor_selected = -1;
-static actor_lengs = 0;
+// El actor que tenemos seleccionado
+// desde este modulo.
+static ecs_entity_t entity_selected = -1;
 
-// static GPtrArray *actorsWorld_tmp;
 
 void panel_hierarchy_init(void)
 {
-    // actorsWorld_tmp = g_ptr_array_new();
 }
 
 void panel_hierarchy_main(void)
@@ -23,19 +22,36 @@ void panel_hierarchy_main(void)
     igSetNextWindowSize((ImVec2){100, 200}, 0);
     if (igBegin("Hierarchy", false, ImGuiWindowFlags_NoMove))
     {
-        if (igButton("Agregar actor", (ImVec2){0, 0}))
+        igSameLine(0,0);
+        if (igSmallButton("+"))
         {
-            actor e = actor_new(g_strdup_printf("Entity%d",actor_lengs));
-            actor_lengs++;
+            flower_entity_new("newEntity", true);
+        }
+        igSameLine(0,3.0f);
+        if(igSmallButton("Duplicar")){
+            if(entity_selected != -1){
+                flower_entity_clone_new(entity_selected);
+            }
         }
 
-        // Lista de actors
-        // --------------------
+        igSameLine(0,3.0f);
+        if(igSmallButton("Eliminar")){
+            if(entity_selected != -1){
+                flower_entity_remove(entity_selected);
+            }
+        }
+
+        igSeparator();
+
+        /*
+         * Buscamos todas las entidades que tengan un TransformComponent
+        */
+
         ecs_world_t *world = eactor_get_world();
 
-        ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
+        ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t) {
             .filter.terms = {
-                {.id = actor_get_lookup("CPosition"), .inout = EcsIn}
+                {.id = flower_lookup("TransformComponent"), .inout = EcsIn}
             },
         });
 
@@ -45,27 +61,31 @@ void panel_hierarchy_main(void)
             for (int i = 0; i < it.count; i++)
             {
                 actor actor_now = it.entities[i];
-                bool selected = (actor_selected == actor_now ? true : false);
+                bool selected = (entity_selected == actor_now ? true : false);
 
                 const char *name = ecs_get_name(world, actor_now);
-
-                if(igSelectable_Bool(name, selected, ImGuiSelectableFlags_None, (ImVec2){0})){
-                    actor_selected = actor_now;
+                
+                igPushID_Int(i);
+                if(igSelectable_Bool(name, selected, ImGuiSelectableFlags_None, (ImVec2){0})) {
+                    entity_selected = actor_now;
                 }
+                igPopID();
             }
         }
+
+        ecs_query_fini(q);
     }
     igEnd();
 }
 
 const char *hierarchy_get_selected_name(void)
 {
-    if(actor_selected == -1)return "None";
+    if(entity_selected == -1)return "None";
     ecs_world_t *world = eactor_get_world();
-    return ecs_get_name(world, actor_selected);
+    return ecs_get_name(world, entity_selected);
 }
 
 actor hierarchy_get_selected(void)
 {
-    return actor_selected;
+    return entity_selected;
 }

@@ -10,13 +10,14 @@
 // ------------------------------------
 #include "component.base.h"
 
-enum {
+enum
+{
     EventSystemOnRender
 };
 
 #define actor ecs_entity_t
 
-// 
+//
 
 void ecs_flecs_init(void);
 void ecs_flecs_progress(void);
@@ -38,7 +39,8 @@ ecs_entity_t component_custom_global_load(const char *name);
 
 void actor_system_run(const char *query);
 
-// EACTOR
+// ------------------
+// FLOWER:ENTITY
 // ------------------
 
 actor actor_new(const char *name);
@@ -51,11 +53,63 @@ void actor_set_ptr(actor a, const char *name, size_t size, void *components);
 
 void actor_set_empty(actor a, ecs_entity_t component);
 
-// EACTOR SERIALIZE
+/*
+ * Clonamos una entidad y sus componentes.
+ *
+ */
+
+void flower_entity_clone_new(ecs_entity_t source);
+
+/*
+ * Borramos una entidad del mundo.
+ *
+ */
+
+void flower_entity_remove(ecs_entity_t entity);
+
+/*
+ * Creamos una entidad basica.
+ *
+ */
+
+ecs_entity_t flower_entity_new(const char *name, bool uid);
+
+// ------------------
+//
 // ------------------
 
-char *actor_serialize_data(actor a);
+/*
+ * Nos permite obtener el identificador actor de
+ * un componente o un actor en si segun su nombre.
+ *
+ */
 
-actor actor_deserialize_data(const char *data);
+actor flower_lookup(const char *name);
+
+/*
+ * Ejecutamos un sistema custom.
+ *
+ */
+
+void flower_internal_system_run(const char *system_str);
+
+// ------------------
+// FLOWER SERIALIZE
+// ------------------
+
+/*
+ * Nos permite serializar el world de flecs
+ * y nos entrega un buffer string con los datos.
+ *
+ *
+ */
+const char *flower_internal_serialize(void);
+
+/*
+ * Nos permite deserializar los datos de un archivo,
+ * esto crea las entidades nuevas en el world de flecs.
+ *
+ */
+void flower_internal_deserialize(const char *filename);
 
 #endif // EFLECS_H

@@ -33,12 +33,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
- C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/string.h \
- C:/msys64/mingw64/include/sec_api/string_s.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -113,6 +107,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/gsequence.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gshell.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gslice.h \
+ C:/msys64/mingw64/include/string.h \
+ C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstringchunk.h \
@@ -133,4 +129,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+ C:/msys64/mingw64/include/assert.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h

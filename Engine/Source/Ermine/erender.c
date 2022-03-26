@@ -50,6 +50,13 @@ ecamera ecamera_make(void)
             .write_enabled = true,
             .compare = SG_COMPAREFUNC_LESS_EQUAL,
         },
+        .colors[0] = {
+            .blend = {
+                .enabled = true,
+                .src_factor_rgb = SG_BLENDFACTOR_SRC_ALPHA,
+                .dst_factor_rgb = SG_BLENDFACTOR_ONE_MINUS_SRC_ALPHA,
+            },
+        },
     });
 
     return cam;

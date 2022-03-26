@@ -36,9 +36,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/eflecs.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -132,4 +129,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
- C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+ C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h

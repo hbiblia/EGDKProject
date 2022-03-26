@@ -237,19 +237,19 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/emath.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.s
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: ../Engine/Source/Ermine/eflecs.c
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj -c /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: ../Engine/Source/Ermine/flower.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj -c /d/Github/EGDKProyect/Engine/Source/Ermine/flower.c
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Ermine/flower.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.i
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Ermine/flower.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.s
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/Source/ThirdParty/flecs/flecs.c
@@ -391,6 +391,20 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s
 
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: ../Engine/Source/Editor/editor.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/editor.c
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/editor.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.i
+
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/editor.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s
+
 # Object files for target EGDKEditor
 EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj" \
@@ -405,7 +419,7 @@ EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj" \
-"CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj" \
@@ -415,7 +429,8 @@ EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj" \
-"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj"
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj" \
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj"
 
 # External object files for target EGDKEditor
 EGDKEditor_EXTERNAL_OBJECTS =
@@ -432,7 +447,7 @@ EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj
-EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj
@@ -443,9 +458,10 @@ EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/build.make
 EGDKEditor: CMakeFiles/EGDKEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C executable EGDKEditor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/Github/EGDKProyect/b/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking C executable EGDKEditor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EGDKEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

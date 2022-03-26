@@ -3,7 +3,7 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "eflecs.h"
+#include "flower.h"
 
 typedef struct ecolor CColor;
 typedef struct evect2 CVec2;

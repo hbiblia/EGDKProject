@@ -129,6 +129,30 @@ EGDKEditor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/build
 .PHONY : EGDKEditor/fast
 
+Engine/Source/Editor/editor.obj: Engine/Source/Editor/editor.c.obj
+.PHONY : Engine/Source/Editor/editor.obj
+
+# target to build an object file
+Engine/Source/Editor/editor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj
+.PHONY : Engine/Source/Editor/editor.c.obj
+
+Engine/Source/Editor/editor.i: Engine/Source/Editor/editor.c.i
+.PHONY : Engine/Source/Editor/editor.i
+
+# target to preprocess a source file
+Engine/Source/Editor/editor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.i
+.PHONY : Engine/Source/Editor/editor.c.i
+
+Engine/Source/Editor/editor.s: Engine/Source/Editor/editor.c.s
+.PHONY : Engine/Source/Editor/editor.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/editor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s
+.PHONY : Engine/Source/Editor/editor.c.s
+
 Engine/Source/Editor/main.obj: Engine/Source/Editor/main.c.obj
 .PHONY : Engine/Source/Editor/main.obj
 
@@ -368,30 +392,6 @@ Engine/Source/Ermine/ecolor.s: Engine/Source/Ermine/ecolor.c.s
 Engine/Source/Ermine/ecolor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.s
 .PHONY : Engine/Source/Ermine/ecolor.c.s
-
-Engine/Source/Ermine/eflecs.obj: Engine/Source/Ermine/eflecs.c.obj
-.PHONY : Engine/Source/Ermine/eflecs.obj
-
-# target to build an object file
-Engine/Source/Ermine/eflecs.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj
-.PHONY : Engine/Source/Ermine/eflecs.c.obj
-
-Engine/Source/Ermine/eflecs.i: Engine/Source/Ermine/eflecs.c.i
-.PHONY : Engine/Source/Ermine/eflecs.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/eflecs.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.i
-.PHONY : Engine/Source/Ermine/eflecs.c.i
-
-Engine/Source/Ermine/eflecs.s: Engine/Source/Ermine/eflecs.c.s
-.PHONY : Engine/Source/Ermine/eflecs.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/eflecs.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.s
-.PHONY : Engine/Source/Ermine/eflecs.c.s
 
 Engine/Source/Ermine/einput.obj: Engine/Source/Ermine/einput.c.obj
 .PHONY : Engine/Source/Ermine/einput.obj
@@ -633,6 +633,30 @@ Engine/Source/Ermine/ewindow.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.s
 .PHONY : Engine/Source/Ermine/ewindow.c.s
 
+Engine/Source/Ermine/flower.obj: Engine/Source/Ermine/flower.c.obj
+.PHONY : Engine/Source/Ermine/flower.obj
+
+# target to build an object file
+Engine/Source/Ermine/flower.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj
+.PHONY : Engine/Source/Ermine/flower.c.obj
+
+Engine/Source/Ermine/flower.i: Engine/Source/Ermine/flower.c.i
+.PHONY : Engine/Source/Ermine/flower.i
+
+# target to preprocess a source file
+Engine/Source/Ermine/flower.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.i
+.PHONY : Engine/Source/Ermine/flower.c.i
+
+Engine/Source/Ermine/flower.s: Engine/Source/Ermine/flower.c.s
+.PHONY : Engine/Source/Ermine/flower.s
+
+# target to generate assembly for a file
+Engine/Source/Ermine/flower.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.s
+.PHONY : Engine/Source/Ermine/flower.c.s
+
 Engine/Source/ThirdParty/flecs/flecs.obj: Engine/Source/ThirdParty/flecs/flecs.c.obj
 .PHONY : Engine/Source/ThirdParty/flecs/flecs.obj
 
@@ -690,6 +714,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... EGDKEditor"
+	@echo "... Engine/Source/Editor/editor.obj"
+	@echo "... Engine/Source/Editor/editor.i"
+	@echo "... Engine/Source/Editor/editor.s"
 	@echo "... Engine/Source/Editor/main.obj"
 	@echo "... Engine/Source/Editor/main.i"
 	@echo "... Engine/Source/Editor/main.s"
@@ -720,9 +747,6 @@ help:
 	@echo "... Engine/Source/Ermine/ecolor.obj"
 	@echo "... Engine/Source/Ermine/ecolor.i"
 	@echo "... Engine/Source/Ermine/ecolor.s"
-	@echo "... Engine/Source/Ermine/eflecs.obj"
-	@echo "... Engine/Source/Ermine/eflecs.i"
-	@echo "... Engine/Source/Ermine/eflecs.s"
 	@echo "... Engine/Source/Ermine/einput.obj"
 	@echo "... Engine/Source/Ermine/einput.i"
 	@echo "... Engine/Source/Ermine/einput.s"
@@ -753,6 +777,9 @@ help:
 	@echo "... Engine/Source/Ermine/ewindow.obj"
 	@echo "... Engine/Source/Ermine/ewindow.i"
 	@echo "... Engine/Source/Ermine/ewindow.s"
+	@echo "... Engine/Source/Ermine/flower.obj"
+	@echo "... Engine/Source/Ermine/flower.i"
+	@echo "... Engine/Source/Ermine/flower.s"
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.obj"
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.i"
 	@echo "... Engine/Source/ThirdParty/flecs/flecs.s"

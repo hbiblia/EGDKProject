@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eflecs.h>
+#include <flower.h>
 
 void drawing_window(const ImDrawList *dl, const ImDrawCmd *cmd);
 
@@ -37,7 +37,7 @@ void drawing_window(const ImDrawList *dl, const ImDrawCmd *cmd)
     erender_camera_set_viewport(&default_cam, cx, cy, cw, ch, true);
     ebegin_mode(default_cam);
     {
-        actor_system_run("EventSystemOnRender");
+        flower_internal_system_run("EventSystemOnRender");
     }
     eend_mode();
 }

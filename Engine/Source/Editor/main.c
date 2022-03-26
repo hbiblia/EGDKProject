@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eflecs.h>
+#include <flower.h>
 
 #include "editor.h"
 
@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
         .height = 700,
         .init_fn = init,
         .update_fn = update,
+        .path_project = argv[1],
     });
 }
 
@@ -122,6 +123,7 @@ void editor_main_render()
                 }
                 if (igMenuItem_Bool("Save As...", "Ctrl+S", false, true))
                 {
+                    editor_internal_level_save();
                 }
                 if (igMenuItem_Bool("Exit", "", false, true))
                 {

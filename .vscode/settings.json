@@ -54,6 +54,8 @@
         "locale": "c",
         "xlocmes": "c",
         "xlocnum": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "parson.h": "c",
+        "editor.h": "c"
     }
 }

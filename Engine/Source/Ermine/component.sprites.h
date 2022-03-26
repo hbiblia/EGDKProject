@@ -3,14 +3,14 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "eflecs.h"
+#include "flower.h"
 
 typedef struct {
     char *key;
     CColor color;
     bool flipX;
     bool flipY;
-}CSprites;
+}SpriteRendererComponent;
 
 EAPI void ComponentSpritesImport(ecs_world_t *world);
 

@@ -2,9 +2,8 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eflecs.h>
+#include <flower.h>
 
-#include <glib.h>
 #include "parson/parson.h"
 
 static JSON_Value *root_value;
@@ -13,8 +12,8 @@ static JSON_Object *commit;
 
 void panel_assets_init(void)
 {
-    const char *path_resource = "D:\\Github\\EGDKProyect\\Examples\\TappyPlane\\resource\\";
-    root_value = json_parse_file("D:\\Github\\EGDKProyect\\Examples\\TappyPlane\\resource\\assets.json");
+    const char *resource_path = eresource_get_path(RESOURCE_PATH);
+    root_value = json_parse_file(PATH_BUILD(resource_path, "assets.json"));
     commits = json_value_get_array(root_value);
 
     // RESOURCE LOAD
@@ -26,7 +25,7 @@ void panel_assets_init(void)
         const char *ext = json_object_get_string(commit, "ext");
         double uid = json_object_get_number(commit, "id");
 
-        gchar *fileName = g_strdup_printf("%sr%.0f.%s", path_resource, uid, ext);
+        gchar *fileName = PATH_BUILD(resource_path, STRDUPPF("r%.0f.%s",uid, ext));
 
         eresource_assets_load(fileName, name);
     }
@@ -53,25 +52,41 @@ void panel_assets_main(void)
             {
                 commit = json_array_get_object(commits, i);
                 const char *name = json_object_get_string(commit, "name");
+                const char *ext = json_object_get_string(commit, "ext");
 
                 igPushID_Str(name);
                 {
                     etexture image = eresource_get_texture(name);
 
+                    // Iconos internos
+                    if(strcmp(ext, "level")==0){
+                        image = eresource_get_texture("resource::icon_level");
+                    }else if(strcmp(ext, "folder")==0){
+                        image = eresource_get_texture("resource::icon_folder");
+                    }
+
                     igPushStyleColor_Vec4(ImGuiCol_Button, (ImVec4){0, 0, 0, 0});
                     igImageButton((ImTextureID)(uintptr_t)image.id, (ImVec2){thumbnailSize, thumbnailSize}, (ImVec2){0, 0}, (ImVec2){1, 1}, -1, (ImVec4){0, 0, 0, 0}, (ImVec4){1, 1, 1, 1});
 
+                    // ----------------------
                     // Draggable source
+                    // ----------------------
                     if (igBeginDragDropSource(0))
                     {
-                        igSetDragDropPayload("ASSETS_ITEM", name, strlen(name)+1, 0);
+                        igSetDragDropPayload("ASSETS_RESOURCE_ITEM", name, strlen(name)+1, 0);
                         igEndDragDropSource();
                     }
                     igPopStyleColor(1);
 
+                    // ----------------------
+                    // DOUBLE CLICK ITEM
+                    // ----------------------
                     if (igIsItemHovered(0) && igIsMouseDoubleClicked(ImGuiMouseButton_Left))
                     {
-                        printf("Selected: %s\n", name);
+                        if(strcmp(ext,"level")==0){
+                            double uid = json_object_get_number(commit, "id");
+                            editor_internal_level_open(STRDUPPF("r%.0f",uid));
+                        }
                     }
 
                     igTextWrapped("%s", name);

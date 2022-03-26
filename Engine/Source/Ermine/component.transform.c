@@ -50,14 +50,14 @@ void ComponentTransformImport(ecs_world_t *world)
 
     // COMPONENTE TRANSFORM
     // ---------------------
-    ecs_entity_t IdCTransform = ecs_component_init(world, &(ecs_component_desc_t){
-        .entity.name = "CTransform",
-        .size = sizeof(CTransform),
-        .alignment = ECS_ALIGNOF(CTransform),
+    ecs_entity_t IdTransformComponent = ecs_component_init(world, &(ecs_component_desc_t){
+        .entity.name = "TransformComponent",
+        .size = sizeof(TransformComponent),
+        .alignment = ECS_ALIGNOF(TransformComponent),
     });
 
     ecs_struct_init(world, &(ecs_struct_desc_t){
-        .entity.entity = IdCTransform,
+        .entity.entity = IdTransformComponent,
         .members = {
             { .name = "position", .type = actor_get_lookup("CVec3") },
             { .name = "scale", .type = actor_get_lookup("CVec3") },

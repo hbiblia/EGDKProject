@@ -22,7 +22,7 @@ Engine/Source/Ermine/eshape.c
 Engine/Source/Ermine/einput.c
 Engine/Source/Ermine/eanimate.c
 Engine/Source/Ermine/emath.c
-Engine/Source/Ermine/eflecs.c
+Engine/Source/Ermine/flower.c
 Engine/Source/ThirdParty/flecs/flecs.c
 Engine/Source/ThirdParty/parson/parson.c
 Engine/Source/Ermine/component.base.c
@@ -37,6 +37,7 @@ Engine/Source/Editor/panel_assets.c
 Engine/Source/Editor/panel_hierarchy.c
 Engine/Source/Editor/panel_inspector.c
 Engine/Source/Editor/panel_viewport.c
+Engine/Source/Editor/editor.c
 )
 
 # GAME

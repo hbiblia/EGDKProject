@@ -3,56 +3,54 @@
         "name": "background",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 2369
     },
     {
         "name": "groundGrass",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 3659
     },
     {
         "name": "rockGrass",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 7845
     },
     {
         "name": "rockGrassDown",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 6893
     },
     {
         "name": "starGold",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 9685
     },
     {
         "name": "planeRed1",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 9625
     },
     {
         "name": "planeRed2",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 9635
     },
     {
         "name": "planeRed3",
         "type": "texture",
         "ext":"png",
-        "parent": 0,
         "id": 9485
+    },
+    {
+        "name": "test",
+        "type": "level",
+        "ext":"level",
+        "id": 5893
     }
 ]

@@ -10,7 +10,7 @@
 #define SOKOL_GL_IMPL
 #define CIMGUI_IMPL
 #include "ermine.h"
-#include "eflecs.h"
+#include "flower.h"
 
 #include "sokol/sokol_imgui.h"
 
@@ -24,15 +24,14 @@ static void init_default(void)
     sgl_setup(&(sgl_desc_t){0});
 
     simgui_setup(&(simgui_desc_t){
-        .sample_count = sapp_sample_count()
-    });
+        .sample_count = sapp_sample_count()});
 
     wdefault.pass_action = (sg_pass_action){
         .colors[0] = {.action = SG_ACTION_CLEAR, .value = {0.0f, 0.0f, 0.0f, 1.0}}};
 
     ecs_flecs_init();
-    eresource_init();
-    
+    eresource_init(wdefault.path_project);
+
     if (wdefault.init_fn)
         wdefault.init_fn();
 }
@@ -45,10 +44,10 @@ static void frame_default(void)
         .delta_time = sapp_frame_duration(),
         .dpi_scale = sapp_dpi_scale()});
 
-    ecs_flecs_progress();
     if (wdefault.update_fn)
         wdefault.update_fn();
 
+    ecs_flecs_progress();
 
     sg_begin_default_pass(&wdefault.pass_action, ewindow_width(), ewindow_height());
     sgl_draw();
@@ -63,9 +62,12 @@ static void event_default(const sapp_event *ev)
 {
     simgui_handle_event(ev);
 
-    if (ev->type == SAPP_EVENTTYPE_KEY_DOWN){
+    if (ev->type == SAPP_EVENTTYPE_KEY_DOWN)
+    {
         input_key_set_down(ev->key_code);
-    }else if(ev->type == SAPP_EVENTTYPE_KEY_UP){
+    }
+    else if (ev->type == SAPP_EVENTTYPE_KEY_UP)
+    {
         input_key_set_up(ev->key_code);
     }
 

@@ -29,11 +29,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
- C:/msys64/mingw64/include/stdarg.h \
- C:/msys64/mingw64/include/_mingw_stdarg.h \
- C:/msys64/mingw64/include/string.h \
- C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/glib-2.0/glib.h \
  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -52,6 +47,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/gatomic.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-typeof.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gerror.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
+ C:/msys64/mingw64/include/stdarg.h \
+ C:/msys64/mingw64/include/_mingw_stdarg.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gquark.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gutils.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gbacktrace.h \
@@ -108,6 +106,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/gsequence.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gshell.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gslice.h \
+ C:/msys64/mingw64/include/string.h \
+ C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstringchunk.h \

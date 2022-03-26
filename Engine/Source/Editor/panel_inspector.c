@@ -2,10 +2,9 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <eflecs.h>
+#include <flower.h>
 
 #include "editor.h"
-#include <glib.h>
 
 #include "component.transform.h"
 #include "component.sprites.h"
@@ -26,29 +25,6 @@ void panel_inspector_main(void)
     if (actor_seleted != hierarchy_get_selected())
     {
         actor_seleted = hierarchy_get_selected();
-        if (actor_seleted != -1)
-        {
-            // ecs_world_t *world = eactor_get_world();
-            // printf("Selected: %u\n", actor_seleted);
-
-            char *data = actor_serialize_data(actor_seleted);
-            // printf("Data: %s\n", data);
-
-            // jroot = json_parse_string(data);
-
-            // ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
-            //     .filter.terms = {
-            //         {.id = ecs_id(EcsComponent)}
-            //     },
-            // });
-
-            // ecs_iter_t it = ecs_query_iter(world, q);
-            // while (ecs_query_next(&it)) {
-            //     for (int i = 0; i < it.count; i ++) {
-            //         printf("Components: %s\n", ecs_get_name(world, it.entities[i]));
-            //     }
-            // }
-        }
     }
 
     // UI
@@ -73,6 +49,10 @@ void panel_inspector_main(void)
             igSeparator();
             igSameLine(0, 0);
         }
+        else
+        {
+            igTextWrapped("Select an entity to view properties");
+        }
 
         // List Components Properties
         // ---------------------
@@ -94,7 +74,7 @@ void panel_inspector_main(void)
                 if (!component_ptr)
                     continue;
 
-                name_component = g_strdup(&name_component[1]);
+                // name_component = g_strdup(&name_component[1]);
 
                 // Component data
                 // ---------------------
@@ -121,12 +101,12 @@ void panel_inspector_main(void)
                 {
                     actor seleted = hierarchy_get_selected();
 
-                    if (igMenuItem_Bool("Camera", "", false, true))
+                    if (igMenuItem_Bool("CameraComponent", "", false, true))
                     {
                     }
-                    if (igMenuItem_Bool("SpriteRender", "", false, true))
+                    if (igMenuItem_Bool("SpriteRendererComponent", "", false, true))
                     {
-                        actor_set_empty(seleted, actor_get_lookup("CSprites"));
+                        actor_set_empty(seleted, actor_get_lookup("SpriteRendererComponent"));
                     }
                     igEndPopup();
                 }
@@ -139,7 +119,7 @@ void panel_inspector_main(void)
 
 void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component, ecs_id_t id)
 {
-    bool open = igTreeNodeEx_Str(name, 0);
+    bool open = igTreeNodeEx_Str(name, ImGuiTreeNodeFlags_DefaultOpen);
     if (open)
     {
         // obtenemos los field de la entidad componente
@@ -174,7 +154,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     {
                         *value = evect2_new(value_b[0], value_b[1]);
                     }
-                    i += op->op_count;
+                    i += (op->op_count - 1);
                 }
                 else if (strcmp(field_type_name, "CVec3") == 0)
                 {
@@ -185,7 +165,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     {
                         *value = evect3_new(value_b[0], value_b[1], value_b[2]);
                     }
-                    i += op->op_count;
+                    i += (op->op_count - 1);
                 }
                 else if (strcmp(field_type_name, "CColor") == 0)
                 {
@@ -223,7 +203,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
 
                     if (igBeginDragDropTarget())
                     {
-                        ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_ITEM", 0);
+                        ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_RESOURCE_ITEM", 0);
                         if (drop)
                         {
                             *nbuffer = g_strdup(drop->Data);

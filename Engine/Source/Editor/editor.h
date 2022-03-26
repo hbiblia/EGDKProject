@@ -24,4 +24,22 @@ const char *hierarchy_get_selected_name(void);
 void panel_assets_init(void);
 void panel_assets_main(void);
 
+// FUNC DEL EDITOR
+// -------------
+
+/*
+ * Guardamos la escena y si no tenemos una abierta
+ * la creamos con los nuevos datos.
+ *
+ */
+
+void editor_internal_level_save(void);
+
+/*
+ * Cargamos un level existente.
+ *
+ */
+
+void editor_internal_level_open(const char *filename);
+
 #endif // EDITOR_MAIN_H

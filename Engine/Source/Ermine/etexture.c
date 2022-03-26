@@ -21,27 +21,15 @@ void etexture_draw(etexture_desc t)
         float rx = t.transform.rotation.x;
         float ry = t.transform.rotation.y;
         float rz = t.transform.rotation.z;
-        float sx = VD(t.transform.scale.x, 0.0f, 1.0f);
-        float sy = VD(t.transform.scale.y, 0.0f, 1.0f);
-        float sz = VD(t.transform.scale.z, 0.0f, 1.0f);
+        float sx = t.transform.scale.x;
+        float sy = t.transform.scale.y;
+        float sz = t.transform.scale.z;
         // transform origin
         float ox = t.transform.origin.x;
         float oy = t.transform.origin.y;
         //
         float width = (float)t.source.width;
         float height = (float)t.source.height;
-
-        bool flipX = false;
-
-        if (width < 0)
-        {
-            flipX = true;
-            width *= -1;
-        }
-        if (height < 0)
-        {
-            t.clip.y -= height;
-        }
 
         // FLIP
         width   *= t.flipx ? -1 : 1;
@@ -53,8 +41,8 @@ void etexture_draw(etexture_desc t)
         
         evect2 uv0 = {t.clip.x / width, t.clip.y / t.clip.height};
         evect2 uv1 = {t.clip.x / width, (t.clip.y + height) / t.clip.height};
-        evect2 uv2 = {(t.clip.x + width) / width, (t.clip.y + height) / t.clip.height};
-        evect2 uv3 = {(t.clip.x + width) / width, t.clip.y / height};
+        evect2 uv2 = {(t.clip.x + width) / t.clip.width, (t.clip.y + height) / t.clip.height};
+        evect2 uv3 = {(t.clip.x + width) / t.clip.width, t.clip.y / height};
 
         float w = t.clip.width;
         float h = t.clip.height;
@@ -69,8 +57,7 @@ void etexture_draw(etexture_desc t)
             sgl_rotate(sgl_rad(rx), 1.0f, 0.0f, 0.0f);
             sgl_rotate(sgl_rad(ry), 0.0f, 1.0f, 0.0f);
             sgl_rotate(sgl_rad(rz), 0.0f, 0.0f, 1.0f);
-            sgl_translate(-ox, -oy, 0.0f);
-            ;
+            sgl_translate(-(ox*w), -(oy*h), 0.0f);
 
             sgl_begin_quads();
             {
@@ -100,7 +87,6 @@ etexture etexture_load(const char *filename)
         sg_image d = sg_make_image(&(sg_image_desc){
             .width = texture.width,
             .height = texture.height,
-            .pixel_format = SG_PIXELFORMAT_RGBA8,
             .data.subimage[0][0] = {
                 .ptr = data,
                 .size = (size_t){texture.width * texture.height * 4},

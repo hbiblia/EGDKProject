@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/d/Github/EGDKProyect/Engine/Source/Editor/editor.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/main.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj.d"
@@ -18,7 +19,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/eanimate.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/ecolor.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj.d"
-  "/d/Github/EGDKProyect/Engine/Source/Ermine/eflecs.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eflecs.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/einput.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/emath.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/erender.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj.d"
@@ -29,6 +29,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/Github/EGDKProyect/Engine/Source/Ermine/etexture.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/eutil.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/ewindow.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Ermine/flower.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj.d"
   )
