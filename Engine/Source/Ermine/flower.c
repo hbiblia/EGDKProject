@@ -81,7 +81,7 @@ void flower_entity_clone_new(ecs_entity_t source)
 void flower_entity_remove(ecs_entity_t entity)
 {
     if(ecs_is_alive(world, entity) && ecs_is_valid(world, entity)){
-        printf("INFO: Delete entity [ID:%d][NAME:%s]\n", entity, ecs_get_name(world, entity));
+        printf("INFO: Delete entity [ID:%u][NAME:%s]\n", entity, ecs_get_name(world, entity));
         ecs_delete(world, entity);
     }
 }

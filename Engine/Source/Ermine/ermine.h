@@ -49,6 +49,12 @@ enum
     RESOURCE_LAST
 };
 
+enum
+{
+    CAMERA_ORTHOGRAPHIC,
+    CAMERA_PERSPECTIVE
+};
+
 #define VD(v, m, d) v == m ? d : v
 #define COLORD(color) ecolor_empty(color) ? WHITE : color
 #define ECOLOR_RGBA_T(r, g, b, a) (ecolor){(r) / 255.0f, (g) / 255.0f, (b) / 255.0f, (a) / 255.0f}
@@ -122,6 +128,8 @@ typedef struct ecamera
     evect3 position;
     evect3 rotation;
     sgl_pipeline pip;
+    int projection;
+    float fovy;
     // viewport
     int viewport_w;
     int viewport_h;

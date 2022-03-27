@@ -2947,9 +2947,58 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/include/wchar.h \
   C:/msys64/mingw64/include/_mingw_stat64.h \
   C:/msys64/mingw64/include/sec_api/wchar_s.h \
+  C:/msys64/mingw64/include/d3d11.h \
+  C:/msys64/mingw64/include/rpc.h \
+  C:/msys64/mingw64/include/rpcdce.h \
+  C:/msys64/mingw64/include/rpcdcep.h \
+  C:/msys64/mingw64/include/rpcnsi.h \
+  C:/msys64/mingw64/include/rpcnterr.h \
+  C:/msys64/mingw64/include/rpcasync.h \
+  C:/msys64/mingw64/include/rpcndr.h \
+  C:/msys64/mingw64/include/rpcnsip.h \
+  C:/msys64/mingw64/include/rpcsal.h \
+  C:/msys64/mingw64/include/ole2.h \
+  C:/msys64/mingw64/include/objbase.h \
+  C:/msys64/mingw64/include/combaseapi.h \
+  C:/msys64/mingw64/include/wtypesbase.h \
+  C:/msys64/mingw64/include/unknwnbase.h \
+  C:/msys64/mingw64/include/objidlbase.h \
+  C:/msys64/mingw64/include/cguid.h \
+  C:/msys64/mingw64/include/objidl.h \
+  C:/msys64/mingw64/include/unknwn.h \
+  C:/msys64/mingw64/include/wtypes.h \
+  C:/msys64/mingw64/include/urlmon.h \
+  C:/msys64/mingw64/include/oleidl.h \
+  C:/msys64/mingw64/include/servprov.h \
+  C:/msys64/mingw64/include/msxml.h \
+  C:/msys64/mingw64/include/oaidl.h \
+  C:/msys64/mingw64/include/propidl.h \
+  C:/msys64/mingw64/include/oleauto.h \
+  C:/msys64/mingw64/include/ocidl.h \
+  C:/msys64/mingw64/include/dxgi.h \
+  C:/msys64/mingw64/include/dxgitype.h \
+  C:/msys64/mingw64/include/dxgicommon.h \
+  C:/msys64/mingw64/include/dxgiformat.h \
+  C:/msys64/mingw64/include/d3dcommon.h \
+  C:/msys64/mingw64/include/d3d10_1.h \
+  C:/msys64/mingw64/include/d3d10.h \
+  C:/msys64/mingw64/include/d3d10sdklayers.h \
+  C:/msys64/mingw64/include/d3d10misc.h \
+  C:/msys64/mingw64/include/d3d10.h \
+  C:/msys64/mingw64/include/d3d10shader.h \
+  C:/msys64/mingw64/include/d3d10effect.h \
+  C:/msys64/mingw64/include/d3d10_1shader.h \
+  C:/msys64/mingw64/include/d3d11sdklayers.h \
+  C:/msys64/mingw64/include/d3d10misc.h \
+  C:/msys64/mingw64/include/d3d10shader.h \
+  C:/msys64/mingw64/include/d3d10effect.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h \
   C:/msys64/mingw64/include/float.h \
+  C:/msys64/mingw64/include/d3dcompiler.h \
+  C:/msys64/mingw64/include/d3d11shader.h \
+  C:/msys64/mingw64/include/d3dcommon.h \
+  C:/msys64/mingw64/include/d3d12shader.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
@@ -3490,6 +3539,48 @@ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.c:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_imgui.h:
 
+C:/msys64/mingw64/include/d3d12shader.h:
+
+C:/msys64/mingw64/include/d3dcompiler.h:
+
+C:/msys64/mingw64/include/d3d11sdklayers.h:
+
+C:/msys64/mingw64/include/d3d10_1shader.h:
+
+C:/msys64/mingw64/include/d3d10sdklayers.h:
+
+C:/msys64/mingw64/include/d3d10.h:
+
+C:/msys64/mingw64/include/d3d10_1.h:
+
+C:/msys64/mingw64/include/d3dcommon.h:
+
+C:/msys64/mingw64/include/dxgiformat.h:
+
+C:/msys64/mingw64/include/ocidl.h:
+
+C:/msys64/mingw64/include/propidl.h:
+
+C:/msys64/mingw64/include/msxml.h:
+
+C:/msys64/mingw64/include/urlmon.h:
+
+C:/msys64/mingw64/include/objidl.h:
+
+C:/msys64/mingw64/include/combaseapi.h:
+
+C:/msys64/mingw64/include/objbase.h:
+
+C:/msys64/mingw64/include/ole2.h:
+
+C:/msys64/mingw64/include/rpcsal.h:
+
+C:/msys64/mingw64/include/rpcnsip.h:
+
+C:/msys64/mingw64/include/rpcnsi.h:
+
+C:/msys64/mingw64/include/rpcdce.h:
+
 C:/msys64/mingw64/include/sec_api/wchar_s.h:
 
 C:/msys64/mingw64/include/_mingw_stat64.h:
@@ -3508,6 +3599,8 @@ C:/msys64/mingw64/include/stringapiset.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c:
 
+C:/msys64/mingw64/include/rpcdcep.h:
+
 C:/msys64/mingw64/include/winuser.h:
 
 C:/msys64/mingw64/include/pshpack1.h:
@@ -3517,6 +3610,10 @@ C:/msys64/mingw64/include/timezoneapi.h:
 C:/msys64/mingw64/include/fltwinerror.h:
 
 C:/msys64/mingw64/include/winerror.h:
+
+C:/msys64/mingw64/include/d3d10misc.h:
+
+C:/msys64/mingw64/include/dxgitype.h:
 
 C:/msys64/mingw64/include/wow64apiset.h:
 
@@ -3684,6 +3781,8 @@ C:/msys64/mingw64/include/glib-2.0/glib/ghmac.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gfileutils.h:
 
+C:/msys64/mingw64/include/d3d10shader.h:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/prfchwintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/ghash.h:
@@ -3694,7 +3793,13 @@ C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gtestutils.h:
 
+C:/msys64/mingw64/include/d3d10effect.h:
+
 C:/msys64/mingw64/include/malloc.h:
+
+C:/msys64/mingw64/include/oleidl.h:
+
+C:/msys64/mingw64/include/unknwnbase.h:
 
 C:/msys64/mingw64/include/debugapi.h:
 
@@ -3703,6 +3808,8 @@ C:/msys64/mingw64/include/glib-2.0/glib/giochannel.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/x86gprintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/ghostutils.h:
+
+C:/msys64/mingw64/include/rpcndr.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.c:
 
@@ -3715,6 +3822,8 @@ C:/msys64/mingw64/include/glib-2.0/glib/gscanner.h:
 C:/msys64/mingw64/include/glib-2.0/glib/gdate.h:
 
 C:/msys64/mingw64/include/winsock2.h:
+
+C:/msys64/mingw64/include/oleauto.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/vaesintrin.h:
 
@@ -3802,11 +3911,15 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/serializeintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vldqintrin.h:
 
+C:/msys64/mingw64/include/dxgicommon.h:
+
 C:/msys64/mingw64/include/winver.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gstrvbuilder.h:
 
 C:/msys64/mingw64/include/pthread.h:
+
+C:/msys64/mingw64/include/d3d11.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gslist.h:
 
@@ -3852,6 +3965,8 @@ C:/msys64/mingw64/include/glib-2.0/glib/gslice.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/pmmintrin.h:
 
+C:/msys64/mingw64/include/unknwn.h:
+
 C:/msys64/mingw64/include/stddef.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h:
@@ -3871,6 +3986,10 @@ C:/msys64/mingw64/include/glib-2.0/glib/gquark.h:
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h:
+
+C:/msys64/mingw64/include/servprov.h:
+
+C:/msys64/mingw64/include/rpc.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/f16cintrin.h:
 
@@ -3968,7 +4087,11 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/enqcmdintrin.h:
 
 D:/Github/EGDKProyect/Engine/Source/Editor/main.c:
 
+C:/msys64/mingw64/include/oaidl.h:
+
 ../Engine/Source/Editor/panel_assets.c:
+
+C:/msys64/mingw64/include/dxgi.h:
 
 D:/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c:
 
@@ -3985,6 +4108,10 @@ C:/msys64/mingw64/include/wchar.h:
 ../Engine/Source/Editor/panel_hierarchy.c:
 
 ../Engine/Source/Editor/panel_inspector.c:
+
+C:/msys64/mingw64/include/objidlbase.h:
+
+C:/msys64/mingw64/include/rpcnterr.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
 
@@ -4046,11 +4173,17 @@ C:/msys64/mingw64/include/namedpipeapi.h:
 
 ../Engine/Source/Ermine/escripts.c:
 
+C:/msys64/mingw64/include/wtypes.h:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/tmmintrin.h:
+
+C:/msys64/mingw64/include/d3d11shader.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/esprite.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avxvnniintrin.h:
+
+C:/msys64/mingw64/include/wtypesbase.h:
 
 ../Engine/Source/Ermine/etexture.c:
 
@@ -4069,6 +4202,8 @@ D:/Github/EGDKProyect/Engine/Source/Ermine/eshape.c:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/emmintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/xmmintrin.h:
+
+C:/msys64/mingw64/include/cguid.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mmintrin.h:
 
@@ -4107,6 +4242,8 @@ C:/msys64/mingw64/include/minwindef.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/pconfigintrin.h:
 
 C:/msys64/mingw64/include/specstrings.h:
+
+C:/msys64/mingw64/include/rpcasync.h:
 
 C:/msys64/mingw64/include/stdio.h:
 

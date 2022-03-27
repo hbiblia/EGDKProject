@@ -4,13 +4,11 @@
 #define CIMGUI_IMPL
 #include <ermine.h>
 #include <flower.h>
-#include <glib.h>
 
-
-// La entida que tenemos seleccionada.
+// La entidad que tenemos seleccionada.
 static ecs_entity_t entity_gselected = -1;
 
-// La entida principal
+// La entidad principal
 static ecs_entity_t entity_root = -1;
 
 // temporal world hierarchy
@@ -92,25 +90,45 @@ void hierarchy_set_selected(ecs_entity_t entity)
 // La idea es buscar los hijos de RootEntity -> entity -> e...
 void hierarchy_draw_children(ecs_entity_t entity)
 {
-    // info entity.
+    // Guardamos todas las entidades hijos del entity
+    ecs_entity_t *entities[100];
+    int entities_count = 0;
+
+    // querys children entitys
+    ecs_iter_t it = ecs_term_iter(world, &(ecs_term_t){.id = ecs_childof(entity)});
+    while (ecs_term_next(&it))
+    {
+        for (int i = 0; i < it.count; i++)
+        {
+            entities[entities_count] = it.entities[i];
+            entities_count++;
+        }
+    }
+
+    // info entity
     const char *name = ecs_get_name(world, entity);
-    // si la entidad tiene hijos.
-    bool bparent = false;
-    // si tenemos la entidad seleccionada.
+
+    // si tenemos la entidad seleccionada
     bool selected = (entity_gselected == entity ? true : false);
 
-    // querys
-    ecs_iter_t it = ecs_term_iter(world, &(ecs_term_t){ .id = ecs_childof(entity)});
-    while(ecs_term_next(&it))
+    // es parent o no, dime tu!
+    bool bparent = entities_count > 0 ? true : false;
+    if (!bparent)
     {
-        bparent = true;
-
+        if (igSelectable_Bool(name, selected, ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_SpanAvailWidth, (ImVec2){0}))
+        {
+            entity_gselected = entity;
+        }
+    }
+    else
+    {
         ImGuiTreeNodeFlags flags = selected ? ImGuiTreeNodeFlags_Selected : ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_OpenOnArrow;
         flags |= ImGuiTreeNodeFlags_SpanAvailWidth;
         flags |= ImGuiTreeNodeFlags_OpenOnArrow;
 
-        // Si la entida Root abrimos el TreeNode.
-        if (strcmp(name, "Root")==0){
+        // Si la entidad Root abrimos el TreeNode
+        if (strcmp(name, "Root") == 0)
+        {
             flags |= ImGuiTreeNodeFlags_DefaultOpen;
         }
 
@@ -122,19 +140,11 @@ void hierarchy_draw_children(ecs_entity_t entity)
         }
         if (opened)
         {
-            for (int i = 0; i < it.count; i++)
+            for (int i = 0; i < entities_count; i++)
             {
-                hierarchy_draw_children(it.entities[i]);
+                hierarchy_draw_children(entities[i]);
             }
             igTreePop();
-        }
-    }
-    
-    if(!bparent)
-    {
-        if (igSelectable_Bool(name, selected, ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_SpanAvailWidth, (ImVec2){0}))
-        {
-            entity_gselected = entity;
         }
     }
 }

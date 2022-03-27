@@ -45,9 +45,19 @@ set(SOUCE_GAME
 Engine/Source/Game/main.c
 )
 
-set(LINK_RENDER -lkernel32 -luser32 -lshell32 -lgdi32 -lole32 -lcimgui -lWs2_32)
+if(${CMAKE_SYSTEM_NAME} MATCHES "MINGW64_NT")
+    add_definitions(-DSOKOL_D3D11)
+    set(LINK_RENDER -lkernel32 -luser32 -lshell32 -ldxgi -ld3d11 -lole32 -lgdi32 -lcimgui -lWs2_32)
+    message("Windows Build")
+endif()
+    
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    add_definitions(-DSOKOL_GLCORE33)
+    set(LINK_RENDER -lGL -ldl -lm -lX11 -lasound -lXi -lXcursor -lcimgui)
+    message("Linux Build")
+endif()
 
-add_definitions(-DSOKOL_GLCORE33)
+
 add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include )
 
 include_directories(${GLIB_INCLUDE_DIRS} Engine/Source/Ermine/ Engine/Source/ThirdParty/)

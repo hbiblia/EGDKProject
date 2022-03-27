@@ -182,9 +182,43 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: \
  C:/msys64/mingw64/include/shellapi.h C:/msys64/mingw64/include/wchar.h \
  C:/msys64/mingw64/include/_mingw_stat64.h \
  C:/msys64/mingw64/include/sec_api/wchar_s.h \
+ C:/msys64/mingw64/include/d3d11.h C:/msys64/mingw64/include/rpc.h \
+ C:/msys64/mingw64/include/rpcdce.h C:/msys64/mingw64/include/rpcdcep.h \
+ C:/msys64/mingw64/include/rpcnsi.h C:/msys64/mingw64/include/rpcnterr.h \
+ C:/msys64/mingw64/include/rpcasync.h C:/msys64/mingw64/include/rpcndr.h \
+ C:/msys64/mingw64/include/rpcnsip.h C:/msys64/mingw64/include/rpcsal.h \
+ C:/msys64/mingw64/include/ole2.h C:/msys64/mingw64/include/objbase.h \
+ C:/msys64/mingw64/include/combaseapi.h \
+ C:/msys64/mingw64/include/wtypesbase.h \
+ C:/msys64/mingw64/include/unknwnbase.h \
+ C:/msys64/mingw64/include/objidlbase.h C:/msys64/mingw64/include/cguid.h \
+ C:/msys64/mingw64/include/objidl.h C:/msys64/mingw64/include/unknwn.h \
+ C:/msys64/mingw64/include/wtypes.h C:/msys64/mingw64/include/urlmon.h \
+ C:/msys64/mingw64/include/oleidl.h C:/msys64/mingw64/include/servprov.h \
+ C:/msys64/mingw64/include/msxml.h C:/msys64/mingw64/include/oaidl.h \
+ C:/msys64/mingw64/include/propidl.h C:/msys64/mingw64/include/oleauto.h \
+ C:/msys64/mingw64/include/ocidl.h C:/msys64/mingw64/include/dxgi.h \
+ C:/msys64/mingw64/include/dxgitype.h \
+ C:/msys64/mingw64/include/dxgicommon.h \
+ C:/msys64/mingw64/include/dxgiformat.h \
+ C:/msys64/mingw64/include/d3dcommon.h \
+ C:/msys64/mingw64/include/d3d10_1.h C:/msys64/mingw64/include/d3d10.h \
+ C:/msys64/mingw64/include/d3d10sdklayers.h \
+ C:/msys64/mingw64/include/d3d10misc.h C:/msys64/mingw64/include/d3d10.h \
+ C:/msys64/mingw64/include/d3d10shader.h \
+ C:/msys64/mingw64/include/d3d10effect.h \
+ C:/msys64/mingw64/include/d3d10_1shader.h \
+ C:/msys64/mingw64/include/d3d11sdklayers.h \
+ C:/msys64/mingw64/include/d3d10misc.h \
+ C:/msys64/mingw64/include/d3d10shader.h \
+ C:/msys64/mingw64/include/d3d10effect.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h \
  C:/msys64/mingw64/include/float.h \
+ C:/msys64/mingw64/include/d3dcompiler.h \
+ C:/msys64/mingw64/include/d3d11shader.h \
+ C:/msys64/mingw64/include/d3dcommon.h \
+ C:/msys64/mingw64/include/d3d12shader.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \

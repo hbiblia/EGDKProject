@@ -2968,9 +2968,58 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/wchar.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/_mingw_stat64.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/sec_api/wchar_s.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d11.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcdce.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcdcep.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcnsi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcnterr.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcasync.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcndr.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcnsip.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/rpcsal.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/ole2.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/objbase.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/combaseapi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/wtypesbase.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/unknwnbase.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/objidlbase.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/cguid.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/objidl.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/unknwn.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/wtypes.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/urlmon.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/oleidl.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/servprov.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/msxml.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/oaidl.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/propidl.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/oleauto.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/ocidl.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/dxgi.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/dxgitype.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/dxgicommon.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/dxgiformat.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3dcommon.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10_1.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10sdklayers.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10misc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10shader.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10effect.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10_1shader.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d11sdklayers.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10misc.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10shader.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d10effect.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h
  /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/float.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3dcompiler.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d11shader.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3dcommon.h
+ /d/Github/EGDKProyect/b/C:/msys64/mingw64/include/d3d12shader.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h
  /d/Github/EGDKProyect/b/D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h

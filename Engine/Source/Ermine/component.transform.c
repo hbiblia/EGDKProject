@@ -7,7 +7,7 @@ void system__update_fn(ecs_iter_t *it)
 
     for (int i = 0; i < it->count; i++)
     {
-        printf("Entity transform\n");
+        // printf("Entity transform\n");
     }
 }
 
