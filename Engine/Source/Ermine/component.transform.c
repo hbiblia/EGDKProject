@@ -72,7 +72,6 @@ void ComponentTransformImport(ecs_world_t *world)
             { .name = "position", .type = actor_get_lookup("CVec3") },
             { .name = "scale", .type = actor_get_lookup("CVec3") },
             { .name = "rotation", .type = actor_get_lookup("CVec3") },
-            { .name = "origin", .type = actor_get_lookup("CVec2") },
         },
     });
 

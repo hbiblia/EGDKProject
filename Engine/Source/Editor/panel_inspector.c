@@ -6,11 +6,8 @@
 
 #include "editor.h"
 
-#include "component.transform.h"
-#include "component.sprites.h"
-
 static bool first_selected = false;
-static actor actor_seleted = -1;
+static ecs_entity_t entiti_seleted = -1;
 static ecs_world_t *world;
 
 static void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component, ecs_id_t id);
@@ -22,9 +19,9 @@ void panel_inspector_init(void)
 
 void panel_inspector_main(void)
 {
-    if (actor_seleted != hierarchy_get_selected())
+    if (entiti_seleted != hierarchy_get_selected())
     {
-        actor_seleted = hierarchy_get_selected();
+        entiti_seleted = hierarchy_get_selected();
     }
 
     // UI
@@ -32,18 +29,26 @@ void panel_inspector_main(void)
     igSetNextWindowSize((ImVec2){200, 200}, 0);
     if (igBegin("Inspector", false, ImGuiWindowFlags_NoMove))
     {
-        if (actor_seleted != -1)
+        if (entiti_seleted != -1)
         {
+            // Enabled o Disable entidad
+            bool is_active = flower_is_enabled(entiti_seleted);
+            if(igCheckbox("Enabled", &is_active)){
+                flower_enable(entiti_seleted, is_active);
+            }
+
             // Tenemos el nombre de la entida seleccionada y podemos cambiarlo.
-            // Por seguridad no permitimos el cambio de la entidad a 0.
+            // Por seguridad no permitimos el cambio de la entidad a 0 y debemos presionar enter.
             char buffer[256];
-            char *ecs_name = ecs_get_name(world, actor_seleted);
+            char *ecs_name = ecs_get_name(world, entiti_seleted);
             strcpy(buffer, ecs_name);
             if (igInputText("Name", buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
             {
                 if (strlen(buffer) > 0)
                 {
-                    ecs_set_name(world, actor_seleted, buffer);
+                    if(flower_lookup(buffer) == 0){
+                        ecs_set_name(world, entiti_seleted, buffer);
+                    }
                 }
             }
             igSeparator();
@@ -58,9 +63,9 @@ void panel_inspector_main(void)
         // ---------------------
         // Description: Cargamos la lista de componentes de una
         // entidad seleccionada.
-        if (actor_seleted != -1)
+        if (entiti_seleted != -1)
         {
-            ecs_type_t type = ecs_get_type(world, actor_seleted);
+            ecs_type_t type = ecs_get_type(world, entiti_seleted);
             const ecs_id_t *ids = ecs_vector_first(type, ecs_id_t);
             int32_t count = ecs_vector_count(type);
 
@@ -69,7 +74,7 @@ void panel_inspector_main(void)
                 ecs_id_t id = ids[i];
                 ecs_entity_t component = ecs_pair_second(world, id);
                 char *name_component = ecs_get_name(world, component);
-                void *component_ptr = ecs_get_id(world, actor_seleted, component);
+                void *component_ptr = ecs_get_id(world, entiti_seleted, component);
 
                 if (!component_ptr)
                     continue;
@@ -86,7 +91,7 @@ void panel_inspector_main(void)
         // ---------------------
         igPushItemWidth(-1);
         {
-            if (actor_seleted != -1)
+            if (entiti_seleted != -1)
             {
                 // Add components buttons
                 // ---------------------
@@ -150,7 +155,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     CVec2 *value = (CVec2 *)ECS_OFFSET(ptr, op->offset);
                     float value_b[2] = {value->x, value->y};
 
-                    if (igDragFloat2(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
+                    if (igDragFloat2(field_label, value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0))
                     {
                         *value = evect2_new(value_b[0], value_b[1]);
                     }
@@ -161,7 +166,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                     CVec3 *value = (CVec3 *)ECS_OFFSET(ptr, op->offset);
                     float value_b[3] = {value->x, value->y, value->z};
 
-                    if (igDragFloat3(field_label, value_b, 0.1f, 0.0f, 0.0f, "%.2f", 0))
+                    if (igDragFloat3(field_label, value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0))
                     {
                         *value = evect3_new(value_b[0], value_b[1], value_b[2]);
                     }
@@ -181,7 +186,11 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 else if (strcmp(field_type_name, "f32") == 0)
                 {
                     float *value_f = (float *)ECS_OFFSET(ptr, op->offset);
-                    igDragFloat(field_label, value_f, 0.1f, 0.0f, 0.0f, "%.2f", 0);
+                    igDragFloat(field_label, value_f, 0.01f, 0.0f, 0.0f, "%.2f", 0);
+                } else if (strcmp(field_type_name, "i8") == 0)
+                {
+                    uint8_t *value_f = (uint8_t *)ECS_OFFSET(ptr, op->offset);
+                    igDragInt(field_label, value_f, 0.5f, 0, 0, "%d", 0);
                 }
                 else if (strcmp(field_type_name, "bool") == 0)
                 {

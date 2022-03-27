@@ -134,6 +134,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
  C:/msys64/mingw64/include/assert.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
- D:/Github/EGDKProyect/Engine/Source/Editor/editor.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
+ D:/Github/EGDKProyect/Engine/Source/Editor/editor.h

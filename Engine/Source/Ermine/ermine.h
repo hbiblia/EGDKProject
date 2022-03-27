@@ -111,7 +111,9 @@ typedef struct etransform
     evect3 position;
     evect3 scale;
     evect3 rotation;
-    evect2 origin;
+    evect3 localPosition;
+    evect3 localRotation;
+    evect3 localScale;
 } etransform;
 
 typedef struct erectangle_desc
@@ -179,6 +181,7 @@ const char *eutil_file_get_name(const char *filepath);
 char *eutil_path_normalize(const char *path);
 #define PATH_BUILD(...) eutil_path_normalize(g_build_filename(__VA_ARGS__, NULL))
 #define STRDUPPF g_strdup_printf
+#define BASENAME g_path_get_basename 
 
 // EWINDOW
 

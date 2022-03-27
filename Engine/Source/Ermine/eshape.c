@@ -22,8 +22,8 @@ void eshape_triangle_draw(eshape_desc shape)
     float sy = VD(shape.transform.scale.y, 0.0f, 1.0f);
     float sz = VD(shape.transform.scale.z, 0.0f, 1.0f);
     // transform origin
-    float ox = shape.transform.origin.x;
-    float oy = shape.transform.origin.y;
+    float ox = 0.0f;
+    float oy = 0.0f;
 
     sgl_push_matrix();
     {
@@ -32,7 +32,7 @@ void eshape_triangle_draw(eshape_desc shape)
         sgl_rotate(sgl_rad(rx), 1.0f, 0.0f, 0.0f);
         sgl_rotate(sgl_rad(ry), 0.0f, 1.0f, 0.0f);
         sgl_rotate(sgl_rad(rz), 0.0f, 0.0f, 1.0f);
-        sgl_translate(-ox, -oy, 0.0f);
+        sgl_translate(-(ox*size), -(oy*size), 0.0f);
 
         sgl_begin_triangles();
         {
@@ -62,8 +62,8 @@ void eshape_rectangle_draw(eshape_desc shape)
     float sy = VD(shape.transform.scale.y, 0.0f, 1.0f);
     float sz = VD(shape.transform.scale.z, 0.0f, 1.0f);
     // transform origin
-    float ox = shape.transform.origin.x;
-    float oy = shape.transform.origin.y;
+    float ox = 0.0f;
+    float oy = 0.0f;
 
     sgl_push_matrix();
     {
@@ -72,7 +72,7 @@ void eshape_rectangle_draw(eshape_desc shape)
         sgl_rotate(sgl_rad(rx), 1.0f, 0.0f, 0.0f);
         sgl_rotate(sgl_rad(ry), 0.0f, 1.0f, 0.0f);
         sgl_rotate(sgl_rad(rz), 0.0f, 0.0f, 1.0f);
-        sgl_translate(-ox, -oy, 0.0f);
+        sgl_translate(-(ox*w), -(oy*h), 0.0f);
 
         sgl_begin_quads();
         {

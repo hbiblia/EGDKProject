@@ -44,6 +44,36 @@ ecs_entity_t actor_get_lookup(const char *name)
 // FLOWER:ENTITY
 // ------------------
 
+/*
+ * Verificamos que la entidad este deshabilitada
+ *
+ */
+
+bool flower_is_disabled(ecs_entity_t entity)
+{
+    return ecs_has_id(world, entity, EcsDisabled);
+}
+
+/*
+ * Verificamos que la entidad este habilitada
+ *
+ */
+
+bool flower_is_enabled(ecs_entity_t entity)
+{
+    return !ecs_has_id(world, entity, EcsDisabled);
+}
+
+/*
+ * Deshabilitamos o Habilitamos una entidad
+ *
+ */
+
+void flower_enable(ecs_entity_t entity, bool enabled)
+{
+    ecs_enable(world, entity, enabled);
+}
+
 void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size, void *components)
 {
     ecs_entity_t cmp = actor_get_lookup(name);
@@ -67,7 +97,7 @@ void flower_entity_clone_new(ecs_entity_t source)
 {
     char *name = ecs_get_name(world, source);
     ecs_entity_t n = ecs_clone(world, 0, source, false);
-    ecs_set_name(world, n, STRDUPPF("%s%d",name,entity_len_world));
+    ecs_set_name(world, n, STRDUPPF("%s%d", name, entity_len_world));
 
     // Clonar es lo mismo
     entity_len_world++;
@@ -80,9 +110,13 @@ void flower_entity_clone_new(ecs_entity_t source)
 
 void flower_entity_remove(ecs_entity_t entity)
 {
-    if(ecs_is_alive(world, entity) && ecs_is_valid(world, entity)){
+    if (ecs_is_alive(world, entity) && ecs_is_valid(world, entity))
+    {
         printf("INFO: Delete entity [ID:%u][NAME:%s]\n", entity, ecs_get_name(world, entity));
-        ecs_delete(world, entity);
+        // ecs_enable(world, entity, false);
+        // ecs_delete(world, entity);
+        // ecs_entity_t parent = ecs_get_pair(world, entity);
+        // ecs_remove_pair(world, entity, EcsChildOf, entity);
     }
 }
 
@@ -93,11 +127,12 @@ void flower_entity_remove(ecs_entity_t entity)
 
 ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid)
 {
-    char *new_name = uid ? STRDUPPF("%s%d",name, entity_len_world) : name;
+    char *new_name = uid ? STRDUPPF("%s%d", name, entity_len_world) : name;
 
     ecs_entity_t entity = ecs_new_entity(world, new_name);
     // Siempre se agrega a un padre Root o otra entidad.
-    if (parent > 0){
+    if (parent > 0)
+    {
         ecs_add_pair(world, entity, EcsChildOf, parent);
     }
     // Todos tienen el mismo componente si esta en la escena.
@@ -163,11 +198,11 @@ const char *flower_internal_serialize(void)
 
     // Obtenemos todas las entidades en el mundo
     // que estan creadas por el usuario.
-    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t) {
-        .filter.terms = {
-            {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
-        },
-    });
+    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
+                                               .filter.terms = {
+                                                   {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
+                                               },
+                                           });
 
     GString *buffer_json = g_string_new("[");
 

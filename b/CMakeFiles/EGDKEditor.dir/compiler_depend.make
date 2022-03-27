@@ -701,9 +701,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
-  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
+  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/Source/Editor/panel_viewport.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c \
@@ -3281,18 +3279,11 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/
   C:/msys64/mingw64/include/sys/param.h \
   C:/msys64/mingw64/include/sys/types.h \
   C:/msys64/mingw64/include/math.h \
-  C:/msys64/mingw64/include/pthread.h \
-  C:/msys64/mingw64/include/process.h \
-  C:/msys64/mingw64/include/corecrt_startup.h \
-  C:/msys64/mingw64/include/signal.h \
-  C:/msys64/mingw64/include/pthread_signal.h \
   C:/msys64/mingw64/include/time.h \
   C:/msys64/mingw64/include/sys/timeb.h \
   C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
   C:/msys64/mingw64/include/_timeval.h \
   C:/msys64/mingw64/include/pthread_time.h \
-  C:/msys64/mingw64/include/pthread_compat.h \
-  C:/msys64/mingw64/include/pthread_unistd.h \
   C:/msys64/mingw64/include/WinSock2.h \
   C:/msys64/mingw64/include/_mingw_unicode.h \
   C:/msys64/mingw64/include/windows.h \
@@ -3475,7 +3466,14 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/
   C:/msys64/mingw64/include/in6addr.h \
   C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h \
   C:/msys64/mingw64/include/mstcpip.h \
-  C:/msys64/mingw64/include/Windows.h
+  C:/msys64/mingw64/include/Windows.h \
+  C:/msys64/mingw64/include/pthread.h \
+  C:/msys64/mingw64/include/process.h \
+  C:/msys64/mingw64/include/corecrt_startup.h \
+  C:/msys64/mingw64/include/signal.h \
+  C:/msys64/mingw64/include/pthread_signal.h \
+  C:/msys64/mingw64/include/pthread_compat.h \
+  C:/msys64/mingw64/include/pthread_unistd.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj: ../Engine/Source/ThirdParty/parson/parson.c \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c \
@@ -3509,6 +3507,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj: ../Engin
 
 ../Engine/Source/ThirdParty/parson/parson.c:
 
+C:/msys64/mingw64/include/pthread_compat.h:
+
 C:/msys64/mingw64/include/Windows.h:
 
 C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h:
@@ -3524,8 +3524,6 @@ C:/msys64/mingw64/include/psdk_inc/_ip_types.h:
 C:/msys64/mingw64/include/psdk_inc/_fd_types.h:
 
 C:/msys64/mingw64/include/psdk_inc/_socket_types.h:
-
-C:/msys64/mingw64/include/pthread_compat.h:
 
 C:/msys64/mingw64/include/sys/param.h:
 
@@ -4117,16 +4115,6 @@ D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
 
 D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c:
 
-C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
-
-C:/msys64/mingw64/include/apiset.h:
-
-D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
-
-C:/msys64/mingw64/include/windows.h:
-
 ../Engine/Source/Editor/panel_viewport.c:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h:
@@ -4150,6 +4138,16 @@ C:/msys64/mingw64/include/synchapi.h:
 ../Engine/Source/Ermine/component.sprites.c:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
+
+C:/msys64/mingw64/include/apiset.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
+
+C:/msys64/mingw64/include/windows.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c:
 

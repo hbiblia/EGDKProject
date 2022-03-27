@@ -6,7 +6,7 @@
 #include <flower.h>
 
 // La entidad que tenemos seleccionada.
-static ecs_entity_t entity_gselected = -1;
+static ecs_entity_t entiti_gselected = -1;
 
 // La entidad principal
 static ecs_entity_t entity_root = -1;
@@ -24,7 +24,7 @@ void panel_hierarchy_init(void)
     world = flower_get_world();
 
     // Creamos el ROOT que contendra todas las entidades del nivel.
-    entity_gselected = entity_root = flower_entity_new("Root", 0, false);
+    entiti_gselected = entity_root = flower_entity_new("Root", 0, false);
 }
 
 // Hierarchy render-update
@@ -36,23 +36,27 @@ void panel_hierarchy_main(void)
         igSameLine(0, 0);
         if (igSmallButton("+"))
         {
-            flower_entity_new("newEntity", entity_gselected, true);
-        }
-        igSameLine(0, 3.0f);
-        if (igSmallButton("Duplicar"))
-        {
-            if (entity_gselected != -1)
-            {
-                flower_entity_clone_new(entity_gselected);
-            }
+            flower_entity_new("newEntity", entiti_gselected, true);
         }
 
-        igSameLine(0, 3.0f);
-        if (igSmallButton("Eliminar"))
+        // No puedes borrar el Root
+        if (entity_root != entiti_gselected)
         {
-            if (entity_gselected != -1)
+            igSameLine(0, 3.0f);
+            if (igSmallButton("Duplicar"))
             {
-                flower_entity_remove(entity_gselected);
+                if (entiti_gselected != -1)
+                {
+                    flower_entity_clone_new(entiti_gselected);
+                }
+            }
+            igSameLine(0, 3.0f);
+            if (igSmallButton("Eliminar"))
+            {
+                if (entiti_gselected != -1)
+                {
+                    flower_entity_remove(entiti_gselected);
+                }
             }
         }
 
@@ -61,6 +65,7 @@ void panel_hierarchy_main(void)
         /*
          * Buscamos todas las entidades que tengan un TransformComponent
          */
+        // igScrollbar(0);
         hierarchy_draw_children(entity_root);
     }
     igEnd();
@@ -69,34 +74,37 @@ void panel_hierarchy_main(void)
 // Obtenemos el nombre de la entidad seleccionada.
 const char *hierarchy_get_selected_name(void)
 {
-    if (entity_gselected == -1)
+    if (entiti_gselected == -1)
         return "None";
-    return ecs_get_name(world, entity_gselected);
+    return ecs_get_name(world, entiti_gselected);
 }
 
 // Obtenemos la entidad seleccionada.
 ecs_entity_t hierarchy_get_selected(void)
 {
-    return entity_gselected;
+    return entiti_gselected;
 }
 
 // Seleccionamos la entidad desde otro lugar del editor.
 void hierarchy_set_selected(ecs_entity_t entity)
 {
-    entity_gselected = entity;
+    entiti_gselected = entity;
 }
 
 // Obtenemos los hijos de una entidad y lo mostramos.
 // La idea es buscar los hijos de RootEntity -> entity -> e...
 void hierarchy_draw_children(ecs_entity_t entity)
 {
-    // Guardamos todas las entidades hijos del entity
+    // Guardamos todas las entidades de los hijos del entity-parent
     ecs_entity_t *entities[100];
     int entities_count = 0;
 
-    // querys children entitys
-    ecs_iter_t it = ecs_term_iter(world, &(ecs_term_t){.id = ecs_childof(entity)});
-    while (ecs_term_next(&it))
+    // Una consulta para obtener los hijos de entitys y ver las entidades deshabilitadas
+    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
+        .filter.terms = {{.id = ecs_childof(entity)}, {.id = EcsDisabled, .oper = EcsOptional }},
+    });
+    ecs_iter_t it = ecs_query_iter(world, q);
+    while (ecs_query_next(&it))
     {
         for (int i = 0; i < it.count; i++)
         {
@@ -104,24 +112,28 @@ void hierarchy_draw_children(ecs_entity_t entity)
             entities_count++;
         }
     }
+    ecs_query_fini(q);
 
-    // info entity
+    // nombre de la entidad
     const char *name = ecs_get_name(world, entity);
 
     // si tenemos la entidad seleccionada
-    bool selected = (entity_gselected == entity ? true : false);
+    bool selected = (entiti_gselected == entity ? true : false);
 
-    // es parent o no, dime tu!
+    // Los parent-entity se pueden expander para mostrar el contenido,
+    // los no-parent-entity no se pueden expandir.
     bool bparent = entities_count > 0 ? true : false;
     if (!bparent)
     {
+        // #no-parent-entity
         if (igSelectable_Bool(name, selected, ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_SpanAvailWidth, (ImVec2){0}))
         {
-            entity_gselected = entity;
+            entiti_gselected = entity;
         }
     }
     else
     {
+        // #parent-entity
         ImGuiTreeNodeFlags flags = selected ? ImGuiTreeNodeFlags_Selected : ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_OpenOnArrow;
         flags |= ImGuiTreeNodeFlags_SpanAvailWidth;
         flags |= ImGuiTreeNodeFlags_OpenOnArrow;
@@ -136,7 +148,7 @@ void hierarchy_draw_children(ecs_entity_t entity)
 
         if (igIsItemClicked(ImGuiMouseButton_Left))
         {
-            entity_gselected = entity;
+            entiti_gselected = entity;
         }
         if (opened)
         {

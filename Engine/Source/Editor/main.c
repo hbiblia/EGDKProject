@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
     printf("EGDKEditor v1.0-dev \n");
 
     ewindow_init((ewindow_desc){
-        .title = "EGDKEditor - none",
-        .width = 1024,
+        .title = STRDUPPF("EGDKEditor - %s", BASENAME(argv[1])),
+        .width = 1280,
         .height = 700,
         .init_fn = init,
         .update_fn = update,

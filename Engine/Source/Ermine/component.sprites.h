@@ -10,6 +10,7 @@ typedef struct {
     CColor color;
     bool flipX;
     bool flipY;
+    uint8_t sortingOrder;
 }SpriteRendererComponent;
 
 EAPI void ComponentSpritesImport(ecs_world_t *world);

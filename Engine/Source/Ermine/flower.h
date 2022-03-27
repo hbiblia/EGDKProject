@@ -43,9 +43,26 @@ void actor_system_run(const char *query);
 // FLOWER:ENTITY
 // ------------------
 
-actor actor_new(const char *name);
+/*
+ * Verificamos que la entidad este deshabilitada
+ *
+ */
 
-actor actor_prefab_default(void);
+bool flower_is_disabled(ecs_entity_t entity);
+
+/*
+ * Verificamos que la entidad este habilitada
+ *
+ */
+
+bool flower_is_enabled(ecs_entity_t entity);
+
+/*
+ * Deshabilitamos o Habilitamos una entidad
+ *
+ */
+
+void flower_enable(ecs_entity_t entity, bool enabled);
 
 /*
  * Asignamos un componente con un valor.

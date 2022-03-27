@@ -25,8 +25,8 @@ void etexture_draw(etexture_desc t)
         float sy = t.transform.scale.y;
         float sz = t.transform.scale.z;
         // transform origin
-        float ox = t.transform.origin.x;
-        float oy = t.transform.origin.y;
+        float ox = 0.0f;
+        float oy = 0.0f;
         //
         float width = (float)t.source.width;
         float height = (float)t.source.height;
