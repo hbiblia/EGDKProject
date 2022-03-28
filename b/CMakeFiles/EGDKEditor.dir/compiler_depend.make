@@ -134,6 +134,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: ../Engine/Source/Ed
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
@@ -274,6 +275,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: ../Engine/Source/Edit
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
@@ -415,12 +417,12 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: ../Engine/Sou
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
-  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/Source/Editor/panel_hierarchy.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c \
@@ -556,11 +558,13 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/Source/Editor/panel_inspector.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c \
@@ -696,6 +700,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
@@ -837,6 +842,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/S
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
@@ -979,6 +985,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj: ../Engine/S
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: ../Engine/Source/Ermine/component.sprites.c \
@@ -1117,6 +1124,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: ../Engin
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
@@ -1257,6 +1265,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj: ../Eng
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
 
@@ -1392,7 +1401,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj: ../Engine/Source/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj: ../Engine/Source/Ermine/ecolor.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ecolor.c \
@@ -1526,7 +1536,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj: ../Engine/Source/Ermine/einput.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/einput.c \
@@ -1660,7 +1671,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: ../Engine/Source/Ermine/emath.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/emath.c \
@@ -1794,7 +1806,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: ../Engine/Source/Erm
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: ../Engine/Source/Ermine/erender.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/erender.c \
@@ -1928,7 +1941,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: ../Engine/Source/Ermine/eresource.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/eresource.c \
@@ -2062,7 +2076,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: ../Engine/Source
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj: ../Engine/Source/Ermine/escripts.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/escripts.c \
@@ -2196,7 +2211,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj: ../Engine/Source/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj: ../Engine/Source/Ermine/eshape.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/eshape.c \
@@ -2330,7 +2346,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/esprite.c.obj: ../Engine/Source/Ermine/esprite.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/esprite.c \
@@ -2464,7 +2481,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/esprite.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj: ../Engine/Source/Ermine/etexture.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/etexture.c \
@@ -2599,6 +2617,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj: ../Engine/Source/
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/stb/stb_image.h \
   C:/msys64/mingw64/include/math.h \
   C:/msys64/mingw64/include/assert.h \
@@ -2738,7 +2757,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj: ../Engine/Source/Erm
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
-  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: ../Engine/Source/Ermine/ewindow.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ewindow.c \
@@ -3096,6 +3116,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
@@ -3239,6 +3260,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
 
@@ -3279,11 +3301,18 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/
   C:/msys64/mingw64/include/sys/param.h \
   C:/msys64/mingw64/include/sys/types.h \
   C:/msys64/mingw64/include/math.h \
+  C:/msys64/mingw64/include/pthread.h \
+  C:/msys64/mingw64/include/process.h \
+  C:/msys64/mingw64/include/corecrt_startup.h \
+  C:/msys64/mingw64/include/signal.h \
+  C:/msys64/mingw64/include/pthread_signal.h \
   C:/msys64/mingw64/include/time.h \
   C:/msys64/mingw64/include/sys/timeb.h \
   C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
   C:/msys64/mingw64/include/_timeval.h \
   C:/msys64/mingw64/include/pthread_time.h \
+  C:/msys64/mingw64/include/pthread_compat.h \
+  C:/msys64/mingw64/include/pthread_unistd.h \
   C:/msys64/mingw64/include/WinSock2.h \
   C:/msys64/mingw64/include/_mingw_unicode.h \
   C:/msys64/mingw64/include/windows.h \
@@ -3466,14 +3495,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/
   C:/msys64/mingw64/include/in6addr.h \
   C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h \
   C:/msys64/mingw64/include/mstcpip.h \
-  C:/msys64/mingw64/include/Windows.h \
-  C:/msys64/mingw64/include/pthread.h \
-  C:/msys64/mingw64/include/process.h \
-  C:/msys64/mingw64/include/corecrt_startup.h \
-  C:/msys64/mingw64/include/signal.h \
-  C:/msys64/mingw64/include/pthread_signal.h \
-  C:/msys64/mingw64/include/pthread_compat.h \
-  C:/msys64/mingw64/include/pthread_unistd.h
+  C:/msys64/mingw64/include/Windows.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj: ../Engine/Source/ThirdParty/parson/parson.c \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.c \
@@ -3507,8 +3529,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/parson/parson.c.obj: ../Engin
 
 ../Engine/Source/ThirdParty/parson/parson.c:
 
-C:/msys64/mingw64/include/pthread_compat.h:
-
 C:/msys64/mingw64/include/Windows.h:
 
 C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h:
@@ -3524,6 +3544,8 @@ C:/msys64/mingw64/include/psdk_inc/_ip_types.h:
 C:/msys64/mingw64/include/psdk_inc/_fd_types.h:
 
 C:/msys64/mingw64/include/psdk_inc/_socket_types.h:
+
+C:/msys64/mingw64/include/pthread_compat.h:
 
 C:/msys64/mingw64/include/sys/param.h:
 
@@ -4057,6 +4079,14 @@ C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h:
 
+../Engine/Source/Ermine/eanimate.c:
+
+D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h:
+
+C:/msys64/mingw64/include/concurrencysal.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/eresource.c:
+
 ../Engine/Source/Ermine/esprite.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/waitpkgintrin.h:
@@ -4093,17 +4123,19 @@ C:/msys64/mingw64/include/dxgi.h:
 
 D:/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c:
 
-../Engine/Source/Ermine/eanimate.c:
-
-D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h:
-
-C:/msys64/mingw64/include/concurrencysal.h:
-
-D:/Github/EGDKProyect/Engine/Source/Ermine/eresource.c:
-
 C:/msys64/mingw64/include/wchar.h:
 
 ../Engine/Source/Editor/panel_hierarchy.c:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
+
+C:/msys64/mingw64/include/apiset.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
+
+C:/msys64/mingw64/include/windows.h:
 
 ../Engine/Source/Editor/panel_inspector.c:
 
@@ -4138,16 +4170,6 @@ C:/msys64/mingw64/include/synchapi.h:
 ../Engine/Source/Ermine/component.sprites.c:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
-
-C:/msys64/mingw64/include/apiset.h:
-
-D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
-
-C:/msys64/mingw64/include/windows.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c:
 

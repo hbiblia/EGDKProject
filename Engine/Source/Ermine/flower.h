@@ -110,7 +110,7 @@ ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid);
  *
  */
 
-actor flower_lookup(const char *name);
+ecs_entity_t flower_lookup(const char *name);
 
 /*
  * Ejecutamos un sistema custom.

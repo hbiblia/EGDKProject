@@ -56,7 +56,7 @@ void ComponentSpritesImport(ecs_world_t *world)
         .entity.entity = IdSpriteRendererComponent,
            .members = {
                 {.name = "key", .type = ecs_id(ecs_string_t)},
-                {.name = "color", .type = actor_get_lookup("CColor")},
+                {.name = "color", .type = flower_lookup("CColor")},
                 {.name = "flipX", .type = ecs_id(ecs_bool_t)},
                 {.name = "flipY", .type = ecs_id(ecs_bool_t)},
                 {.name = "sortingOrder", .type = ecs_id(ecs_i8_t)},
@@ -77,8 +77,8 @@ void ComponentSpritesImport(ecs_world_t *world)
         .entity = {.name = "EventSystemOnRender", .add = {EventSystemOnRender}},
         .query = {
             .filter.terms = {
-                        {.id = IdSpriteRendererComponent},
-                        {.id = actor_get_lookup("TransformComponent"), .inout = EcsIn},
+                {.id = IdSpriteRendererComponent},
+                {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
             },
         },
        .callback = system__render_fn,

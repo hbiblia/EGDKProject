@@ -40,10 +40,6 @@ void eresource_init(const char *path_project)
 
     printf("INFO: Resource path: [%s]\n", path_resource[RESOURCE_PATH]);
     printf("INFO: Resource path engine [%s]\n",path_resource[RESOURCE_PATH_ENGINE]);
-
-    // Cargamos resource del engine
-    eresource_assets_load(PATH_BUILD(path_resource[RESOURCE_PATH_ENGINE], "texture","icon_folder.png"), "resource::icon_folder");
-    eresource_assets_load(PATH_BUILD(path_resource[RESOURCE_PATH_ENGINE], "texture","icon_level.png"), "resource::icon_level");
 }
 
 // -------------
@@ -72,6 +68,30 @@ void eresource_assets_load(const char *filename, const char *key)
     if (id_temporal != -1)
     {
         g_hash_table_insert(hash_table, key, id_temporal);
+    }
+}
+
+void eresource_assets_game(JSON_Array *commits)
+{
+    const char *resource_path = eresource_get_path(RESOURCE_PATH);
+    
+    // RESOURCE LOAD
+    for (int i = 0; i < json_array_get_count(commits); i++)
+    {
+        JSON_Object *commit = json_array_get_object(commits, i);
+
+        const char *name = json_object_get_string(commit, "name");
+        const char *ext = json_object_get_string(commit, "ext");
+        double uid = json_object_get_number(commit, "id");
+
+        if (strlen(ext) == 0){
+            JSON_Array *children = json_object_get_array(commit, "children");
+            eresource_assets_game(children);
+            return;
+        }
+
+        gchar *fileName = PATH_BUILD(resource_path, STRDUPPF("r%.0f.%s", uid, ext));
+        eresource_assets_load(fileName, name);
     }
 }
 
@@ -120,8 +140,9 @@ void eresource_level_save(const char *filename)
  * Cargamos un level existente.
  *
  */
-void eresource_level_open(const char *filename)
+void eresource_scene_open(const char *name)
 {
     const char *resource_path = eresource_get_path(RESOURCE_PATH);
-    const char *file_level = PATH_BUILD(resource_path, filename);
+    const char *scene = PATH_BUILD(resource_path, STRDUPPF("%s.scene",name));
+    printf("INFO: Resource open scene: [%s]\n", scene);
 }

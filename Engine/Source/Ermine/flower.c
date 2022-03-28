@@ -133,12 +133,19 @@ ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid)
     // Siempre se agrega a un padre Root o otra entidad.
     if (parent > 0)
     {
-        ecs_add_pair(world, entity, EcsChildOf, parent);
+        ecs_add_pair(world, entity, EcsChildOf | EcsCascade, parent);
     }
     // Todos tienen el mismo componente si esta en la escena.
     actor_set(entity, TransformComponent, {.scale = {1, 1, 1}});
 
     entity_len_world++;
+
+    // ecs_query_init(world, &(ecs_query_desc_t) {
+    // .filter.terms = {
+    //     {.id = entity},
+    //     {.id = EcsDisabled, .oper = EcsNot,.subj.set = {.mask = EcsSuperSet, .relation = EcsChildOf}}
+    //     },
+    // });
 
     return entity;
 }
@@ -153,9 +160,9 @@ ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid)
  *
  */
 
-actor flower_lookup(const char *name)
+ecs_entity_t flower_lookup(const char *name)
 {
-    return ecs_lookup(world, name);
+        return ecs_lookup(world, name);
 }
 
 /*
@@ -165,16 +172,16 @@ actor flower_lookup(const char *name)
 
 void flower_internal_system_run(const char *system_str)
 {
-    ecs_query_t *q = ecs_query_new(world, system_str);
-    ecs_iter_t it = ecs_query_iter(world, q);
-    while (ecs_query_next(&it))
-    {
-        for (int i = 0; i < it.count; i++)
+        ecs_query_t *q = ecs_query_new(world, system_str);
+        ecs_iter_t it = ecs_query_iter(world, q);
+        while (ecs_query_next(&it))
         {
-            ecs_run(world, it.entities[i], 0, NULL);
+            for (int i = 0; i < it.count; i++)
+            {
+                ecs_run(world, it.entities[i], 0, NULL);
+            }
         }
-    }
-    ecs_query_fini(q);
+        ecs_query_fini(q);
 }
 
 // FLOWER::SERIALIZE & DESERIALIZE
@@ -192,33 +199,32 @@ const char *flower_internal_serialize(void)
     // JSON FLECS PREPARE
 #define ECS_ENTITY_TO_JSON (ecs_entity_to_json_desc_t){ \
     true, false, false, false, false, false, true, false, false, false, true}
+        ecs_entity_to_json_desc_t desc = ECS_ENTITY_TO_JSON;
+        desc.serialize_values = true;
 
-    ecs_entity_to_json_desc_t desc = ECS_ENTITY_TO_JSON;
-    desc.serialize_values = true;
+        // Obtenemos todas las entidades en el mundo
+        // que estan creadas por el usuario.
+        ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
+                                                   .filter.terms = {
+                                                       {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
+                                                   },
+                                               });
 
-    // Obtenemos todas las entidades en el mundo
-    // que estan creadas por el usuario.
-    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
-                                               .filter.terms = {
-                                                   {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
-                                               },
-                                           });
+        GString *buffer_json = g_string_new("[");
 
-    GString *buffer_json = g_string_new("[");
-
-    ecs_iter_t it = ecs_query_iter(world, q);
-    while (ecs_query_next(&it))
-    {
-        for (int i = 0; i < it.count; i++)
+        ecs_iter_t it = ecs_query_iter(world, q);
+        while (ecs_query_next(&it))
         {
-            char *buffer = ecs_entity_to_json(world, it.entities[i], &desc);
-            buffer_json = g_string_append(buffer_json, buffer);
-            if (i != (it.count - 1))
-                buffer_json = g_string_append(buffer_json, ",");
+            for (int i = 0; i < it.count; i++)
+            {
+                char *buffer = ecs_entity_to_json(world, it.entities[i], &desc);
+                buffer_json = g_string_append(buffer_json, buffer);
+                if (i != (it.count - 1))
+                    buffer_json = g_string_append(buffer_json, ",");
+            }
         }
-    }
-    buffer_json = g_string_append(buffer_json, "]");
-    return g_string_free(buffer_json, false);
+        buffer_json = g_string_append(buffer_json, "]");
+        return g_string_free(buffer_json, false);
 }
 
 /*
@@ -229,24 +235,24 @@ const char *flower_internal_serialize(void)
 
 void flower_internal_deserialize(const char *filename)
 {
-    // {"path":"Entity11", "ids":[["Position"], ["Scale"]], "values":[{"x":10, "y":0, "z":10}, {"x":1, "y":1, "z":1}]}
-    // const char *buffer = ecs_parse_json(world, data, )
+        // {"path":"Entity11", "ids":[["Position"], ["Scale"]], "values":[{"x":10, "y":0, "z":10}, {"x":1, "y":1, "z":1}]}
+        // const char *buffer = ecs_parse_json(world, data, )
 
-    // actor a = actor_new("Entity11");
-    // // procesador de componentes
-    // ecs_entity_t cmp = actor_get_lookup("CPosition");
-    // void *ptr = ecs_get_mut_id(world, a, cmp, 0);
+        // actor a = actor_new("Entity11");
+        // // procesador de componentes
+        // ecs_entity_t cmp = actor_get_lookup("CPosition");
+        // void *ptr = ecs_get_mut_id(world, a, cmp, 0);
 
-    // // procesador de datos de componentes
-    // ecs_meta_cursor_t cur = ecs_meta_cursor(world, cmp, ptr);
-    // ecs_meta_push(&cur);
-    // ecs_meta_set_float(&cur, 10);
-    // ecs_meta_next(&cur);
-    // ecs_meta_set_float(&cur, 0);
-    // ecs_meta_next(&cur);
-    // ecs_meta_set_float(&cur, 10);
-    // ecs_meta_pop(&cur);
+        // // procesador de datos de componentes
+        // ecs_meta_cursor_t cur = ecs_meta_cursor(world, cmp, ptr);
+        // ecs_meta_push(&cur);
+        // ecs_meta_set_float(&cur, 10);
+        // ecs_meta_next(&cur);
+        // ecs_meta_set_float(&cur, 0);
+        // ecs_meta_next(&cur);
+        // ecs_meta_set_float(&cur, 10);
+        // ecs_meta_pop(&cur);
 
-    // // aplicamos el proceso
-    // ecs_meta_set_entity(&cur, a);
+        // // aplicamos el proceso
+        // ecs_meta_set_entity(&cur, a);
 }

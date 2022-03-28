@@ -21,6 +21,8 @@ void init()
     io->ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     io->ConfigDockingWithShift = true;
 
+    editor_internal_resource_default();
+
     // PANELS INIT
     // -------------
     panel_viewport_init();
@@ -103,7 +105,7 @@ void editor_main_render()
                 ImGuiID panel_left = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Left, 0.20f, NULL, &dockspace_id);
                 // ImGuiID panel_top = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Up, 0.80f, NULL, &dockspace_id);
                 ImGuiID panel_right = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Right, 0.25f, NULL, &dockspace_id);
-                ImGuiID panel_bottom = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Down, 0.20f, NULL, &dockspace_id);
+                ImGuiID panel_bottom = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Down, 0.30f, NULL, &dockspace_id);
 
                 igDockBuilderDockWindow("Hierarchy", panel_left);
                 igDockBuilderDockWindow("Viewport", dockspace_id);

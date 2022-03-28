@@ -101,6 +101,14 @@ void panel_assets_main(void);
 // -------------
 
 /*
+ * Cargamos cosas basicas del editor
+ * que pueden estar en resource.
+ *
+ */
+
+void editor_internal_resource_default(void);
+
+/*
  * Guardamos la escena y si no tenemos una abierta
  * la creamos con los nuevos datos.
  *
@@ -113,6 +121,6 @@ void editor_internal_level_save(void);
  *
  */
 
-void editor_internal_level_open(const char *filename);
+void editor_internal_scene_open(const char *name_scene);
 
 #endif // EDITOR_MAIN_H

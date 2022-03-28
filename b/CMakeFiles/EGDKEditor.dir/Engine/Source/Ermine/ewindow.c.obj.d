@@ -317,6 +317,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \

@@ -31,6 +31,8 @@
 #include "einput.h"
 #include <glib.h>
 
+#include "parson/parson.h"
+
 enum
 {
     ELOG_TRACE,
@@ -222,6 +224,8 @@ EAPI void eresource_init(const char *path_project);
 EAPI void eresource_assets_load(const char *filename, const char *key);
 EAPI etexture eresource_get_texture(const char *key);
 EAPI const char *eresource_get_path(int path_id);
+EAPI void eresource_assets_game(JSON_Array *commits);
+EAPI void eresource_scene_open(const char *name);
 
 // EMATH
 EAPI evect2 evect2_new(float x, float y);

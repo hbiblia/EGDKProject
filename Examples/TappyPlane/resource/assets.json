@@ -1,56 +1,86 @@
 [
     {
-        "name": "background",
-        "type": "texture",
-        "ext":"png",
-        "id": 2369
+        "name": "Resource",
+        "type": "folder",
+        "ext": "",
+        "id": 0,
+        "children": [
+            {
+                "name": "background",
+                "type": "texture",
+                "ext": "png",
+                "id": 2369
+            },
+            {
+                "name": "groundGrass",
+                "type": "texture",
+                "ext": "png",
+                "id": 3659
+            },
+            {
+                "name": "rockGrass",
+                "type": "texture",
+                "ext": "png",
+                "id": 7845
+            },
+            {
+                "name": "rockGrassDown",
+                "type": "texture",
+                "ext": "png",
+                "id": 6893
+            },
+            {
+                "name": "starGold",
+                "type": "texture",
+                "ext": "png",
+                "id": 9685
+            },
+            {
+                "name": "planeRed1",
+                "type": "texture",
+                "ext": "png",
+                "id": 9625
+            },
+            {
+                "name": "planeRed2",
+                "type": "texture",
+                "ext": "png",
+                "id": 9635
+            },
+            {
+                "name": "planeRed3",
+                "type": "texture",
+                "ext": "png",
+                "id": 9485
+            }
+        ]
     },
     {
-        "name": "groundGrass",
-        "type": "texture",
-        "ext":"png",
-        "id": 3659
+        "name": "Components",
+        "type": "folder",
+        "ext": "",
+        "id": 1,
+        "children": []
     },
     {
-        "name": "rockGrass",
-        "type": "texture",
-        "ext":"png",
-        "id": 7845
+        "name": "Systems",
+        "type": "folder",
+        "ext": "",
+        "id": 2,
+        "children": []
     },
     {
-        "name": "rockGrassDown",
-        "type": "texture",
-        "ext":"png",
-        "id": 6893
-    },
-    {
-        "name": "starGold",
-        "type": "texture",
-        "ext":"png",
-        "id": 9685
-    },
-    {
-        "name": "planeRed1",
-        "type": "texture",
-        "ext":"png",
-        "id": 9625
-    },
-    {
-        "name": "planeRed2",
-        "type": "texture",
-        "ext":"png",
-        "id": 9635
-    },
-    {
-        "name": "planeRed3",
-        "type": "texture",
-        "ext":"png",
-        "id": 9485
-    },
-    {
-        "name": "test",
-        "type": "level",
-        "ext":"level",
-        "id": 5893
+        "name": "Scenes",
+        "type": "folder",
+        "ext": "",
+        "id": 3,
+        "children": [
+            {
+                "name": "test",
+                "type": "scene",
+                "ext": "scene",
+                "id": 5893
+            }
+        ]
     }
 ]

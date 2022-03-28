@@ -5,6 +5,8 @@
 #include <ermine.h>
 #include <flower.h>
 
+#include "component.transform.h"
+
 // La entidad que tenemos seleccionada.
 static ecs_entity_t entiti_gselected = -1;
 
@@ -91,17 +93,35 @@ void hierarchy_set_selected(ecs_entity_t entity)
     entiti_gselected = entity;
 }
 
+// mantenemos el orden de las entidades segun su identificacion.
+static int hierarchy_private_order_by(ecs_entity_t e1, const TransformComponent *ptr1, ecs_entity_t e2, const TransformComponent *ptr2)
+{
+    (void)e1;
+    (void)e2;
+    return e1 - e2;
+}
+
 // Obtenemos los hijos de una entidad y lo mostramos.
 // La idea es buscar los hijos de RootEntity -> entity -> e...
 void hierarchy_draw_children(ecs_entity_t entity)
 {
-    // Guardamos todas las entidades de los hijos del entity-parent
+    // ---------------------------
+    // Guardamos todas las entidades
+    // de los hijos del entity-parent
+    // ---------------------------
     ecs_entity_t *entities[100];
     int entities_count = 0;
 
-    // Una consulta para obtener los hijos de entitys y ver las entidades deshabilitadas
+    // ---------------------------
+    // Una consulta para obtener
+    // los hijos de entitys y ver
+    // las entidades deshabilitadas
+    // ---------------------------
     ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
-        .filter.terms = {{.id = ecs_childof(entity)}, {.id = EcsDisabled, .oper = EcsOptional }},
+        .filter.terms = {
+            {.id = ecs_childof(entity)},
+            {.id = EcsDisabled, .oper = EcsOptional},
+        },
     });
     ecs_iter_t it = ecs_query_iter(world, q);
     while (ecs_query_next(&it))
@@ -114,14 +134,21 @@ void hierarchy_draw_children(ecs_entity_t entity)
     }
     ecs_query_fini(q);
 
+    // ---------------------------
     // nombre de la entidad
+    // ---------------------------
     const char *name = ecs_get_name(world, entity);
 
+    // ---------------------------
     // si tenemos la entidad seleccionada
+    // ---------------------------
     bool selected = (entiti_gselected == entity ? true : false);
 
-    // Los parent-entity se pueden expander para mostrar el contenido,
+    // ---------------------------
+    // Los parent-entity se pueden
+    // expander para mostrar el contenido,
     // los no-parent-entity no se pueden expandir.
+    // ---------------------------
     bool bparent = entities_count > 0 ? true : false;
     if (!bparent)
     {

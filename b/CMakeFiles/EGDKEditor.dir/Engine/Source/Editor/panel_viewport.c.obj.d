@@ -129,6 +129,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h \
