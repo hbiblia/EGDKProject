@@ -30,6 +30,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj: \
  C:/msys64/mingw64/include/_mingw_off_t.h \
  C:/msys64/mingw64/include/swprintf.inl \
  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+ C:/msys64/mingw64/include/math.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \

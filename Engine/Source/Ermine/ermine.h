@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 #define ERMINE_VERSION "1.0-dev"
 
@@ -181,6 +182,7 @@ const char *eutil_file_get_extension(const char *filename);
 bool eutil_isfile_extension(const char *filename, const char *ext);
 const char *eutil_file_get_name(const char *filepath);
 char *eutil_path_normalize(const char *path);
+int eutil_genrandom_number(int length);
 #define PATH_BUILD(...) eutil_path_normalize(g_build_filename(__VA_ARGS__, NULL))
 #define STRDUPPF g_strdup_printf
 #define BASENAME g_path_get_basename 
@@ -226,6 +228,13 @@ EAPI etexture eresource_get_texture(const char *key);
 EAPI const char *eresource_get_path(int path_id);
 EAPI void eresource_assets_game(JSON_Array *commits);
 EAPI void eresource_scene_open(const char *name);
+EAPI void eresource_scene_save(void);
+EAPI bool eresource_scene_is_open(void);
+EAPI JSON_Object *eresource_assets_find_object_custom(const char *id_name, const char *value, JSON_Array *r);
+EAPI JSON_Object *eresource_assets_find_object(const char *id_name, const char *value);
+EAPI JSON_Value *eresource_assets_create_new_item(const char *name, const char *type, const char *ext);
+EAPI JSON_Array *eresource_assets_get_main(void);
+EAPI JSON_Status eresource_assets_save(void);
 
 // EMATH
 EAPI evect2 evect2_new(float x, float y);

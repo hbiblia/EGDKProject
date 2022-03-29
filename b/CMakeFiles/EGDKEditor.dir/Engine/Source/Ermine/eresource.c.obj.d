@@ -19,6 +19,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
  C:/msys64/mingw64/include/errno.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+ C:/msys64/mingw64/include/math.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
  C:/msys64/mingw64/include/stddef.h \
@@ -128,4 +129,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+ C:/msys64/mingw64/include/assert.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h

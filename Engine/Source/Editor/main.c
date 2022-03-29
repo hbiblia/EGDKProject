@@ -29,6 +29,7 @@ void init()
     panel_hierarchy_init();
     panel_inspector_init();
     panel_assets_init();
+    
 }
 
 void update()
@@ -102,7 +103,7 @@ void editor_main_render()
                 igDockBuilderAddNode(dockspace_id, dockspace_flags | ImGuiDockNodeFlags_DockSpace);
                 igDockBuilderSetNodeSize(dockspace_id, viewport->Size);
 
-                ImGuiID panel_left = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Left, 0.20f, NULL, &dockspace_id);
+                ImGuiID panel_left = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Left, 0.155f, NULL, &dockspace_id);
                 // ImGuiID panel_top = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Up, 0.80f, NULL, &dockspace_id);
                 ImGuiID panel_right = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Right, 0.25f, NULL, &dockspace_id);
                 ImGuiID panel_bottom = igDockBuilderSplitNode(dockspace_id, ImGuiDir_Down, 0.30f, NULL, &dockspace_id);
@@ -130,7 +131,7 @@ void editor_main_render()
                 }
                 if (igMenuItem_Bool("Save As...", "Ctrl+S", false, true))
                 {
-                    editor_internal_level_save();
+                    eresource_scene_save();
                 }
                 if (igMenuItem_Bool("Exit", "", false, true))
                 {
@@ -151,4 +152,5 @@ void editor_main_render()
     panel_inspector_main();
     panel_hierarchy_main();
     panel_assets_main();
+
 }

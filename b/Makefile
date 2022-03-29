@@ -153,6 +153,30 @@ Engine/Source/Editor/editor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s
 .PHONY : Engine/Source/Editor/editor.c.s
 
+Engine/Source/Editor/imgui.obj: Engine/Source/Editor/imgui.c.obj
+.PHONY : Engine/Source/Editor/imgui.obj
+
+# target to build an object file
+Engine/Source/Editor/imgui.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj
+.PHONY : Engine/Source/Editor/imgui.c.obj
+
+Engine/Source/Editor/imgui.i: Engine/Source/Editor/imgui.c.i
+.PHONY : Engine/Source/Editor/imgui.i
+
+# target to preprocess a source file
+Engine/Source/Editor/imgui.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.i
+.PHONY : Engine/Source/Editor/imgui.c.i
+
+Engine/Source/Editor/imgui.s: Engine/Source/Editor/imgui.c.s
+.PHONY : Engine/Source/Editor/imgui.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/imgui.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.s
+.PHONY : Engine/Source/Editor/imgui.c.s
+
 Engine/Source/Editor/main.obj: Engine/Source/Editor/main.c.obj
 .PHONY : Engine/Source/Editor/main.obj
 
@@ -296,6 +320,30 @@ Engine/Source/Ermine/component.base.s: Engine/Source/Ermine/component.base.c.s
 Engine/Source/Ermine/component.base.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.s
 .PHONY : Engine/Source/Ermine/component.base.c.s
+
+Engine/Source/Ermine/component.info.obj: Engine/Source/Ermine/component.info.c.obj
+.PHONY : Engine/Source/Ermine/component.info.obj
+
+# target to build an object file
+Engine/Source/Ermine/component.info.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj
+.PHONY : Engine/Source/Ermine/component.info.c.obj
+
+Engine/Source/Ermine/component.info.i: Engine/Source/Ermine/component.info.c.i
+.PHONY : Engine/Source/Ermine/component.info.i
+
+# target to preprocess a source file
+Engine/Source/Ermine/component.info.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.i
+.PHONY : Engine/Source/Ermine/component.info.c.i
+
+Engine/Source/Ermine/component.info.s: Engine/Source/Ermine/component.info.c.s
+.PHONY : Engine/Source/Ermine/component.info.s
+
+# target to generate assembly for a file
+Engine/Source/Ermine/component.info.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.s
+.PHONY : Engine/Source/Ermine/component.info.c.s
 
 Engine/Source/Ermine/component.sprites.obj: Engine/Source/Ermine/component.sprites.c.obj
 .PHONY : Engine/Source/Ermine/component.sprites.obj
@@ -717,6 +765,9 @@ help:
 	@echo "... Engine/Source/Editor/editor.obj"
 	@echo "... Engine/Source/Editor/editor.i"
 	@echo "... Engine/Source/Editor/editor.s"
+	@echo "... Engine/Source/Editor/imgui.obj"
+	@echo "... Engine/Source/Editor/imgui.i"
+	@echo "... Engine/Source/Editor/imgui.s"
 	@echo "... Engine/Source/Editor/main.obj"
 	@echo "... Engine/Source/Editor/main.i"
 	@echo "... Engine/Source/Editor/main.s"
@@ -735,6 +786,9 @@ help:
 	@echo "... Engine/Source/Ermine/component.base.obj"
 	@echo "... Engine/Source/Ermine/component.base.i"
 	@echo "... Engine/Source/Ermine/component.base.s"
+	@echo "... Engine/Source/Ermine/component.info.obj"
+	@echo "... Engine/Source/Ermine/component.info.i"
+	@echo "... Engine/Source/Ermine/component.info.s"
 	@echo "... Engine/Source/Ermine/component.sprites.obj"
 	@echo "... Engine/Source/Ermine/component.sprites.i"
 	@echo "... Engine/Source/Ermine/component.sprites.s"

@@ -1,30 +1,37 @@
-CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: \
- D:/Github/EGDKProyect/Engine/Source/Ermine/erender.c \
- D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
- C:/msys64/mingw64/include/stdio.h \
- C:/msys64/mingw64/include/corecrt_stdio_config.h \
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj: \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.c \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h \
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+ C:/msys64/mingw64/include/assert.h C:/msys64/mingw64/include/crtdefs.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
  C:/msys64/mingw64/include/_mingw_mac.h \
  C:/msys64/mingw64/include/_mingw_secapi.h \
  C:/msys64/mingw64/include/vadefs.h \
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
+ C:/msys64/mingw64/include/stdarg.h \
+ C:/msys64/mingw64/include/_mingw_stdarg.h \
+ C:/msys64/mingw64/include/string.h \
+ C:/msys64/mingw64/include/sec_api/string_s.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
+ C:/msys64/mingw64/include/stdint.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
+ C:/msys64/mingw64/include/stddef.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+ C:/msys64/mingw64/include/errno.h C:/msys64/mingw64/include/malloc.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
+ C:/msys64/mingw64/include/stdlib.h \
+ C:/msys64/mingw64/include/corecrt_wstdlib.h \
+ C:/msys64/mingw64/include/limits.h \
+ C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
+ C:/msys64/mingw64/include/stdio.h \
+ C:/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/msys64/mingw64/include/_mingw_off_t.h \
  C:/msys64/mingw64/include/swprintf.inl \
  C:/msys64/mingw64/include/sec_api/stdio_s.h \
- C:/msys64/mingw64/include/stdlib.h \
- C:/msys64/mingw64/include/corecrt_wstdlib.h \
- C:/msys64/mingw64/include/limits.h C:/msys64/mingw64/include/crtdefs.h \
- C:/msys64/mingw64/include/sec_api/stdlib_s.h \
- C:/msys64/mingw64/include/malloc.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
- C:/msys64/mingw64/include/errno.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
  C:/msys64/mingw64/include/math.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
- C:/msys64/mingw64/include/stddef.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
- C:/msys64/mingw64/include/stdint.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
@@ -48,9 +55,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/gatomic.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-typeof.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gerror.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
- C:/msys64/mingw64/include/stdarg.h \
- C:/msys64/mingw64/include/_mingw_stdarg.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gquark.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gutils.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gbacktrace.h \
@@ -107,8 +111,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/gsequence.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gshell.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gslice.h \
- C:/msys64/mingw64/include/string.h \
- C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h \
  C:/msys64/mingw64/include/glib-2.0/glib/gstringchunk.h \
@@ -129,4 +131,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
- D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+ D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h

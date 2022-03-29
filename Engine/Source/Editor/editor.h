@@ -108,19 +108,4 @@ void panel_assets_main(void);
 
 void editor_internal_resource_default(void);
 
-/*
- * Guardamos la escena y si no tenemos una abierta
- * la creamos con los nuevos datos.
- *
- */
-
-void editor_internal_level_save(void);
-
-/*
- * Cargamos un level existente.
- *
- */
-
-void editor_internal_scene_open(const char *name_scene);
-
 #endif // EDITOR_MAIN_H

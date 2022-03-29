@@ -31,6 +31,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: \
  C:/msys64/mingw64/include/_mingw_off_t.h \
  C:/msys64/mingw64/include/swprintf.inl \
  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+ C:/msys64/mingw64/include/math.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
@@ -133,4 +134,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: \
  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h

@@ -5,7 +5,7 @@
 #include <ermine.h>
 #include <flower.h>
 
-#include "component.transform.h"
+#include "component.info.h"
 
 // La entidad que tenemos seleccionada.
 static ecs_entity_t entiti_gselected = -1;
@@ -78,7 +78,7 @@ const char *hierarchy_get_selected_name(void)
 {
     if (entiti_gselected == -1)
         return "None";
-    return ecs_get_name(world, entiti_gselected);
+    return flower_info_get_name(entiti_gselected);
 }
 
 // Obtenemos la entidad seleccionada.
@@ -94,11 +94,11 @@ void hierarchy_set_selected(ecs_entity_t entity)
 }
 
 // mantenemos el orden de las entidades segun su identificacion.
-static int hierarchy_private_order_by(ecs_entity_t e1, const TransformComponent *ptr1, ecs_entity_t e2, const TransformComponent *ptr2)
+static int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2)
 {
     (void)e1;
     (void)e2;
-    return e1 - e2;
+    return ptr1->id - ptr2->id;
 }
 
 // Obtenemos los hijos de una entidad y lo mostramos.
@@ -122,6 +122,8 @@ void hierarchy_draw_children(ecs_entity_t entity)
             {.id = ecs_childof(entity)},
             {.id = EcsDisabled, .oper = EcsOptional},
         },
+        // .order_by = hierarchy_private_order_by,
+        // .order_by_component = flower_lookup("InfoComponent"),
     });
     ecs_iter_t it = ecs_query_iter(world, q);
     while (ecs_query_next(&it))
@@ -137,7 +139,7 @@ void hierarchy_draw_children(ecs_entity_t entity)
     // ---------------------------
     // nombre de la entidad
     // ---------------------------
-    const char *name = ecs_get_name(world, entity);
+    const char *name = flower_info_get_name(entity);
 
     // ---------------------------
     // si tenemos la entidad seleccionada
@@ -153,10 +155,12 @@ void hierarchy_draw_children(ecs_entity_t entity)
     if (!bparent)
     {
         // #no-parent-entity
+        igPushID_Int(entity);
         if (igSelectable_Bool(name, selected, ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_SpanAvailWidth, (ImVec2){0}))
         {
             entiti_gselected = entity;
         }
+        igPopID();
     }
     else
     {

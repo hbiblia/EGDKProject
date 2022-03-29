@@ -112,3 +112,20 @@ void etracelog(int t, const char *text, ...)
 #endif
     va_end(args);
 }
+
+
+/*
+ * Generamos numeros 
+ *
+ */
+int eutil_genrandom_number(int length)
+{
+    char *pool_number = "91234567897412589630159753852";
+    char *numbers = malloc(sizeof(*numbers) * (length+1));
+
+    for(int i = 0; i<length; i++){
+        numbers[i] = pool_number[rand() % (sizeof((pool_number))/sizeof((pool_number[0])))];
+    }
+    numbers[length] = '\0';
+    return atoi(numbers);
+}

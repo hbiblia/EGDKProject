@@ -57,6 +57,8 @@
         "cstdlib": "c",
         "parson.h": "c",
         "editor.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "flower.h": "c",
+        "algorithm": "c"
     }
 }

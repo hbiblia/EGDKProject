@@ -17,24 +17,3 @@ void editor_internal_resource_default(void)
     eresource_assets_load(PATH_BUILD(path_resource, "texture", "component.png"), "resource::iconComponent");
     eresource_assets_load(PATH_BUILD(path_resource, "texture", "system.png"), "resource::iconSystem");
 }
-
-/*
- * Guardamos el level y si no tenemos uno abierto
- * lo creamos con los nuevos datos.
- *
- */
-
-void editor_internal_level_save(void)
-{
-    eresource_level_save();
-}
-
-/*
- * Cargamos una escena existente.
- *
- */
-
-void editor_internal_scene_open(const char *name_scene)
-{
-    eresource_scene_open(name_scene);
-}

@@ -24,6 +24,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: ../Engine/Source/Ed
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -141,6 +142,149 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: ../Engine/Source/Ed
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
 
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj: ../Engine/Source/Editor/imgui.c \
+  D:/Github/EGDKProyect/Engine/Source/Editor/imgui.c \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
+  C:/msys64/mingw64/include/stdint.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
+  C:/msys64/mingw64/include/glib-2.0/glib.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
+  C:/msys64/mingw64/lib/glib-2.0/include/glibconfig.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmacros.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h \
+  C:/msys64/mingw64/include/float.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gversionmacros.h \
+  C:/msys64/mingw64/include/time.h \
+  C:/msys64/mingw64/include/sys/timeb.h \
+  C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/msys64/mingw64/include/_timeval.h \
+  C:/msys64/mingw64/include/pthread_time.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/garray.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gasyncqueue.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gthread.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gatomic.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-typeof.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gerror.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gquark.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbacktrace.h \
+  C:/msys64/mingw64/include/signal.h \
+  C:/msys64/mingw64/include/pthread_signal.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbase64.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbitlock.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbookmarkfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdatetime.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbytes.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gcharset.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gchecksum.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gconvert.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdataset.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdate.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdir.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/genviron.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gfileutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ggettext.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghash.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glist.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmem.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gnode.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghmac.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gchecksum.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghook.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghostutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/giochannel.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmain.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gpoll.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gslist.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstring.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gunicode.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gkeyfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmappedfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmarkup.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmessages.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gvariant.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gvarianttype.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/goption.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gpattern.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gprimes.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gqsort.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gqueue.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grand.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grcbox.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grefcount.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grefstring.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmem.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmacros.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gregex.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gscanner.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gsequence.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gshell.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gslice.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstringchunk.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstrvbuilder.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtestutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gthreadpool.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtimer.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtrashstack.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtree.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/guri.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/guuid.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gversion.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gwin32.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gallocator.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gcache.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gcompletion.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+  C:/msys64/mingw64/include/assert.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/Editor/imgui.h
+
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: ../Engine/Source/Editor/main.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/main.c \
   C:/msys64/mingw64/include/stdio.h \
@@ -164,6 +308,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj: ../Engine/Source/Edit
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -306,6 +451,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: ../Engine/Sou
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -447,6 +593,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   C:/msys64/mingw64/include/malloc.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -564,7 +711,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/Source/Editor/panel_inspector.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c \
@@ -589,6 +736,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -706,7 +854,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
-  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
+  D:/Github/EGDKProyect/Engine/Source/Editor/editor.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/Source/Editor/panel_viewport.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c \
@@ -731,6 +880,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj: ../Engine/S
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -884,6 +1034,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj: ../Engine/S
   C:/msys64/mingw64/include/_mingw_off_t.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
@@ -988,6 +1139,147 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj: ../Engine/S
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h
 
+CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj: ../Engine/Source/Ermine/component.info.c \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.c \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+  C:/msys64/mingw64/include/assert.h \
+  C:/msys64/mingw64/include/crtdefs.h \
+  C:/msys64/mingw64/include/corecrt.h \
+  C:/msys64/mingw64/include/_mingw.h \
+  C:/msys64/mingw64/include/_mingw_mac.h \
+  C:/msys64/mingw64/include/_mingw_secapi.h \
+  C:/msys64/mingw64/include/vadefs.h \
+  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
+  C:/msys64/mingw64/include/stdarg.h \
+  C:/msys64/mingw64/include/_mingw_stdarg.h \
+  C:/msys64/mingw64/include/string.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
+  C:/msys64/mingw64/include/stdint.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
+  C:/msys64/mingw64/include/stddef.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/corecrt_wstdlib.h \
+  C:/msys64/mingw64/include/limits.h \
+  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
+  C:/msys64/mingw64/include/stdio.h \
+  C:/msys64/mingw64/include/corecrt_stdio_config.h \
+  C:/msys64/mingw64/include/_mingw_off_t.h \
+  C:/msys64/mingw64/include/swprintf.inl \
+  C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/math.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
+  C:/msys64/mingw64/include/glib-2.0/glib.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/galloca.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtypes.h \
+  C:/msys64/mingw64/lib/glib-2.0/include/glibconfig.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmacros.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h \
+  C:/msys64/mingw64/include/float.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gversionmacros.h \
+  C:/msys64/mingw64/include/time.h \
+  C:/msys64/mingw64/include/sys/timeb.h \
+  C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
+  C:/msys64/mingw64/include/_timeval.h \
+  C:/msys64/mingw64/include/pthread_time.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/garray.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gasyncqueue.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gthread.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gatomic.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-typeof.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gerror.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gquark.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbacktrace.h \
+  C:/msys64/mingw64/include/signal.h \
+  C:/msys64/mingw64/include/pthread_signal.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbase64.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbitlock.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbookmarkfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdatetime.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gbytes.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gcharset.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gchecksum.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gconvert.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdataset.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdate.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gdir.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/genviron.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gfileutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ggettext.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghash.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glist.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmem.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gnode.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghmac.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gchecksum.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghook.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/ghostutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/giochannel.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmain.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gpoll.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gslist.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstring.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gunicode.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gkeyfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmappedfile.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmarkup.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmessages.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gvariant.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gvarianttype.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/goption.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gpattern.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gprimes.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gqsort.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gqueue.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grand.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grcbox.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grefcount.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/grefstring.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmem.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gmacros.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gregex.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gscanner.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gsequence.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gshell.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gslice.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gspawn.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstrfuncs.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstringchunk.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gstrvbuilder.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtestutils.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gthreadpool.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtimer.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtrashstack.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gtree.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/guri.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/guuid.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gversion.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/gwin32.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gallocator.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gcache.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gcompletion.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
+  C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h
+
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: ../Engine/Source/Ermine/component.sprites.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h \
@@ -1023,6 +1315,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj: ../Engin
   C:/msys64/mingw64/include/_mingw_off_t.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
@@ -1164,6 +1457,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj: ../Eng
   C:/msys64/mingw64/include/_mingw_off_t.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
@@ -1292,6 +1586,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj: ../Engine/Source/
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -1427,6 +1722,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -1563,6 +1859,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/malloc.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -1697,6 +1994,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/emath.c.obj: ../Engine/Source/Erm
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -1832,6 +2130,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/erender.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -1967,6 +2266,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: ../Engine/Source
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2077,7 +2377,12 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eresource.c.obj: ../Engine/Source
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/grel.h \
   C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
-  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
+  C:/msys64/mingw64/include/assert.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj: ../Engine/Source/Ermine/escripts.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/escripts.c \
@@ -2102,6 +2407,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/escripts.c.obj: ../Engine/Source/
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2237,6 +2543,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eshape.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2372,6 +2679,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/esprite.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2507,6 +2815,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj: ../Engine/Source/
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2619,7 +2928,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/etexture.c.obj: ../Engine/Source/
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/stb/stb_image.h \
-  C:/msys64/mingw64/include/math.h \
   C:/msys64/mingw64/include/assert.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/emmintrin.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/xmmintrin.h \
@@ -2648,6 +2956,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eutil.c.obj: ../Engine/Source/Erm
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -2783,6 +3092,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: ../Engine/Source/E
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
   C:/msys64/mingw64/include/errno.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/msys64/mingw64/include/stddef.h \
@@ -3020,7 +3330,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: ../Engine/Source/E
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h \
-  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/einput.h \
   C:/msys64/mingw64/include/glib-2.0/glib.h \
@@ -3159,6 +3468,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/_mingw_off_t.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
+  C:/msys64/mingw64/include/math.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gfx.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_glue.h \
@@ -3262,7 +3572,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h \
-  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/Source/ThirdParty/flecs/flecs.c \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.c \
@@ -3567,8 +3878,6 @@ C:/msys64/mingw64/include/d3d11sdklayers.h:
 
 C:/msys64/mingw64/include/d3d10_1shader.h:
 
-C:/msys64/mingw64/include/d3d10sdklayers.h:
-
 C:/msys64/mingw64/include/d3d10.h:
 
 C:/msys64/mingw64/include/d3d10_1.h:
@@ -3628,8 +3937,6 @@ C:/msys64/mingw64/include/pshpack1.h:
 C:/msys64/mingw64/include/timezoneapi.h:
 
 C:/msys64/mingw64/include/fltwinerror.h:
-
-C:/msys64/mingw64/include/winerror.h:
 
 C:/msys64/mingw64/include/d3d10misc.h:
 
@@ -3723,7 +4030,13 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vbmi2intrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx5124fmapsintrin.h:
 
-C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h:
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vbmiintrin.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512ifmaintrin.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vldqintrin.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vlbwintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gwin32.h:
 
@@ -3785,6 +4098,10 @@ C:/msys64/mingw64/include/stdlib.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gtrashstack.h:
 
+C:/msys64/mingw64/include/winerror.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.c:
+
 ../Engine/Source/Ermine/ewindow.c:
 
 C:/msys64/mingw64/include/guiddef.h:
@@ -3806,6 +4123,10 @@ C:/msys64/mingw64/include/d3d10shader.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/prfchwintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/ghash.h:
+
+C:/msys64/mingw64/include/d3d10sdklayers.h:
+
+D:/Github/EGDKProyect/Engine/Source/Editor/imgui.h:
 
 C:/msys64/mingw64/include/inaddr.h:
 
@@ -3849,6 +4170,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/vaesintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gchecksum.h:
 
+../Engine/Source/Editor/imgui.c:
+
 C:/msys64/mingw64/include/glib-2.0/glib/gpoll.h:
 
 C:/msys64/mingw64/include/errno.h:
@@ -3867,6 +4190,8 @@ C:/msys64/mingw64/include/glib-2.0/glib/gbitlock.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gbase64.h:
 
+C:/msys64/mingw64/include/sec_api/string_s.h:
+
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_app.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/galloca.h:
@@ -3875,11 +4200,7 @@ C:/msys64/mingw64/include/_mingw_secapi.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h:
 
-C:/msys64/mingw64/include/wincon.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h:
-
-D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h:
+C:/msys64/mingw64/include/math.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h:
 
@@ -3915,6 +4236,14 @@ C:/msys64/mingw64/include/glib-2.0/glib/gcharset.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/emath.c:
 
+C:/msys64/mingw64/include/wincon.h:
+
+D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_time.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/deprecated/gmain.h:
+
 C:/msys64/mingw64/include/psdk_inc/_wsadata.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/garray.h:
@@ -3928,8 +4257,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h:
 D:/Github/EGDKProyect/Engine/Source/Ermine/erender.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/serializeintrin.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vldqintrin.h:
 
 C:/msys64/mingw64/include/dxgicommon.h:
 
@@ -3963,6 +4290,24 @@ C:/msys64/mingw64/include/sec_api/stdlib_s.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/glib-typeof.h:
 
+D:/Github/EGDKProyect/Engine/Source/Editor/imgui.c:
+
+C:/msys64/mingw64/include/unknwn.h:
+
+C:/msys64/mingw64/include/stddef.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/uintrintrin.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gasyncqueue.h:
+
+C:/msys64/mingw64/include/sdks/_mingw_ddk.h:
+
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/cetintrin.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gquark.h:
+
 D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h:
 
 ../Engine/Source/Ermine/emath.c:
@@ -3984,24 +4329,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/float.h:
 C:/msys64/mingw64/include/glib-2.0/glib/gslice.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/pmmintrin.h:
-
-C:/msys64/mingw64/include/unknwn.h:
-
-C:/msys64/mingw64/include/stddef.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/uintrintrin.h:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gasyncqueue.h:
-
-C:/msys64/mingw64/include/sdks/_mingw_ddk.h:
-
-C:/msys64/mingw64/include/sec_api/string_s.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/cetintrin.h:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gquark.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_gl.h:
 
@@ -4127,16 +4454,6 @@ C:/msys64/mingw64/include/wchar.h:
 
 ../Engine/Source/Editor/panel_hierarchy.c:
 
-C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
-
-C:/msys64/mingw64/include/apiset.h:
-
-D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
-
-C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
-
-C:/msys64/mingw64/include/windows.h:
-
 ../Engine/Source/Editor/panel_inspector.c:
 
 C:/msys64/mingw64/include/objidlbase.h:
@@ -4145,15 +4462,17 @@ C:/msys64/mingw64/include/rpcnterr.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/cimgui/cimgui.h:
 
+D:/Github/EGDKProyect/Engine/Source/Ermine/component.info.h:
+
 D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c:
 
 ../Engine/Source/Editor/panel_viewport.c:
 
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vbmivlintrin.h:
+
 D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/escripts.c:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vbmivlintrin.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gerror.h:
 
@@ -4165,11 +4484,23 @@ C:/msys64/mingw64/include/WinSock2.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/smmintrin.h:
 
+../Engine/Source/Ermine/component.info.c:
+
 C:/msys64/mingw64/include/synchapi.h:
 
 ../Engine/Source/Ermine/component.sprites.c:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gdir.h:
+
+C:/msys64/mingw64/include/apiset.h:
+
+D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.h:
+
+C:/msys64/mingw64/include/glib-2.0/glib/gtimezone.h:
+
+C:/msys64/mingw64/include/windows.h:
 
 D:/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c:
 
@@ -4212,8 +4543,6 @@ D:/Github/EGDKProyect/Engine/Source/Ermine/etexture.c:
 C:/msys64/mingw64/include/string.h:
 
 D:/Github/EGDKProyect/Engine/Source/ThirdParty/stb/stb_image.h:
-
-C:/msys64/mingw64/include/math.h:
 
 C:/msys64/mingw64/include/glib-2.0/glib/gbookmarkfile.h:
 
@@ -4368,9 +4697,3 @@ C:/msys64/mingw64/include/datetimeapi.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512pfintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512dqintrin.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vlbwintrin.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512ifmaintrin.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vbmiintrin.h:

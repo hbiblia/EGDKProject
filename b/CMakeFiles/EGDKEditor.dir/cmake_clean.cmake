@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj.d"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj"
+  "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj.d"
   "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj"

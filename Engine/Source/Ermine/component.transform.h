@@ -10,7 +10,6 @@ typedef struct evect3 CScale;
 typedef struct evect3 CRotation;
 typedef struct etransform TransformComponent;
 
-
 EAPI void ComponentTransformImport(ecs_world_t *world);
 
 #endif // COMPONENT_TRANSFORM_H_

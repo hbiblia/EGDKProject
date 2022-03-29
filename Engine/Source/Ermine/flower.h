@@ -113,6 +113,27 @@ ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid);
 ecs_entity_t flower_lookup(const char *name);
 
 /*
+ * Obtenemos el nombre de la entidad
+ *
+ */
+
+char *flower_info_get_name(ecs_entity_t entity);
+
+/*
+ * Cambiamos el nombre de la entidad
+ *
+ */
+
+void flower_info_set_name(ecs_entity_t entity, const char *name);
+
+/*
+ * Cambiamos el Infoid de la entidad
+ *
+ */
+
+void flower_info_set_id(ecs_entity_t entity, int id);
+
+/*
  * Ejecutamos un sistema custom.
  *
  */
@@ -129,13 +150,13 @@ void flower_internal_system_run(const char *system_str);
  *
  *
  */
-const char *flower_internal_serialize(void);
+EAPI const char *flower_internal_serialize(void);
 
 /*
  * Nos permite deserializar los datos de un archivo,
  * esto crea las entidades nuevas en el world de flecs.
  *
  */
-void flower_internal_deserialize(const char *filename);
+EAPI void flower_internal_deserialize(const char *filename);
 
 #endif // EFLECS_H

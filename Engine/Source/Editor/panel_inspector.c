@@ -5,6 +5,7 @@
 #include <flower.h>
 
 #include "editor.h"
+#include "component.info.h"
 
 static bool first_selected = false;
 static ecs_entity_t entiti_seleted = -1;
@@ -29,32 +30,7 @@ void panel_inspector_main(void)
     igSetNextWindowSize((ImVec2){200, 200}, 0);
     if (igBegin("Inspector", false, ImGuiWindowFlags_NoMove))
     {
-        if (entiti_seleted != -1)
-        {
-            // Enabled o Disable entidad
-            bool is_active = flower_is_enabled(entiti_seleted);
-            if(igCheckbox("Enabled", &is_active)){
-                flower_enable(entiti_seleted, is_active);
-            }
-
-            // Tenemos el nombre de la entida seleccionada y podemos cambiarlo.
-            // Por seguridad no permitimos el cambio de la entidad a 0 y debemos presionar enter.
-            char buffer[256];
-            char *ecs_name = ecs_get_name(world, entiti_seleted);
-            strcpy(buffer, ecs_name);
-            if (igInputText("Name", buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
-            {
-                if (strlen(buffer) > 0)
-                {
-                    if(flower_lookup(buffer) == 0){
-                        ecs_set_name(world, entiti_seleted, buffer);
-                    }
-                }
-            }
-            igSeparator();
-            igSameLine(0, 0);
-        }
-        else
+        if (entiti_seleted == -1)
         {
             igTextWrapped("Select an entity to view properties");
         }
@@ -187,7 +163,8 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 {
                     float *value_f = (float *)ECS_OFFSET(ptr, op->offset);
                     igDragFloat(field_label, value_f, 0.01f, 0.0f, 0.0f, "%.2f", 0);
-                } else if (strcmp(field_type_name, "i8") == 0)
+                }
+                else if (strcmp(field_type_name, "i8") == 0)
                 {
                     uint8_t *value_f = (uint8_t *)ECS_OFFSET(ptr, op->offset);
                     igDragInt(field_label, value_f, 0.5f, 0, 0, "%d", 0);
