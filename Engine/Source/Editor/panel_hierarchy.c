@@ -121,9 +121,10 @@ void hierarchy_draw_children(ecs_entity_t entity)
         .filter.terms = {
             {.id = ecs_childof(entity)},
             {.id = EcsDisabled, .oper = EcsOptional},
+            {.id = flower_lookup("InfoComponent")},
         },
-        // .order_by = hierarchy_private_order_by,
-        // .order_by_component = flower_lookup("InfoComponent"),
+        .order_by = hierarchy_private_order_by,
+        .order_by_component = flower_lookup("InfoComponent"),
     });
     ecs_iter_t it = ecs_query_iter(world, q);
     while (ecs_query_next(&it))

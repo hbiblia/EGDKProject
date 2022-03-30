@@ -100,7 +100,7 @@ void flower_entity_clone_new(ecs_entity_t source)
 {
     ecs_entity_t new_entity = ecs_clone(world, 0, source, true);
     flower_info_set_id(new_entity, entity_len_world);
-    
+
     entity_len_world++;
 }
 
@@ -111,11 +111,8 @@ void flower_entity_clone_new(ecs_entity_t source)
 
 void flower_entity_remove(ecs_entity_t entity)
 {
-    if (ecs_is_alive(world, entity) && ecs_is_valid(world, entity))
-    {
-        printf("INFO: Delete entity [ID:%u][NAME:%s]\n", entity, flower_info_get_name(entity));
-        ecs_delete(world, entity);
-    }
+    printf("INFO: Delete entity [ID:%u][NAME:%s]\n", entity, flower_info_get_name(entity));
+    ecs_delete(world, entity);
 }
 
 /*

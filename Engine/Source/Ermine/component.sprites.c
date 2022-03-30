@@ -3,12 +3,13 @@
 #include "component.transform.h"
 #include <glib.h>
 
-// static int compare_layer(ecs_entity_t e1, const SpriteRendererComponent *s1,
-// ecs_entity_t e2, const SpriteRendererComponent *s2){
-//     (void)e1;
-//     (void)e2;
-//     return s1->layer - s2->layer;
-// }
+static int sprites_sortingOrder(ecs_entity_t e1, const SpriteRendererComponent *s1,
+ecs_entity_t e2, const SpriteRendererComponent *s2){
+    (void)e1;
+    (void)e2;
+    if (s1 == NULL || s2 == NULL)return 0;
+    return s1->sortingOrder - s2->sortingOrder;
+}
 
 static void system__init_fn(ecs_iter_t *it)
 {
@@ -80,6 +81,8 @@ void ComponentSpritesImport(ecs_world_t *world)
                 {.id = IdSpriteRendererComponent},
                 {.id = flower_lookup("TransformComponent"), .inout = EcsIn},
             },
+            .order_by = sprites_sortingOrder,
+            .order_by_component = IdSpriteRendererComponent
         },
        .callback = system__render_fn,
     });

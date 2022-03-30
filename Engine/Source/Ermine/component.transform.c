@@ -5,10 +5,14 @@
 static void system__update_fn(ecs_iter_t *it)
 {
     TransformComponent *transform = ecs_term_w_size(it, sizeof(TransformComponent), 1);
+    TransformComponent *transformParent = ecs_term_w_size(it, sizeof(TransformComponent), 2);
 
     for (int i = 0; i < it->count; i++)
     {
-        // printf("Entity transform\n");
+        // printf("Parent: X:%f\n", transformParent[i].position.x);
+        // printf("Child: X:%f\n", transform[i].position.x);
+
+
     }
 }
 
@@ -89,6 +93,7 @@ void ComponentTransformImport(ecs_world_t *world)
         .query = {
             .filter.terms = {
                 {.id = flower_lookup("TransformComponent")},
+                {.id = flower_lookup("TransformComponent"), .subj.set = {.mask = EcsParent | EcsCascade}, .inout = EcsIn},
             },
         },
        .callback = system__update_fn,

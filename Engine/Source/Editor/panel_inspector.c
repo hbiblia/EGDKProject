@@ -25,6 +25,11 @@ void panel_inspector_main(void)
         entiti_seleted = hierarchy_get_selected();
     }
 
+    if (entiti_seleted != 1 && !ecs_is_valid(world, entiti_seleted))
+    {
+        entiti_seleted = -1;
+    }
+
     // UI
     // ---------------------
     igSetNextWindowSize((ImVec2){200, 200}, 0);
@@ -32,7 +37,7 @@ void panel_inspector_main(void)
     {
         if (entiti_seleted == -1)
         {
-            igTextWrapped("Select an entity to view properties");
+            igTextWrapped("Select anything to Inspect");
         }
 
         // List Components Properties
