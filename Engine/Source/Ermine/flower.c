@@ -1,9 +1,6 @@
 #include "flower.h"
 
-#include "component.base.h"
-#include "component.transform.h"
-#include "component.sprites.h"
-#include "component.info.h"
+#include "components.h"
 
 static ecs_world_t *world;
 
@@ -17,10 +14,8 @@ void ecs_flecs_init(void)
     world = ecs_init();
 
     // iniciamos los componentes por defecto.
-    ComponentInfoImport(world);
-    ComponentBaseImport(world);
-    ComponentTransformImport(world);
-    ComponentSpritesImport(world);
+
+    components_init();
 }
 
 void ecs_flecs_progress(void)
@@ -86,7 +81,7 @@ void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size
     }
 }
 
-void flower_set_component_empty(actor a, ecs_entity_t component)
+void flower_set_component_empty(ecs_entity_t a, ecs_entity_t component)
 {
     ecs_add_id(world, a, component);
 }

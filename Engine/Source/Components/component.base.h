@@ -10,6 +10,12 @@ typedef struct evect2 CVec2;
 typedef struct evect3 CVec3;
 typedef struct erect CRect;
 
-EAPI void ComponentSpritesImport(ecs_world_t *world);
+typedef struct
+{
+    bool fake;
+    efuntion fun;
+}CFuntion;
+
+EAPI void ComponentBaseImport(ecs_world_t *world);
 
 #endif // COMPONENT_BASE_H_

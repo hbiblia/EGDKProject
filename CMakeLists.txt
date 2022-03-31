@@ -4,10 +4,6 @@ project(EGDKProject)
 
 set(CMAKE_CXX_STANDARD 11)
 
-# PKG_CONFIG
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(GLIB REQUIRED glib-2.0)
-
 # ERMINE LIBS
 set(SOUCE_ERMINE
 Engine/Source/Ermine/ewindow.c
@@ -25,10 +21,12 @@ Engine/Source/Ermine/emath.c
 Engine/Source/Ermine/flower.c
 Engine/Source/ThirdParty/flecs/flecs.c
 Engine/Source/ThirdParty/parson/parson.c
-Engine/Source/Ermine/component.base.c
-Engine/Source/Ermine/component.transform.c
-Engine/Source/Ermine/component.sprites.c
-Engine/Source/Ermine/component.info.c
+Engine/Source/Components/component.base.c
+Engine/Source/Components/TransformComponent.c
+Engine/Source/Components/SpriteRendererComponent.c
+Engine/Source/Components/AnimateSpriteComponent.c
+Engine/Source/Components/DamageComponent.c
+Engine/Source/Components/InfoComponent.c
 )
 
 # EDITOR
@@ -59,10 +57,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     message("Linux Build")
 endif()
 
+# PKG_CONFIG
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GLIB REQUIRED glib-2.0)
 
+# En windows con Msys2 estaba dando problema
 add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include )
 
-include_directories(${GLIB_INCLUDE_DIRS} Engine/Source/Ermine/ Engine/Source/ThirdParty/)
+include_directories(${GLIB_INCLUDE_DIRS} Engine/Source/Ermine/ Engine/Source/ThirdParty/ Engine/Source/Components/)
 link_directories(${GLIB_LIBRARY_DIRS} Engine/Source/ThirdParty/cimgui)
 
 add_executable(EGDKEditor ${SOUCE_ERMINE} ${SOUCE_EDITOR})

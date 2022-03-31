@@ -5,7 +5,7 @@
 #include <ermine.h>
 #include <flower.h>
 
-#include "component.info.h"
+#include "InfoComponent.h"
 
 // La entidad que tenemos seleccionada.
 static ecs_entity_t entiti_gselected = -1;

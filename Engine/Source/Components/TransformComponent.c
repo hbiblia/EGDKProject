@@ -1,5 +1,5 @@
 
-#include "component.transform.h"
+#include "TransformComponent.h"
 
 
 static void system__update_fn(ecs_iter_t *it)
@@ -9,10 +9,9 @@ static void system__update_fn(ecs_iter_t *it)
 
     for (int i = 0; i < it->count; i++)
     {
-        // printf("Parent: X:%f\n", transformParent[i].position.x);
-        // printf("Child: X:%f\n", transform[i].position.x);
-
-
+        transform[i].localPosition.x += transformParent[i].position.x;
+        transform[i].localPosition.y += transformParent[i].position.y;
+        transform[i].localPosition.z += transformParent[i].position.z;
     }
 }
 

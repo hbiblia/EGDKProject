@@ -15,9 +15,7 @@ enum
     EventSystemOnRender
 };
 
-#define actor ecs_entity_t
-
-//
+#define COMPONENT_INIT(NameComponent) ECS_META_COMPONENT(flower_get_world(), NameComponent);
 
 void ecs_flecs_init(void);
 void ecs_flecs_progress(void);
@@ -77,7 +75,7 @@ void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size
  *
  */
 
-void flower_set_component_empty(actor a, ecs_entity_t component);
+void flower_set_component_empty(ecs_entity_t a, ecs_entity_t component);
 
 /*
  * Clonamos una entidad y sus componentes.

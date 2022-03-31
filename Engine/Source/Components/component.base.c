@@ -6,7 +6,24 @@ void ComponentBaseImport(ecs_world_t *world)
     // COMPONENTE BASE
     // ---------------------
 
+    // ---------------------
+    // FUNCTION CALLBACK
+    // ---------------------
+    // ecs_entity_t IdCFuntion = ecs_component_init(world, &(ecs_component_desc_t){
+    //     .entity.name = "CFuntion",
+    //     .size = sizeof(CFuntion),
+    //     .alignment = ECS_ALIGNOF(CFuntion),
+    // });
 
+    // ecs_struct_init(world, &(ecs_struct_desc_t){
+    //     .entity.entity = IdCFuntion,
+    //     .members = {
+    //         { .name = "none", .type = ecs_id(ecs_bool_t) }
+    //     },
+    // });
+
+
+    // ---------------------
     // COLOR
     // ---------------------
     ecs_entity_t IdCColor = ecs_component_init(world, &(ecs_component_desc_t){
@@ -25,6 +42,7 @@ void ComponentBaseImport(ecs_world_t *world)
         },
     });
 
+    // ---------------------
     // VECTORs
     // ---------------------
     ecs_entity_t IdCVec2 = ecs_component_init(world, &(ecs_component_desc_t){
@@ -56,6 +74,7 @@ void ComponentBaseImport(ecs_world_t *world)
         },
     });
 
+    // ---------------------
     // RECTANGLE
     // ---------------------
     ecs_entity_t IdCRect = ecs_component_init(world, &(ecs_component_desc_t){
@@ -72,3 +91,4 @@ void ComponentBaseImport(ecs_world_t *world)
         },
     });
 }
+ 

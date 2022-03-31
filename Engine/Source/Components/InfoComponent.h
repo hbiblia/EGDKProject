@@ -5,11 +5,10 @@
 #include <ermine.h>
 #include "flower.h"
 
-typedef struct
-{
+ECS_STRUCT(DamageComponent, {
     char *name;
     int id;
-} InfoComponent;
+});
 
 EAPI void ComponentInfoImport(ecs_world_t *world);
 

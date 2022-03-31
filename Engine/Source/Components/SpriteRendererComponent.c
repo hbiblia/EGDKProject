@@ -1,7 +1,6 @@
 
-#include "component.sprites.h"
-#include "component.transform.h"
-#include <glib.h>
+#include "SpriteRendererComponent.h"
+#include "TransformComponent.h"
 
 static int sprites_sortingOrder(ecs_entity_t e1, const SpriteRendererComponent *s1,
 ecs_entity_t e2, const SpriteRendererComponent *s2){
@@ -43,7 +42,7 @@ static void system__render_fn(ecs_iter_t *it)
     }
 }
 
-void ComponentSpritesImport(ecs_world_t *world)
+void ComponentSpriteRendererImport(ecs_world_t *world)
 {
     // COMPONENTE SPRITES
     // ---------------------

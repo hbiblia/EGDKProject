@@ -5,7 +5,6 @@
 #include <flower.h>
 
 #include "editor.h"
-#include "component.info.h"
 
 static bool first_selected = false;
 static ecs_entity_t entiti_seleted = -1;
@@ -85,15 +84,28 @@ void panel_inspector_main(void)
                 // ---------------------
                 if (igBeginPopup("AddComponent", 0))
                 {
-                    actor seleted = hierarchy_get_selected();
+                    ecs_entity_t seleted = hierarchy_get_selected();
 
-                    if (igMenuItem_Bool("CameraComponent", "", false, true))
+                    // EcsComponent
+
+                    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
+                        .filter.terms = {
+                            {.id = ecs_id(EcsComponent)},
+                        },
+                    });
+                    ecs_iter_t it = ecs_query_iter(world, q);
+                    while (ecs_query_next(&it))
                     {
+                        for (int i = 0; i < it.count; i++)
+                        {
+                            char *name = ecs_get_name(world, it.entities[i]);
+                            if (igMenuItem_Bool(name, "", false, true))
+                            {
+                                flower_set_component_empty(seleted, actor_get_lookup(name));
+                            }
+                        }
                     }
-                    if (igMenuItem_Bool("SpriteRendererComponent", "", false, true))
-                    {
-                        flower_set_component_empty(seleted, actor_get_lookup("SpriteRendererComponent"));
-                    }
+                    ecs_query_fini(q);
                     igEndPopup();
                 }
             }
@@ -126,12 +138,21 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 const char *field_label = op->name;
 
                 // DEBUG
-                // printf("DEBUG INSPECTOR: %s\n", field_label);
+                // printf("DEBUG INSPECTOR: %s -> %s\n", field_type_name, field_label);
 
                 // Tipos de datos
                 // ---------------------
-
-                if (strcmp(field_type_name, "CVec2") == 0)
+                if(strcmp(field_type_name, "AnimateAnimationDataComponent")==0)
+                {
+                    i += (op->op_count - 1);
+                }else if(strcmp(field_type_name,"CFuntion")==0)
+                {
+                    if(igButton(field_label, (ImVec2){0.0f,0.0f})){
+                        efuntion callback_fn = (efuntion)ECS_OFFSET(ptr, op->offset);
+                        if(callback_fn){ callback_fn(); }
+                    }
+                    i += (op->op_count - 1);
+                }else if (strcmp(field_type_name, "CVec2") == 0)
                 {
                     CVec2 *value = (CVec2 *)ECS_OFFSET(ptr, op->offset);
                     float value_b[2] = {value->x, value->y};
@@ -201,6 +222,8 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                         }
                         igEndDragDropTarget();
                     }
+                }else{
+                    i += (op->op_count - 1);
                 }
             }
         }

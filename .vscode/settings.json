@@ -59,6 +59,12 @@
         "editor.h": "c",
         "stdio.h": "c",
         "flower.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "component.spriterenderer.h": "c",
+        "component.animatesprite.h": "c",
+        "component.info.h": "c",
+        "damagecomponent.h": "c",
+        "components.h": "c",
+        "infocomponent.h": "c"
     }
 }

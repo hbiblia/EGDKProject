@@ -320,6 +320,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ewindow.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/sokol/sokol_imgui.h

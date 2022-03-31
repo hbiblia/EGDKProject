@@ -1,5 +1,5 @@
-#ifndef COMPONENT_SPRITES_H_
-#define COMPONENT_SPRITES_H_
+#ifndef COMPONENT_SPRITE_RENDERER_H_
+#define COMPONENT_SPRITE_RENDERER_H_
 
 #include <flecs/flecs.h>
 #include <ermine.h>
@@ -13,6 +13,6 @@ typedef struct {
     uint8_t sortingOrder;
 }SpriteRendererComponent;
 
-EAPI void ComponentSpritesImport(ecs_world_t *world);
+EAPI void ComponentSpriteRendererImport(ecs_world_t *world);
 
-#endif // COMPONENT_SPRITES_H_
+#endif // COMPONENT_SPRITE_RENDERER_H_

@@ -8,6 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/d/Github/EGDKProyect/Engine/Source/Components/AnimateSpriteComponent.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/AnimateSpriteComponent.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/AnimateSpriteComponent.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Components/DamageComponent.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/DamageComponent.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/DamageComponent.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Components/InfoComponent.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/InfoComponent.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/InfoComponent.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Components/SpriteRendererComponent.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/SpriteRendererComponent.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/SpriteRendererComponent.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Components/TransformComponent.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/TransformComponent.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/TransformComponent.c.obj.d"
+  "/d/Github/EGDKProyect/Engine/Source/Components/component.base.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/editor.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/imgui.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/main.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj.d"
@@ -15,10 +21,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj.d"
-  "/d/Github/EGDKProyect/Engine/Source/Ermine/component.base.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj.d"
-  "/d/Github/EGDKProyect/Engine/Source/Ermine/component.info.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj.d"
-  "/d/Github/EGDKProyect/Engine/Source/Ermine/component.sprites.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj.d"
-  "/d/Github/EGDKProyect/Engine/Source/Ermine/component.transform.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/eanimate.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/eanimate.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/ecolor.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ecolor.c.obj.d"
   "/d/Github/EGDKProyect/Engine/Source/Ermine/einput.c" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj" "gcc" "CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/einput.c.obj.d"

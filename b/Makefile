@@ -129,6 +129,150 @@ EGDKEditor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/build
 .PHONY : EGDKEditor/fast
 
+Engine/Source/Components/AnimateSpriteComponent.obj: Engine/Source/Components/AnimateSpriteComponent.c.obj
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.obj
+
+# target to build an object file
+Engine/Source/Components/AnimateSpriteComponent.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/AnimateSpriteComponent.c.obj
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.c.obj
+
+Engine/Source/Components/AnimateSpriteComponent.i: Engine/Source/Components/AnimateSpriteComponent.c.i
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.i
+
+# target to preprocess a source file
+Engine/Source/Components/AnimateSpriteComponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/AnimateSpriteComponent.c.i
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.c.i
+
+Engine/Source/Components/AnimateSpriteComponent.s: Engine/Source/Components/AnimateSpriteComponent.c.s
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.s
+
+# target to generate assembly for a file
+Engine/Source/Components/AnimateSpriteComponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/AnimateSpriteComponent.c.s
+.PHONY : Engine/Source/Components/AnimateSpriteComponent.c.s
+
+Engine/Source/Components/DamageComponent.obj: Engine/Source/Components/DamageComponent.c.obj
+.PHONY : Engine/Source/Components/DamageComponent.obj
+
+# target to build an object file
+Engine/Source/Components/DamageComponent.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/DamageComponent.c.obj
+.PHONY : Engine/Source/Components/DamageComponent.c.obj
+
+Engine/Source/Components/DamageComponent.i: Engine/Source/Components/DamageComponent.c.i
+.PHONY : Engine/Source/Components/DamageComponent.i
+
+# target to preprocess a source file
+Engine/Source/Components/DamageComponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/DamageComponent.c.i
+.PHONY : Engine/Source/Components/DamageComponent.c.i
+
+Engine/Source/Components/DamageComponent.s: Engine/Source/Components/DamageComponent.c.s
+.PHONY : Engine/Source/Components/DamageComponent.s
+
+# target to generate assembly for a file
+Engine/Source/Components/DamageComponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/DamageComponent.c.s
+.PHONY : Engine/Source/Components/DamageComponent.c.s
+
+Engine/Source/Components/InfoComponent.obj: Engine/Source/Components/InfoComponent.c.obj
+.PHONY : Engine/Source/Components/InfoComponent.obj
+
+# target to build an object file
+Engine/Source/Components/InfoComponent.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/InfoComponent.c.obj
+.PHONY : Engine/Source/Components/InfoComponent.c.obj
+
+Engine/Source/Components/InfoComponent.i: Engine/Source/Components/InfoComponent.c.i
+.PHONY : Engine/Source/Components/InfoComponent.i
+
+# target to preprocess a source file
+Engine/Source/Components/InfoComponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/InfoComponent.c.i
+.PHONY : Engine/Source/Components/InfoComponent.c.i
+
+Engine/Source/Components/InfoComponent.s: Engine/Source/Components/InfoComponent.c.s
+.PHONY : Engine/Source/Components/InfoComponent.s
+
+# target to generate assembly for a file
+Engine/Source/Components/InfoComponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/InfoComponent.c.s
+.PHONY : Engine/Source/Components/InfoComponent.c.s
+
+Engine/Source/Components/SpriteRendererComponent.obj: Engine/Source/Components/SpriteRendererComponent.c.obj
+.PHONY : Engine/Source/Components/SpriteRendererComponent.obj
+
+# target to build an object file
+Engine/Source/Components/SpriteRendererComponent.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/SpriteRendererComponent.c.obj
+.PHONY : Engine/Source/Components/SpriteRendererComponent.c.obj
+
+Engine/Source/Components/SpriteRendererComponent.i: Engine/Source/Components/SpriteRendererComponent.c.i
+.PHONY : Engine/Source/Components/SpriteRendererComponent.i
+
+# target to preprocess a source file
+Engine/Source/Components/SpriteRendererComponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/SpriteRendererComponent.c.i
+.PHONY : Engine/Source/Components/SpriteRendererComponent.c.i
+
+Engine/Source/Components/SpriteRendererComponent.s: Engine/Source/Components/SpriteRendererComponent.c.s
+.PHONY : Engine/Source/Components/SpriteRendererComponent.s
+
+# target to generate assembly for a file
+Engine/Source/Components/SpriteRendererComponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/SpriteRendererComponent.c.s
+.PHONY : Engine/Source/Components/SpriteRendererComponent.c.s
+
+Engine/Source/Components/TransformComponent.obj: Engine/Source/Components/TransformComponent.c.obj
+.PHONY : Engine/Source/Components/TransformComponent.obj
+
+# target to build an object file
+Engine/Source/Components/TransformComponent.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/TransformComponent.c.obj
+.PHONY : Engine/Source/Components/TransformComponent.c.obj
+
+Engine/Source/Components/TransformComponent.i: Engine/Source/Components/TransformComponent.c.i
+.PHONY : Engine/Source/Components/TransformComponent.i
+
+# target to preprocess a source file
+Engine/Source/Components/TransformComponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/TransformComponent.c.i
+.PHONY : Engine/Source/Components/TransformComponent.c.i
+
+Engine/Source/Components/TransformComponent.s: Engine/Source/Components/TransformComponent.c.s
+.PHONY : Engine/Source/Components/TransformComponent.s
+
+# target to generate assembly for a file
+Engine/Source/Components/TransformComponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/TransformComponent.c.s
+.PHONY : Engine/Source/Components/TransformComponent.c.s
+
+Engine/Source/Components/component.base.obj: Engine/Source/Components/component.base.c.obj
+.PHONY : Engine/Source/Components/component.base.obj
+
+# target to build an object file
+Engine/Source/Components/component.base.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.obj
+.PHONY : Engine/Source/Components/component.base.c.obj
+
+Engine/Source/Components/component.base.i: Engine/Source/Components/component.base.c.i
+.PHONY : Engine/Source/Components/component.base.i
+
+# target to preprocess a source file
+Engine/Source/Components/component.base.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.i
+.PHONY : Engine/Source/Components/component.base.c.i
+
+Engine/Source/Components/component.base.s: Engine/Source/Components/component.base.c.s
+.PHONY : Engine/Source/Components/component.base.s
+
+# target to generate assembly for a file
+Engine/Source/Components/component.base.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.s
+.PHONY : Engine/Source/Components/component.base.c.s
+
 Engine/Source/Editor/editor.obj: Engine/Source/Editor/editor.c.obj
 .PHONY : Engine/Source/Editor/editor.obj
 
@@ -296,102 +440,6 @@ Engine/Source/Editor/panel_viewport.s: Engine/Source/Editor/panel_viewport.c.s
 Engine/Source/Editor/panel_viewport.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.s
 .PHONY : Engine/Source/Editor/panel_viewport.c.s
-
-Engine/Source/Ermine/component.base.obj: Engine/Source/Ermine/component.base.c.obj
-.PHONY : Engine/Source/Ermine/component.base.obj
-
-# target to build an object file
-Engine/Source/Ermine/component.base.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.obj
-.PHONY : Engine/Source/Ermine/component.base.c.obj
-
-Engine/Source/Ermine/component.base.i: Engine/Source/Ermine/component.base.c.i
-.PHONY : Engine/Source/Ermine/component.base.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/component.base.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.i
-.PHONY : Engine/Source/Ermine/component.base.c.i
-
-Engine/Source/Ermine/component.base.s: Engine/Source/Ermine/component.base.c.s
-.PHONY : Engine/Source/Ermine/component.base.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/component.base.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.base.c.s
-.PHONY : Engine/Source/Ermine/component.base.c.s
-
-Engine/Source/Ermine/component.info.obj: Engine/Source/Ermine/component.info.c.obj
-.PHONY : Engine/Source/Ermine/component.info.obj
-
-# target to build an object file
-Engine/Source/Ermine/component.info.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.obj
-.PHONY : Engine/Source/Ermine/component.info.c.obj
-
-Engine/Source/Ermine/component.info.i: Engine/Source/Ermine/component.info.c.i
-.PHONY : Engine/Source/Ermine/component.info.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/component.info.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.i
-.PHONY : Engine/Source/Ermine/component.info.c.i
-
-Engine/Source/Ermine/component.info.s: Engine/Source/Ermine/component.info.c.s
-.PHONY : Engine/Source/Ermine/component.info.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/component.info.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.info.c.s
-.PHONY : Engine/Source/Ermine/component.info.c.s
-
-Engine/Source/Ermine/component.sprites.obj: Engine/Source/Ermine/component.sprites.c.obj
-.PHONY : Engine/Source/Ermine/component.sprites.obj
-
-# target to build an object file
-Engine/Source/Ermine/component.sprites.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.obj
-.PHONY : Engine/Source/Ermine/component.sprites.c.obj
-
-Engine/Source/Ermine/component.sprites.i: Engine/Source/Ermine/component.sprites.c.i
-.PHONY : Engine/Source/Ermine/component.sprites.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/component.sprites.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.i
-.PHONY : Engine/Source/Ermine/component.sprites.c.i
-
-Engine/Source/Ermine/component.sprites.s: Engine/Source/Ermine/component.sprites.c.s
-.PHONY : Engine/Source/Ermine/component.sprites.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/component.sprites.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.sprites.c.s
-.PHONY : Engine/Source/Ermine/component.sprites.c.s
-
-Engine/Source/Ermine/component.transform.obj: Engine/Source/Ermine/component.transform.c.obj
-.PHONY : Engine/Source/Ermine/component.transform.obj
-
-# target to build an object file
-Engine/Source/Ermine/component.transform.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.obj
-.PHONY : Engine/Source/Ermine/component.transform.c.obj
-
-Engine/Source/Ermine/component.transform.i: Engine/Source/Ermine/component.transform.c.i
-.PHONY : Engine/Source/Ermine/component.transform.i
-
-# target to preprocess a source file
-Engine/Source/Ermine/component.transform.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.i
-.PHONY : Engine/Source/Ermine/component.transform.c.i
-
-Engine/Source/Ermine/component.transform.s: Engine/Source/Ermine/component.transform.c.s
-.PHONY : Engine/Source/Ermine/component.transform.s
-
-# target to generate assembly for a file
-Engine/Source/Ermine/component.transform.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/component.transform.c.s
-.PHONY : Engine/Source/Ermine/component.transform.c.s
 
 Engine/Source/Ermine/eanimate.obj: Engine/Source/Ermine/eanimate.c.obj
 .PHONY : Engine/Source/Ermine/eanimate.obj
@@ -762,6 +810,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... EGDKEditor"
+	@echo "... Engine/Source/Components/AnimateSpriteComponent.obj"
+	@echo "... Engine/Source/Components/AnimateSpriteComponent.i"
+	@echo "... Engine/Source/Components/AnimateSpriteComponent.s"
+	@echo "... Engine/Source/Components/DamageComponent.obj"
+	@echo "... Engine/Source/Components/DamageComponent.i"
+	@echo "... Engine/Source/Components/DamageComponent.s"
+	@echo "... Engine/Source/Components/InfoComponent.obj"
+	@echo "... Engine/Source/Components/InfoComponent.i"
+	@echo "... Engine/Source/Components/InfoComponent.s"
+	@echo "... Engine/Source/Components/SpriteRendererComponent.obj"
+	@echo "... Engine/Source/Components/SpriteRendererComponent.i"
+	@echo "... Engine/Source/Components/SpriteRendererComponent.s"
+	@echo "... Engine/Source/Components/TransformComponent.obj"
+	@echo "... Engine/Source/Components/TransformComponent.i"
+	@echo "... Engine/Source/Components/TransformComponent.s"
+	@echo "... Engine/Source/Components/component.base.obj"
+	@echo "... Engine/Source/Components/component.base.i"
+	@echo "... Engine/Source/Components/component.base.s"
 	@echo "... Engine/Source/Editor/editor.obj"
 	@echo "... Engine/Source/Editor/editor.i"
 	@echo "... Engine/Source/Editor/editor.s"
@@ -783,18 +849,6 @@ help:
 	@echo "... Engine/Source/Editor/panel_viewport.obj"
 	@echo "... Engine/Source/Editor/panel_viewport.i"
 	@echo "... Engine/Source/Editor/panel_viewport.s"
-	@echo "... Engine/Source/Ermine/component.base.obj"
-	@echo "... Engine/Source/Ermine/component.base.i"
-	@echo "... Engine/Source/Ermine/component.base.s"
-	@echo "... Engine/Source/Ermine/component.info.obj"
-	@echo "... Engine/Source/Ermine/component.info.i"
-	@echo "... Engine/Source/Ermine/component.info.s"
-	@echo "... Engine/Source/Ermine/component.sprites.obj"
-	@echo "... Engine/Source/Ermine/component.sprites.i"
-	@echo "... Engine/Source/Ermine/component.sprites.s"
-	@echo "... Engine/Source/Ermine/component.transform.obj"
-	@echo "... Engine/Source/Ermine/component.transform.i"
-	@echo "... Engine/Source/Ermine/component.transform.s"
 	@echo "... Engine/Source/Ermine/eanimate.obj"
 	@echo "... Engine/Source/Ermine/eanimate.i"
 	@echo "... Engine/Source/Ermine/eanimate.s"

@@ -109,6 +109,8 @@ typedef struct evect3
     float x, y, z;
 } evect3;
 
+typedef void (*efuntion)();
+
 typedef struct etransform
 {
     evect3 position;
