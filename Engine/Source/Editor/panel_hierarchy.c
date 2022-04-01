@@ -26,7 +26,7 @@ void panel_hierarchy_init(void)
     world = flower_get_world();
 
     // Creamos el ROOT que contendra todas las entidades del nivel.
-    entiti_gselected = entity_root = flower_entity_new("Root", 0, false);
+    entiti_gselected = entity_root = flower_entity_new("Root", 0, false, true);
 }
 
 // Hierarchy render-update
@@ -38,7 +38,7 @@ void panel_hierarchy_main(void)
         igSameLine(0, 0);
         if (igSmallButton("+"))
         {
-            flower_entity_new("newEntity", entiti_gselected, true);
+            flower_entity_new("newEntity", entiti_gselected, true, false);
         }
 
         // No puedes borrar el Root

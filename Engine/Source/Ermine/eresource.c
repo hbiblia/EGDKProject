@@ -142,15 +142,17 @@ etexture eresource_get_texture(const char *key)
 
 void eresource_scene_save(void)
 {
-    if (scene_bopened)
-    {
-        const char *resource_path = eresource_get_path(RESOURCE_PATH);
-        const char *json_world_data = flower_internal_serialize();
-        printf("O: %s\n", json_world_data);
-        JSON_Value *value = json_parse_string(json_world_data);
+    // if (scene_bopened)
+    // {
+    //     const char *resource_path = eresource_get_path(RESOURCE_PATH);
+    //     const char *json_world_data = flower_internal_serialize();
+    //     printf("O: %s\n", json_world_data);
+    //     JSON_Value *value = json_parse_string(json_world_data);
 
-        JSON_Status status = json_serialize_to_file(value, scene_file);
-    }
+    //     JSON_Status status = json_serialize_to_file(value, scene_file);
+    // }
+
+    printf("A: %s\n",flower_internal_serialize());
 }
 
 /*
@@ -278,4 +280,3 @@ JSON_Status eresource_assets_save(void)
     JSON_Status status = json_serialize_to_file(root_value, PATH_BUILD(resource_path, "assets.json"));
     return status;
 }
-

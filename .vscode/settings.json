@@ -65,6 +65,8 @@
         "component.info.h": "c",
         "damagecomponent.h": "c",
         "components.h": "c",
-        "infocomponent.h": "c"
+        "infocomponent.h": "c",
+        "animatespritecomponent.h": "c",
+        "transformcomponent.h": "c"
     }
 }

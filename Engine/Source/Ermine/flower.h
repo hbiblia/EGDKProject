@@ -96,7 +96,7 @@ void flower_entity_remove(ecs_entity_t entity);
  *
  */
 
-ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid);
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid, bool name_real);
 
 // ------------------
 //

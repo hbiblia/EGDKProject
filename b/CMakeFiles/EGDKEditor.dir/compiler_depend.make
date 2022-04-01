@@ -3850,8 +3850,11 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/flower.c.obj: ../Engine/Source/Er
   C:/msys64/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/parson/parson.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/flower.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
   D:/Github/EGDKProyect/Engine/Source/Components/components.h \
-  D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h
+  D:/Github/EGDKProyect/Engine/Source/Components/InfoComponent.h \
+  D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h \
+  D:/Github/EGDKProyect/Engine/Source/Components/DamageComponent.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/ThirdParty/flecs/flecs.c.obj: ../Engine/Source/ThirdParty/flecs/flecs.c \
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.c \

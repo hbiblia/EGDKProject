@@ -1,5 +1,5 @@
 #include "flower.h"
-
+#include "ermine.h"
 #include "components.h"
 
 static ecs_world_t *world;
@@ -115,11 +115,11 @@ void flower_entity_remove(ecs_entity_t entity)
  *
  */
 
-ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid)
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid, bool name_real)
 {
     char *new_name = uid ? STRDUPPF("%s%d", name, entity_len_world) : name;
-
-    ecs_entity_t entity = ecs_new_id(world);
+    
+    ecs_entity_t entity = name_real ? ecs_set_name(world, 0, name) : ecs_new_id(world);
     if (parent > 0)
     {
         ecs_add_pair(world, entity, EcsChildOf, parent);
@@ -213,22 +213,27 @@ const char *flower_internal_serialize(void)
 {
     // JSON FLECS PREPARE
 #define ECS_ENTITY_TO_JSON (ecs_entity_to_json_desc_t){ \
-    true, false, false, false, false, false, true, false, false, false, true}
+    true, false, false, false, false, false, true, false, false, false, false}
     ecs_entity_to_json_desc_t desc = ECS_ENTITY_TO_JSON;
     desc.serialize_values = true;
 
-    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
-                                               .filter.terms = {
-                                                   {.id = ecs_childof(flower_lookup("Root")), .inout = EcsIn},
-                                                   {.id = EcsDisabled, .oper = EcsOptional},
-                                               },
-                                           });
+    char *root_s = ecs_entity_to_json(world, flower_lookup("Root"), &desc);
+
+    ecs_query_t *querys = ecs_query_init(world, &(ecs_query_desc_t){
+            .filter.terms = {
+                { .id = ecs_childof(flower_lookup("Root")), .inout = EcsIn },
+                { .id = EcsDisabled, .oper = EcsOptional },
+            },
+    });
 
     GString *buffer_json = g_string_new("[");
+    buffer_json = g_string_append(buffer_json, root_s);
 
-    ecs_iter_t it = ecs_query_iter(world, q);
+    ecs_iter_t it = ecs_query_iter(world, querys);
     while (ecs_query_next(&it))
     {
+        buffer_json = g_string_append(buffer_json, ",");
+
         for (int i = 0; i < it.count; i++)
         {
             char *buffer = ecs_entity_to_json(world, it.entities[i], &desc);
@@ -237,6 +242,7 @@ const char *flower_internal_serialize(void)
                 buffer_json = g_string_append(buffer_json, ",");
         }
     }
+
     buffer_json = g_string_append(buffer_json, "]");
     return g_string_free(buffer_json, false);
 }
