@@ -19,6 +19,8 @@ enum
     flower_component_append_list(#NameComponent);\
     ECS_META_COMPONENT(flower_get_world(), NameComponent)
 
+void flower_reset_entity_world_len(void);
+
 void ecs_flecs_init(void);
 
 void ecs_flecs_progress(void);
@@ -58,6 +60,7 @@ bool flower_is_enabled(ecs_entity_t entity);
 void flower_enable(ecs_entity_t entity, bool enabled);
 
 void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size, void *components);
+
 #define actor_set(a, c, ...) flower_set_component_ptr(a, #c, sizeof(c), &(c)__VA_ARGS__)
 
 void flower_set_component_empty(ecs_entity_t a, ecs_entity_t component);
@@ -66,7 +69,9 @@ void flower_entity_clone_new(ecs_entity_t source);
 
 void flower_entity_remove(ecs_entity_t entity);
 
-ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid, bool name_real);
+ecs_entity_t flower_entity_new_custom(const char *name, ecs_entity_t parent, bool uid, bool name_real);
+
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent);
 
 // ------------------
 //
@@ -88,6 +93,6 @@ void flower_internal_system_run(const char *system_str);
 
 EAPI JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *value_o);
 
-EAPI void flower_internal_deserialize(const char *filename);
+EAPI void flower_internal_deserialize(JSON_Value *value);
 
 #endif // EFLECS_H

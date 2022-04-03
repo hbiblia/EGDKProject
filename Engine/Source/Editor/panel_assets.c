@@ -8,6 +8,8 @@
 #include "ermine-scene.h"
 #include "parson/parson.h"
 
+#include "editor-internal.h"
+
 
 // ---------------------------
 // FILE o FOLDER SELECTED
@@ -355,7 +357,7 @@ void assets_ui_list_folder_column1(void)
                 {
                     if (strcmp(type, "scene") == 0)
                     {
-                        ermine_scene_open(name);
+                        editor_internal_open_scene(name);
                     }
                 }
                 igTextWrapped("%s", name);

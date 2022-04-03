@@ -139,4 +139,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-resource.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h \
+ D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h

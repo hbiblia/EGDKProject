@@ -69,6 +69,9 @@
         "animatespritecomponent.h": "c",
         "transformcomponent.h": "c",
         "spriterenderercomponent.h": "c",
-        "ermine-flower.h": "c"
+        "ermine-flower.h": "c",
+        "ermine-scene.h": "c",
+        "ermine-assets-manager.h": "c",
+        "editor-internal.h": "c"
     }
 }

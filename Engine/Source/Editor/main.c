@@ -3,11 +3,10 @@
 #define CIMGUI_IMPL
 #include <ermine.h>
 #include <ermine-flower.h>
+#include "ermine-scene.h"
+#include "ermine-string.h"
 
-#include "editor.h"
-
-// #include "component.transform.h"
-// #include "component.sprites.h"
+#include "editor-internal.h"
 
 void editor_main_render();
 
@@ -22,6 +21,7 @@ void init()
     io->ConfigDockingWithShift = true;
 
     editor_internal_resource_default();
+    ermine_scene_init();
 
     // PANELS INIT
     // -------------
@@ -140,6 +140,7 @@ void editor_main_render()
                 igEndMenu();
             }
             igEndMenuBar();
+
         }
     }
     igPopStyleVar(1);

@@ -136,4 +136,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-resource.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h \
- D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-assets-manager.h
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-assets-manager.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-string.h

@@ -133,4 +133,8 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h \
- D:/Github/EGDKProyect/Engine/Source/Components/component.base.h
+ D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-resource.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h

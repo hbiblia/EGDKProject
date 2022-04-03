@@ -996,6 +996,10 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
  /d/Github/EGDKProyect/build/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Components/component.base.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-resource.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/imgui.c
@@ -1281,7 +1285,10 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/main.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
  /d/Github/EGDKProyect/build/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Components/component.base.h
- /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-string.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/panel_assets.c
@@ -1429,6 +1436,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_assets.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/panel_hierarchy.c
@@ -1571,6 +1579,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
  /d/Github/EGDKProyect/build/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Components/component.base.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Components/InfoComponent.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
@@ -1714,7 +1725,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h
  /d/Github/EGDKProyect/build/C:/msys64/mingw64/include/assert.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Components/component.base.h
- /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
  /d/Github/EGDKProyect/Engine/Source/Editor/panel_viewport.c
@@ -2845,6 +2856,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-resource.c.obj
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h
  /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-assets-manager.h
+ /d/Github/EGDKProyect/build/D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-string.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-scene.c.obj
  /d/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.c

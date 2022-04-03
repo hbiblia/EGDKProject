@@ -2,25 +2,19 @@
 #include "ermine.h"
 #include "ermine-flower.h"
 #include "ermine-assets-manager.h"
+#include "ermine-string.h"
 
 #define MAX_RESOURCE_FILE 1000
 
-/*
- * Resource: Guardamos el path del
- * resource del proyecto.
- */
-
 static char *path_resource[RESOURCE_LAST];
-
-/*
- * Resource: Administra los archivos
- * que se utilizan en el motor.
- */
 
 static GHashTable *hash_table;
 
 static int texture_id_resource = 0;
+
 static etexture texture_resource_data[MAX_RESOURCE_FILE];
+
+// funcs
 
 void ermine_resource_init(const char *path_project)
 {
@@ -30,6 +24,8 @@ void ermine_resource_init(const char *path_project)
     path_resource[RESOURCE_PATH_PROJECT] = PATH_BUILD(path_project);
     path_resource[RESOURCE_PATH] = PATH_BUILD(path_project, "resource");
     path_resource[RESOURCE_PATH_ENGINE] = PATH_BUILD(g_get_current_dir(), "resource");
+
+    path_resource[RESOURCE_NAME_PROJECT] = STRDUP(BASENAME(path_project));
 
     // assets.json
     ermine_assets_manager_init(PATH_BUILD(path_resource[RESOURCE_PATH], "assets.json"));

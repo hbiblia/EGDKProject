@@ -2,6 +2,12 @@
 #define ERMINE_SCENE_H
 #include "ermine-flower.h"
 
+#define ROOT_SCENE_NAME "Root"
+
+void ermine_scene_init(void);
+
+ecs_entity_t ermine_scene_get(void);
+
 ermine_public void ermine_scene_save(void);
 
 ermine_public void ermine_scene_new(const char *name);

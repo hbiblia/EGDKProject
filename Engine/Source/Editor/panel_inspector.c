@@ -4,7 +4,7 @@
 #include <ermine.h>
 #include <ermine-flower.h>
 
-#include "editor.h"
+#include "editor-internal.h"
 
 static bool first_selected = false;
 static ecs_entity_t entiti_seleted = -1;

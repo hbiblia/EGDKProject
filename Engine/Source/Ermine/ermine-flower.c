@@ -19,6 +19,11 @@ void ecs_flecs_init(void)
     components_init();
 }
 
+void flower_reset_entity_world_len(void)
+{
+    entity_len_world = 0;
+}
+
 void ecs_flecs_progress(void)
 {
     ecs_progress(world, 0);
@@ -36,8 +41,11 @@ ecs_world_t *flower_get_world(void)
 
 void flower_component_append_list(const char *name)
 {
-    if(strcmp(name,"InfoComponent")==0){return;}
-    list_components = g_slist_append (list_components, name);
+    if (strcmp(name, "InfoComponent") == 0)
+    {
+        return;
+    }
+    list_components = g_slist_append(list_components, name);
 }
 
 GSList *flower_component_get_list(void)
@@ -127,10 +135,10 @@ void flower_entity_remove(ecs_entity_t entity)
  *
  */
 
-ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid, bool name_real)
+ecs_entity_t flower_entity_new_custom(const char *name, ecs_entity_t parent, bool uid, bool name_real)
 {
     char *new_name = uid ? STRDUPPF("%s%d", name, entity_len_world) : name;
-    
+
     ecs_entity_t entity = name_real ? ecs_set_name(world, 0, name) : ecs_new_id(world);
     if (parent > 0)
     {
@@ -143,6 +151,11 @@ ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent, bool uid, 
     entity_len_world++;
 
     return entity;
+}
+
+ecs_entity_t flower_entity_new(const char *name, ecs_entity_t parent)
+{
+    return flower_entity_new_custom(name, parent, true, false);
 }
 
 // ------------------
@@ -223,13 +236,14 @@ JSON_Value *flower_internal_process_data(JSON_Value *value)
     JSON_Value *new_value = json_parse_string("{\"components\":[], \"children\":[]}");
     JSON_Array *components = json_object_get_array(json_object(new_value), "components");
 
-    for(int i = 0; i<json_array_get_count(components_name); i++){
+    for (int i = 0; i < json_array_get_count(components_name); i++)
+    {
         JSON_Array *name = json_array_get_array(components_name, i);
         JSON_Value *value = json_array_get_value(components_value, i);
 
         // data human
         char *name_cmp = json_array_get_string(name, 0);
-        
+
         // new object
         JSON_Value *vcomponent = json_value_init_object();
         JSON_Object *bcomponent = json_value_get_object(vcomponent);
@@ -258,12 +272,12 @@ JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *parent)
     value_data = flower_internal_process_data(value_data);
 
     // QUERY_ENTITY_CHILDREN
-    ecs_query_t *querys = ecs_query_init(world, &(ecs_query_desc_t) {
-            .filter.terms = {
-                { .id = ecs_childof(entity), .inout = EcsIn },
-                { .id = EcsDisabled, .oper = EcsOptional },
-            },
-    });
+    ecs_query_t *querys = ecs_query_init(world, &(ecs_query_desc_t){
+                                                    .filter.terms = {
+                                                        {.id = ecs_childof(entity), .inout = EcsIn},
+                                                        {.id = EcsDisabled, .oper = EcsOptional},
+                                                    },
+                                                });
 
     ecs_iter_t it = ecs_query_iter(world, querys);
     while (ecs_query_next(&it))
@@ -271,7 +285,8 @@ JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *parent)
         for (int i = 0; i < it.count; i++)
         {
             ecs_entity_t e = it.entities[i];
-            if(json_object_has_value(json_object(value_data),"children")){
+            if (json_object_has_value(json_object(value_data), "children"))
+            {
                 JSON_Object *children = json_object_get_array(json_object(value_data), "children");
                 flower_internal_serialize(e, children);
             }
@@ -280,15 +295,25 @@ JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *parent)
     ecs_query_fini(querys);
 
     // PARENT
-    if (parent != NULL){
+    if (parent != NULL)
+    {
         json_array_append_value(parent, value_data);
     }
 
     return value_data;
 }
 
-void flower_internal_deserialize(const char *filename)
+void flower_internal_deserialize(JSON_Value *value)
 {
+    JSON_Object *json_data = json_value_get_object(value);
+
+    JSON_Array *components = json_object_get_array(json_data, "components");
+    JSON_Array *children = json_object_get_array(json_data, "children");
+
+    ermine_scene_init();
+
+    // flower_entity_new()
+
     // {"path":"Entity11", "ids":[["Position"], ["Scale"]], "values":[{"x":10, "y":0, "z":10}, {"x":1, "y":1, "z":1}]}
     // const char *buffer = ecs_parse_json(world, data, )
 
