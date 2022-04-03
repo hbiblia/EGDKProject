@@ -2,25 +2,27 @@ cmake_minimum_required(VERSION 3.22)
 
 project(EGDKProject)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD 11)
 
 # ERMINE LIBS
 set(SOUCE_ERMINE
-Engine/Source/Ermine/ewindow.c
-Engine/Source/Ermine/eresource.c
-Engine/Source/Ermine/etexture.c
-Engine/Source/Ermine/esprite.c
-Engine/Source/Ermine/escripts.c
-Engine/Source/Ermine/ecolor.c
-Engine/Source/Ermine/eutil.c
-Engine/Source/Ermine/erender.c
-Engine/Source/Ermine/eshape.c
-Engine/Source/Ermine/einput.c
-Engine/Source/Ermine/eanimate.c
-Engine/Source/Ermine/emath.c
-Engine/Source/Ermine/flower.c
+Engine/Source/Ermine/ermine-util.c
+Engine/Source/Ermine/ermine-assets-manager.c
+Engine/Source/Ermine/ermine-resource.c
+Engine/Source/Ermine/ermine-window.c
+Engine/Source/Ermine/ermine-shape.c
+Engine/Source/Ermine/ermine-texture.c
+Engine/Source/Ermine/ermine-color.c
+Engine/Source/Ermine/ermine-render.c
+Engine/Source/Ermine/ermine-input.c
+Engine/Source/Ermine/ermine-scene.c
+Engine/Source/Ermine/ermine-camera.c
+Engine/Source/Ermine/ermine-math.c
+Engine/Source/Ermine/ermine-flower.c
+
 Engine/Source/ThirdParty/flecs/flecs.c
 Engine/Source/ThirdParty/parson/parson.c
+
 Engine/Source/Components/component.base.c
 Engine/Source/Components/TransformComponent.c
 Engine/Source/Components/SpriteRendererComponent.c
@@ -48,6 +50,8 @@ Engine/Source/Game/main.c
 if(${CMAKE_SYSTEM_NAME} MATCHES "MINGW64_NT")
     add_definitions(-DSOKOL_D3D11)
     set(LINK_RENDER -lkernel32 -luser32 -lshell32 -ldxgi -ld3d11 -lole32 -lgdi32 -lcimgui -lWs2_32)
+    # En windows con Msys2 estaba dando problema
+    add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include )
     message("Windows Build")
 endif()
     
@@ -60,9 +64,6 @@ endif()
 # PKG_CONFIG
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
-
-# En windows con Msys2 estaba dando problema
-add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include )
 
 include_directories(${GLIB_INCLUDE_DIRS} Engine/Source/Ermine/ Engine/Source/ThirdParty/ Engine/Source/Components/)
 link_directories(${GLIB_LIBRARY_DIRS} Engine/Source/ThirdParty/cimgui)

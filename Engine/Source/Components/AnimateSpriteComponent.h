@@ -3,21 +3,12 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "flower.h"
+#include "ermine-flower.h"
 
-typedef struct
-{
-    char *name;
-    bool loop;
-    int frames;
-} AnimateAnimationDataComponent;
+ECS_STRUCT(AnimateSpriteComponent,{
+    int8_t count;
+});
 
-typedef struct
-{
-    int count;
-    AnimateAnimationDataComponent animations;
-} AnimateSpriteComponent;
-
-EAPI void ComponentAnimateSpriteImport(ecs_world_t *world);
+EAPI void AnimateSpriteComponentImport(ecs_world_t *world);
 
 #endif // COMPONENT_ANIMATESPRITES_H_

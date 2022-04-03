@@ -2,7 +2,9 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <flower.h>
+#include <ermine-flower.h>
+
+#include "ermine-scene.h"
 
 static ecamera default_cam;
 
@@ -28,7 +30,9 @@ void panel_viewport_init(void)
 
 void panel_viewport_main(void)
 {
+    const char *title = STRDUPPF("Viewport - %s", ermine_scene_active_get_name());
     igPushStyleVar_Vec2(ImGuiStyleVar_WindowPadding, (ImVec2){0.0f, 0.0f});
+    // igPushID_Str("Viewport");
     if (igBegin("Viewport", false, ImGuiWindowFlags_NoMove))
     {
         viewport_ui_toolbar();
@@ -41,6 +45,7 @@ void panel_viewport_main(void)
         igEndChild();
     }
     igEnd();
+    // igPopID();
     igPopStyleVar(1);
 }
 
@@ -73,7 +78,7 @@ void viewport_ui_toolbar(void)
 {
     if (igButton("Save", (ImVec2){0, 0}))
     {
-        eresource_scene_save();
+        ermine_scene_save();
     }
     igSameLine(0.0f, 5.0f);
     if (igButton("Play", (ImVec2){0, 0}))

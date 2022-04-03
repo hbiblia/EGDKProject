@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <flower.h>
+#include <ermine-flower.h>
 
 #include "editor.h"
 
@@ -59,8 +59,6 @@ void panel_inspector_main(void)
                 if (!component_ptr)
                     continue;
 
-                // name_component = g_strdup(&name_component[1]);
-
                 // Component data
                 // ---------------------
                 inspector_draw_component(name_component, component_ptr, component, id);
@@ -75,37 +73,29 @@ void panel_inspector_main(void)
             {
                 // Add components buttons
                 // ---------------------
-                if (igButton("Add Component", (ImVec2){0, 0}))
+                float width = igGetWindowWidth();
+                if (igButton("Add Component", (ImVec2){width, 0}))
                 {
                     igOpenPopup_Str("AddComponent", 0);
                 }
 
                 // Add components menu-popups
                 // ---------------------
-                if (igBeginPopup("AddComponent", 0))
+                // igSetNextWindowSize((ImVec2){0, 300}, 0);
+                if (igBeginPopup("AddComponent", ImGuiWindowFlags_AlwaysAutoResize))
                 {
                     ecs_entity_t seleted = hierarchy_get_selected();
 
-                    // EcsComponent
-
-                    ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
-                        .filter.terms = {
-                            {.id = ecs_id(EcsComponent)},
-                        },
-                    });
-                    ecs_iter_t it = ecs_query_iter(world, q);
-                    while (ecs_query_next(&it))
+                    GSList *components = flower_component_get_list();
+                    while((char *)g_slist_nth_data(components, 0) != NULL)
                     {
-                        for (int i = 0; i < it.count; i++)
+                        char *name = g_strdup((char *)g_slist_nth_data(components, 0));
+                        if (igMenuItem_Bool(name, "", false, true))
                         {
-                            char *name = ecs_get_name(world, it.entities[i]);
-                            if (igMenuItem_Bool(name, "", false, true))
-                            {
-                                flower_set_component_empty(seleted, actor_get_lookup(name));
-                            }
+                            flower_set_component_empty(seleted, actor_get_lookup(name));
                         }
+                        components = components->next;
                     }
-                    ecs_query_fini(q);
                     igEndPopup();
                 }
             }
@@ -192,8 +182,8 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                 }
                 else if (strcmp(field_type_name, "i8") == 0)
                 {
-                    uint8_t *value_f = (uint8_t *)ECS_OFFSET(ptr, op->offset);
-                    igDragInt(field_label, value_f, 0.5f, 0, 0, "%d", 0);
+                    int *value = (int *)ECS_OFFSET(ptr, op->offset);
+                    igDragInt(field_label, value, 0.5f, 0, 0, "%i", 0);
                 }
                 else if (strcmp(field_type_name, "bool") == 0)
                 {
@@ -218,7 +208,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
                         ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_RESOURCE_ITEM", 0);
                         if (drop)
                         {
-                            *nbuffer = g_strdup(drop->Data);
+                            *nbuffer = g_strdup(eutil_file_get_name(drop->Data));
                         }
                         igEndDragDropTarget();
                     }

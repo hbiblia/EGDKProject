@@ -3,18 +3,12 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "flower.h"
+#include "ermine-flower.h"
 
 typedef struct ecolor CColor;
 typedef struct evect2 CVec2;
 typedef struct evect3 CVec3;
 typedef struct erect CRect;
-
-typedef struct
-{
-    bool fake;
-    efuntion fun;
-}CFuntion;
 
 EAPI void ComponentBaseImport(ecs_world_t *world);
 

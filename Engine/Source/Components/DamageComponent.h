@@ -2,7 +2,7 @@
 #define DAMAGE_COMPONENT_H
 
 #include <ermine.h>
-#include "flower.h"
+#include "ermine-flower.h"
 
 ECS_STRUCT(DamageComponent, {
     int8_t TotalDamage;

@@ -1,3 +1,0 @@
-/d/Github/EGDKProyect/b/CMakeFiles/EGDKEditor.dir
-/d/Github/EGDKProyect/b/CMakeFiles/edit_cache.dir
-/d/Github/EGDKProyect/b/CMakeFiles/rebuild_cache.dir

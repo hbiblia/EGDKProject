@@ -1,5 +1,5 @@
 #include "ermine.h"
-#include "flower.h"
+#include "ermine-flower.h"
 
 /*
  * Cargamos cosas basicas del editor
@@ -9,11 +9,10 @@
 
 void editor_internal_resource_default(void)
 {
-    const char *path_resource = eresource_get_path(RESOURCE_PATH_ENGINE);
     // Cargamos resource del engine
-    eresource_assets_load(PATH_BUILD(path_resource, "texture", "folder.png"), "resource::iconFolder");
-    eresource_assets_load(PATH_BUILD(path_resource, "texture", "scene.png"), "resource::iconScene");
-    eresource_assets_load(PATH_BUILD(path_resource, "texture", "prefab.png"), "resource::iconPrefab");
-    eresource_assets_load(PATH_BUILD(path_resource, "texture", "component.png"), "resource::iconComponent");
-    eresource_assets_load(PATH_BUILD(path_resource, "texture", "system.png"), "resource::iconSystem");
+    ermine_resource_load(PATH_BUILD("texture", "folder.png"), "resource::iconFolder", RESOURCE_PATH_ENGINE);
+    ermine_resource_load(PATH_BUILD("texture", "scene.png"), "resource::iconScene", RESOURCE_PATH_ENGINE);
+    ermine_resource_load(PATH_BUILD("texture", "prefab.png"), "resource::iconPrefab", RESOURCE_PATH_ENGINE);
+    ermine_resource_load(PATH_BUILD("texture", "component.png"), "resource::iconComponent", RESOURCE_PATH_ENGINE);
+    ermine_resource_load(PATH_BUILD("texture", "system.png"), "resource::iconSystem", RESOURCE_PATH_ENGINE);
 }

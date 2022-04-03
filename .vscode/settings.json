@@ -67,6 +67,8 @@
         "components.h": "c",
         "infocomponent.h": "c",
         "animatespritecomponent.h": "c",
-        "transformcomponent.h": "c"
+        "transformcomponent.h": "c",
+        "spriterenderercomponent.h": "c",
+        "ermine-flower.h": "c"
     }
 }

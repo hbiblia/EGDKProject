@@ -1,6 +1,8 @@
+#include "ermine-resource.h"
 
-#include "SpriteRendererComponent.h"
 #include "TransformComponent.h"
+#define ECS_META_IMPLEMENT
+#include "SpriteRendererComponent.h"
 
 static int sprites_sortingOrder(ecs_entity_t e1, const SpriteRendererComponent *s1,
 ecs_entity_t e2, const SpriteRendererComponent *s2){
@@ -33,7 +35,7 @@ static void system__render_fn(ecs_iter_t *it)
             continue;
 
         etexture_draw((etexture_desc){
-            .source = eresource_get_texture(sprite[i].key),
+            .source = ermine_resource_get_texture(sprite[i].key),
             .color = sprite[i].color,
             .flipx = sprite[i].flipX,
             .flipy = sprite[i].flipY,
@@ -42,10 +44,16 @@ static void system__render_fn(ecs_iter_t *it)
     }
 }
 
-void ComponentSpriteRendererImport(ecs_world_t *world)
+void SpriteRendererComponentImport(ecs_world_t *world)
 {
+    ECS_TAG(world, EventSystemOnRender);
+
     // COMPONENTE SPRITES
     // ---------------------
+    // COMPONENT_INIT(SpriteRendererComponent);
+
+    flower_component_append_list("SpriteRendererComponent");
+
     ecs_entity_t IdSpriteRendererComponent = ecs_component_init(world, &(ecs_component_desc_t){
         .entity.name = "SpriteRendererComponent",
         .size = sizeof(SpriteRendererComponent),
@@ -70,8 +78,6 @@ void ComponentSpriteRendererImport(ecs_world_t *world)
         .events = {EcsOnSet, EcsOnAdd},
         .callback = system__init_fn,
     });
-
-    ECS_TAG(world, EventSystemOnRender);
 
     ecs_system_init(world, &(ecs_system_desc_t){
         .entity = {.name = "EventSystemOnRender", .add = {EventSystemOnRender}},

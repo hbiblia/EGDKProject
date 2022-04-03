@@ -1,7 +1,0 @@
-
-#include "ermine.h"
-
-/*
- * Sprites
- *
- */

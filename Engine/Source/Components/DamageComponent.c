@@ -1,7 +1,7 @@
-#define ECS_META_COMPONENT_IMPL
+#define ECS_META_IMPLEMENT
 #include "DamageComponent.h"
 
 void DamageComponentInit(ecs_world_t *world)
 {
-    COMPONENT_INIT(DamageComponent);
+    FLOWER_COMPONENT_INIT(DamageComponent);
 }

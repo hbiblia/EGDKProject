@@ -2,9 +2,12 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <flower.h>
-
+#include <ermine-flower.h>
+#include "ermine-assets-manager.h"
+#include "ermine-resource.h"
+#include "ermine-scene.h"
 #include "parson/parson.h"
+
 
 // ---------------------------
 // FILE o FOLDER SELECTED
@@ -161,7 +164,7 @@ void assets_ui_folder_list_column0()
     if (igBeginChild_Str("assets_folders_content", (ImVec2){0, 0}, 0, ImGuiWindowFlags_HorizontalScrollbar))
     {
         // ImGuiTreeNodeFlags_Leaf : Elimina el arrow
-        assets_ui_folder_list_dir(eresource_assets_get_main());
+        assets_ui_folder_list_dir(ermine_assetsm_get_roots());
     }
     igEndChild();
 }
@@ -264,27 +267,27 @@ void assets_ui_list_folder_column1(void)
                 // ----------------------
                 if (strcmp(type, "scene") == 0)
                 {
-                    icon = eresource_get_texture("resource::iconScene");
+                    icon = ermine_resource_get_texture("resource::iconScene");
                 }
                 else if (strcmp(type, "folder") == 0)
                 {
-                    icon = eresource_get_texture("resource::iconFolder");
+                    icon = ermine_resource_get_texture("resource::iconFolder");
                 }
                 else if (strcmp(type, "prefab") == 0)
                 {
-                    icon = eresource_get_texture("resource::iconPrefab");
+                    icon = ermine_resource_get_texture("resource::iconPrefab");
                 }
                 else if (strcmp(type, "component") == 0)
                 {
-                    icon = eresource_get_texture("resource::iconComponent");
+                    icon = ermine_resource_get_texture("resource::iconComponent");
                 }
                 else if (strcmp(type, "system") == 0)
                 {
-                    icon = eresource_get_texture("resource::iconSystem");
+                    icon = ermine_resource_get_texture("resource::iconSystem");
                 }
                 else
                 {
-                    icon = eresource_get_texture(name);
+                    icon = ermine_resource_get_texture(name);
                 }
 
                 igPushStyleColor_Vec4(ImGuiCol_Button, (ImVec4){0, 0, 0, 0});
@@ -352,7 +355,7 @@ void assets_ui_list_folder_column1(void)
                 {
                     if (strcmp(type, "scene") == 0)
                     {
-                        eresource_scene_open(name);
+                        ermine_scene_open(name);
                     }
                 }
                 igTextWrapped("%s", name);
@@ -435,11 +438,11 @@ bool assets_create_folder(const char *name)
         goto error;
     }
 
-    JSON_Value *data = eresource_assets_create_new_item(name, "folder", "");
+    JSON_Value *data = ermine_assetsm_new_object(name, "folder", "");
     json_array_append_value(folder_data_selected, data);
 
     // Actualizamos el assets.json
-    JSON_Status status = eresource_assets_save();
+    JSON_Status status = ermine_assetsm_save_file();
     if (!status)
     {
         printf("[OK]\n");
@@ -496,7 +499,7 @@ void assets_delete_selected_item(void)
         printf("INFO: Delete item [%s]\n", name);
 
         // Actualizamos el assets.json
-        JSON_Status status = eresource_assets_save();
+        JSON_Status status = ermine_assetsm_save_file();
     }
 }
 
@@ -508,7 +511,7 @@ bool assets_create_component(const char *name)
 {
     printf("INFO: Create component [%s]", name);
 
-    JSON_Object *folder = eresource_assets_find_object("id", "1");
+    JSON_Object *folder = ermine_assetsm_find_by("id", "1");
     if (!json_object_has_value(folder, "children"))
         goto error;
     JSON_Array *children = json_object_get_array(folder, "children");
@@ -519,7 +522,7 @@ bool assets_create_component(const char *name)
     int count_old = json_array_get_count(children);
 
     // Creamos el item para assets.json
-    JSON_Value *new_item = eresource_assets_create_new_item(name, "component", "json");
+    JSON_Value *new_item = ermine_assetsm_new_object(name, "component", "json");
     JSON_Status status = json_array_append_value(children, new_item);
     int uid = (int)json_object_get_number(json_object(new_item), "id");
 
@@ -527,14 +530,14 @@ bool assets_create_component(const char *name)
         goto error;
 
     // Creamos el objecto para el json-file
-    const char *resource_path = eresource_get_path(RESOURCE_PATH);
+    const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
     JSON_Value *data = json_value_init_object();
     json_object_set_string(json_object(data), "name", name);
     json_object_set_value(json_object(data), "property", json_parse_string("[]"));
     json_serialize_to_file(data, PATH_BUILD(resource_path, STRDUPPF("c%d.json", uid)));
 
     // Actualizamos el assets.json
-    status = eresource_assets_save();
+    status = ermine_assetsm_save_file();
     if (status == JSONSuccess)
     {
         printf("[OK]\n");

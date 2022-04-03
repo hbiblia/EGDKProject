@@ -1,5 +1,5 @@
 
-#define ECS_META_COMPONENT_IMPL
+#define ECS_META_IMPLEMENT
 #include "InfoComponent.h"
 
 static void system__update_fn(ecs_iter_t *it)
@@ -30,7 +30,7 @@ void ComponentInfoImport(ecs_world_t *world)
     //     },
     // });
 
-    COMPONENT_INIT(InfoComponent);
+    FLOWER_COMPONENT_INIT(InfoComponent);
 
 
     // ---------------------

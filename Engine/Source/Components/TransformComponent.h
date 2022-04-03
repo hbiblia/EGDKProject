@@ -3,7 +3,7 @@
 
 #include <flecs/flecs.h>
 #include <ermine.h>
-#include "flower.h"
+#include "ermine-flower.h"
 
 typedef struct evect3 CPosition;
 typedef struct evect3 CScale;

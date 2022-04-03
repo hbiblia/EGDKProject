@@ -2,7 +2,7 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <flower.h>
+#include <ermine-flower.h>
 
 #include "editor.h"
 
@@ -131,7 +131,7 @@ void editor_main_render()
                 }
                 if (igMenuItem_Bool("Save As...", "Ctrl+S", false, true))
                 {
-                    eresource_scene_save();
+                    ermine_scene_save();
                 }
                 if (igMenuItem_Bool("Exit", "", false, true))
                 {
