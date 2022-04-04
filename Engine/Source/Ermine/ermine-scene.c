@@ -76,6 +76,8 @@ void ermine_scene_open(const char *name)
     ermine_scene_set_open(true);
     JSON_Value *value = json_parse_file(scenem_open_filename);
 
+    // ermine_scene_init();
+
     flower_internal_deserialize(value);
 
     printf("INFO: Open scene [%s]\n", name);

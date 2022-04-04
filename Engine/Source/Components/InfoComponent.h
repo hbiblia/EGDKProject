@@ -5,13 +5,6 @@
 #include <ermine.h>
 #include "ermine-flower.h"
 
-// typedef struct
-// {
-//     char *name;
-//     ECS_PRIVATE
-//     int8_t id;
-// } InfoComponent;
-
 ECS_STRUCT(InfoComponent, {
     char *name;
     ECS_PRIVATE

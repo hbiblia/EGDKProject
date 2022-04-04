@@ -36,13 +36,23 @@ static int column0_default_size_width = 150;
 // ---------------------------
 
 static void assets_ui_toolbar(void);
+
 static void assets_ui_folder_list_column0();
+
 static void assets_ui_list_folder_column1(void);
+
 static void assets_ui_modal_create(const char *name, const char *title, const char *text_error, bool (*callback_fn)(const char *name));
+
 static void assets_ui_folder_list_dir(JSON_Array *folders);
+
 static bool assets_create_folder(const char *name);
+
 static bool assets_create_component(const char *name);
+
+bool assets_create_scene(const char *name);
+
 static bool assets_is_virtual_item(JSON_Array *folder, const char *new_name, const char *type);
+
 static void assets_delete_selected_item(void);
 
 // ------------------------
@@ -103,6 +113,7 @@ void panel_assets_main(void)
         assets_ui_modal_create("Folder", "Create new folder", "Error occurred while creating a folder", assets_create_folder);
         assets_ui_modal_create("Rename", "Rename file", "Error occurred while creating a folder", assets_create_folder);
         assets_ui_modal_create("Component", "Create new component", "Error occurred while creating a component", assets_create_component);
+        assets_ui_modal_create("Scene", "Create new scene", "Error occurred while creating a scene", assets_create_scene);
     }
     igEnd();
 }
@@ -149,6 +160,7 @@ void assets_ui_toolbar(void)
 
         if (igSelectable_Bool("Scene", false, 0, (ImVec2){0, 0}))
         {
+            imgui_OpenPopup("Scene");
         }
 
         imgui_EndPopup();
@@ -428,38 +440,6 @@ void assets_ui_modal_create(const char *name, const char *title, const char *tex
 }
 
 // ------------------------
-// Creamos un folder virtual
-// ------------------------
-
-bool assets_create_folder(const char *name)
-{
-    printf("INFO: Create folder [%s]", name);
-
-    if (assets_is_virtual_item(folder_data_selected, name, "folder"))
-    {
-        goto error;
-    }
-
-    JSON_Value *data = ermine_assetsm_new_object(name, "folder", "");
-    json_array_append_value(folder_data_selected, data);
-
-    // Actualizamos el assets.json
-    JSON_Status status = ermine_assetsm_save_file();
-    if (!status)
-    {
-        printf("[OK]\n");
-        return true;
-    }
-    else
-    {
-    error:
-
-        printf("[No]\n");
-        return false;
-    }
-}
-
-// ------------------------
 // Comprobamos si existe otro
 // item con el mismo nombre
 // ------------------------
@@ -505,9 +485,33 @@ void assets_delete_selected_item(void)
     }
 }
 
-// ------------------------
-// Creamos un componente
-// ------------------------
+bool assets_create_folder(const char *name)
+{
+    printf("INFO: Create folder [%s]", name);
+
+    if (assets_is_virtual_item(folder_data_selected, name, "folder"))
+    {
+        goto error;
+    }
+
+    JSON_Value *data = ermine_assetsm_new_object(name, "folder", "");
+    json_array_append_value(folder_data_selected, data);
+
+    // Actualizamos el assets.json
+    JSON_Status status = ermine_assetsm_save_file();
+    if (!status)
+    {
+        printf("[OK]\n");
+        return true;
+    }
+    else
+    {
+    error:
+
+        printf("[No]\n");
+        return false;
+    }
+}
 
 bool assets_create_component(const char *name)
 {
@@ -551,3 +555,40 @@ error:
     return false;
 }
 
+bool assets_create_scene(const char *name)
+{
+    printf("INFO: Create scene [%s]", name);
+
+    JSON_Object *folder = ermine_assetsm_find_by("id", "3");
+    if (!json_object_has_value(folder, "children"))
+        goto error;
+    JSON_Array *children = json_object_get_array(folder, "children");
+
+    if (assets_is_virtual_item(children, name, "scene"))
+        goto error;
+
+    int count_old = json_array_get_count(children);
+
+    // Creamos el item para assets.json
+    JSON_Value *new_item = ermine_assetsm_new_object(name, "scene", "scene");
+    JSON_Status status = json_array_append_value(children, new_item);
+    int uid = (int)json_object_get_number(json_object(new_item), "id");
+
+    if (status == JSONFailure)
+        goto error;
+    
+    const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
+    json_serialize_to_file(json_parse_string("{}"), PATH_BUILD(resource_path, STRDUPPF("r%d.scene", uid)));
+
+    // Actualizamos el assets.json
+    status = ermine_assetsm_save_file();
+    if (status == JSONSuccess)
+    {
+        printf("[OK]\n");
+        return true;
+    }
+
+error:
+    printf("[No]\n");
+    return false;
+}

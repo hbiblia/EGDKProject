@@ -273,11 +273,11 @@ JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *parent)
 
     // QUERY_ENTITY_CHILDREN
     ecs_query_t *querys = ecs_query_init(world, &(ecs_query_desc_t){
-                                                    .filter.terms = {
-                                                        {.id = ecs_childof(entity), .inout = EcsIn},
-                                                        {.id = EcsDisabled, .oper = EcsOptional},
-                                                    },
-                                                });
+        .filter.terms = {
+            {.id = ecs_childof(entity), .inout = EcsIn},
+            {.id = EcsDisabled, .oper = EcsOptional},
+        },
+    });
 
     ecs_iter_t it = ecs_query_iter(world, querys);
     while (ecs_query_next(&it))
@@ -310,7 +310,9 @@ void flower_internal_deserialize(JSON_Value *value)
     JSON_Array *components = json_object_get_array(json_data, "components");
     JSON_Array *children = json_object_get_array(json_data, "children");
 
-    ermine_scene_init();
+    // ermine_scene_init();
+
+    // flower_internal_json_parse_component(ermine_scene_get(), components);
 
     // flower_entity_new()
 

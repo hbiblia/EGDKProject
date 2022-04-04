@@ -26,36 +26,8 @@ void AnimateSpriteComponentImport(ecs_world_t *world)
 {
     // COMPONENTE INIT
     // ---------------------
+    ECS_META_COMPONENT(world, CAnimation);
     FLOWER_COMPONENT_INIT(AnimateSpriteComponent);
-
-    // ecs_entity_t IdAnimateAnimationDataComponent = ecs_component_init(world, &(ecs_component_desc_t){
-    //     .entity.name = "AnimateAnimationDataComponent",
-    //     .size = sizeof(AnimateAnimationDataComponent),
-    //     .alignment = ECS_ALIGNOF(AnimateAnimationDataComponent),
-    // });
-
-    // ecs_struct_init(world, &(ecs_struct_desc_t){
-    //     .entity.entity = IdAnimateAnimationDataComponent,
-    //        .members = {
-    //             { .name = "name", .type = ecs_id(ecs_string_t) },
-    //             { .name = "loop", .type = ecs_id(ecs_bool_t) },
-    //             { .name = "frames", .type = ecs_id(ecs_i8_t) },
-    //         },
-    // });
-
-    // ecs_entity_t IdAnimateSpriteComponent = ecs_component_init(world, &(ecs_component_desc_t){
-    //     .entity.name = "AnimateSpriteComponent",
-    //     .size = sizeof(AnimateSpriteComponent),
-    //     .alignment = ECS_ALIGNOF(AnimateSpriteComponent),
-    // });
-
-    // ecs_struct_init(world, &(ecs_struct_desc_t){
-    //     .entity.entity = IdAnimateSpriteComponent,
-    //        .members = {
-    //             { .name = "count", .type = ecs_id(ecs_i8_t) },
-    //             { .name = "animations", .type = IdAnimateAnimationDataComponent },
-    //         },
-    // });
 
     // SYSTEM & OBSERVER
     // ---------------------

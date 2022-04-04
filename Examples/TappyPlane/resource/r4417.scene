@@ -1,0 +1,1 @@
+{"components":[{"name":"InfoComponent","value":{"name":"Root"}},{"name":"TransformComponent","value":{"position":{"x":0,"y":0,"z":0},"scale":{"x":1,"y":1,"z":1},"rotation":{"x":0,"y":0,"z":0}}},{"name":"AnimateSpriteComponent","value":{"count":0,"animation":{"name":null,"startFrame":0,"endFrame":0,"speed":0,"loop":false}}}],"children":[]}

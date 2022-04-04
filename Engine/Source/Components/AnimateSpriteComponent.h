@@ -5,8 +5,16 @@
 #include <ermine.h>
 #include "ermine-flower.h"
 
+ECS_STRUCT(CAnimation, {
+    char *slot;
+    int8_t startFrame;
+    int8_t endFrame;
+    float speed;
+    bool loop;
+});
+
 ECS_STRUCT(AnimateSpriteComponent,{
-    int8_t count;
+    CAnimation animation[5];
 });
 
 EAPI void AnimateSpriteComponentImport(ecs_world_t *world);
