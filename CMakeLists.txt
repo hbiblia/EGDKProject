@@ -39,7 +39,7 @@ Engine/Source/Editor/panel_hierarchy.c
 Engine/Source/Editor/panel_inspector.c
 Engine/Source/Editor/panel_viewport.c
 Engine/Source/Editor/editor.c
-Engine/Source/Editor/imgui.c
+Engine/Source/Editor/custom-imgui.c
 )
 
 # GAME

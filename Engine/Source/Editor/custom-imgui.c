@@ -4,7 +4,7 @@
 #include <ermine.h>
 #include <ermine-flower.h>
 
-#include "imgui.h"
+#include "custom-imgui.h"
 
 static int popup_queue = 0;
 
@@ -47,4 +47,25 @@ void imgui_EndPopup(void)
         igEndPopup();
     }
     popup_queue = 0;
+}
+
+// ------------------------
+// Prop label
+// ------------------------ 
+
+void imgui_labelPropBegin(const char *label, int id)
+{
+    igColumns(2, 0, false);
+    igSetColumnWidth(0, 100.0f);
+    // igText(label);
+    igTextWrapped(label);
+    igNextColumn();
+    igPushItemWidth(-1);
+    igPushID_Int(id);
+}
+
+void imgui_labelPropEnd(void)
+{
+    igPopID();
+    igColumns(1, 0, false);
 }

@@ -273,6 +273,30 @@ Engine/Source/Components/component.base.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Components/component.base.c.s
 .PHONY : Engine/Source/Components/component.base.c.s
 
+Engine/Source/Editor/custom-imgui.obj: Engine/Source/Editor/custom-imgui.c.obj
+.PHONY : Engine/Source/Editor/custom-imgui.obj
+
+# target to build an object file
+Engine/Source/Editor/custom-imgui.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj
+.PHONY : Engine/Source/Editor/custom-imgui.c.obj
+
+Engine/Source/Editor/custom-imgui.i: Engine/Source/Editor/custom-imgui.c.i
+.PHONY : Engine/Source/Editor/custom-imgui.i
+
+# target to preprocess a source file
+Engine/Source/Editor/custom-imgui.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.i
+.PHONY : Engine/Source/Editor/custom-imgui.c.i
+
+Engine/Source/Editor/custom-imgui.s: Engine/Source/Editor/custom-imgui.c.s
+.PHONY : Engine/Source/Editor/custom-imgui.s
+
+# target to generate assembly for a file
+Engine/Source/Editor/custom-imgui.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.s
+.PHONY : Engine/Source/Editor/custom-imgui.c.s
+
 Engine/Source/Editor/editor.obj: Engine/Source/Editor/editor.c.obj
 .PHONY : Engine/Source/Editor/editor.obj
 
@@ -296,30 +320,6 @@ Engine/Source/Editor/editor.s: Engine/Source/Editor/editor.c.s
 Engine/Source/Editor/editor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s
 .PHONY : Engine/Source/Editor/editor.c.s
-
-Engine/Source/Editor/imgui.obj: Engine/Source/Editor/imgui.c.obj
-.PHONY : Engine/Source/Editor/imgui.obj
-
-# target to build an object file
-Engine/Source/Editor/imgui.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj
-.PHONY : Engine/Source/Editor/imgui.c.obj
-
-Engine/Source/Editor/imgui.i: Engine/Source/Editor/imgui.c.i
-.PHONY : Engine/Source/Editor/imgui.i
-
-# target to preprocess a source file
-Engine/Source/Editor/imgui.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.i
-.PHONY : Engine/Source/Editor/imgui.c.i
-
-Engine/Source/Editor/imgui.s: Engine/Source/Editor/imgui.c.s
-.PHONY : Engine/Source/Editor/imgui.s
-
-# target to generate assembly for a file
-Engine/Source/Editor/imgui.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EGDKEditor.dir/build.make CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.s
-.PHONY : Engine/Source/Editor/imgui.c.s
 
 Engine/Source/Editor/main.obj: Engine/Source/Editor/main.c.obj
 .PHONY : Engine/Source/Editor/main.obj
@@ -828,12 +828,12 @@ help:
 	@echo "... Engine/Source/Components/component.base.obj"
 	@echo "... Engine/Source/Components/component.base.i"
 	@echo "... Engine/Source/Components/component.base.s"
+	@echo "... Engine/Source/Editor/custom-imgui.obj"
+	@echo "... Engine/Source/Editor/custom-imgui.i"
+	@echo "... Engine/Source/Editor/custom-imgui.s"
 	@echo "... Engine/Source/Editor/editor.obj"
 	@echo "... Engine/Source/Editor/editor.i"
 	@echo "... Engine/Source/Editor/editor.s"
-	@echo "... Engine/Source/Editor/imgui.obj"
-	@echo "... Engine/Source/Editor/imgui.i"
-	@echo "... Engine/Source/Editor/imgui.s"
 	@echo "... Engine/Source/Editor/main.obj"
 	@echo "... Engine/Source/Editor/main.i"
 	@echo "... Engine/Source/Editor/main.s"

@@ -447,19 +447,19 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s"
 	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/editor.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.s
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj: ../Engine/Source/Editor/imgui.c
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/imgui.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: CMakeFiles/EGDKEditor.dir/flags.make
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: ../Engine/Source/Editor/custom-imgui.c
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: CMakeFiles/EGDKEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/d/Github/EGDKProyect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj -MF CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj.d -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj -c /d/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.c
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.i"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/imgui.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.i
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.i"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /d/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.c > CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.i
 
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.s"
-	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/imgui.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.s
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.s"
+	/mingw64/bin/cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /d/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.c -o CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.s
 
 # Object files for target EGDKEditor
 EGDKEditor_OBJECTS = \
@@ -490,7 +490,7 @@ EGDKEditor_OBJECTS = \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj" \
 "CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj" \
-"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj"
+"CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj"
 
 # External object files for target EGDKEditor
 EGDKEditor_EXTERNAL_OBJECTS =
@@ -522,7 +522,7 @@ EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_viewport.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj
-EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/imgui.c.obj
+EGDKEditor: CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj
 EGDKEditor: CMakeFiles/EGDKEditor.dir/build.make
 EGDKEditor: CMakeFiles/EGDKEditor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/d/Github/EGDKProyect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable EGDKEditor"

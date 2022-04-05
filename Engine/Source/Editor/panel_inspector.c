@@ -3,6 +3,7 @@
 #define CIMGUI_IMPL
 #include <ermine.h>
 #include <ermine-flower.h>
+#include "custom-imgui.h"
 
 #include "editor-internal.h"
 
@@ -118,6 +119,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
     ImVec2 region = {0};
     igGetContentRegionAvail(&region);
 
+    // igTreeNodeEx_Str
     igPushStyleVar_Vec2(ImGuiStyleVar_FramePadding, (ImVec2){4.0f,4.0f});
     float lineHeight = igGetFontSize() + igGetStyle()->FramePadding.y * 2.0f;
     bool open = igTreeNodeEx_Str(name, flags);
@@ -161,8 +163,10 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
             // ---------------------
             if (strcmp(field_type_name, "CFuntion") == 0)
             {
-                if (igButton(field_label, (ImVec2){0.0f, 0.0f}))
-                {
+                imgui_labelPropBegin(field_label, i);
+                bool bopened = igButton("", (ImVec2){0.0f, 0.0f});
+                imgui_labelPropEnd();
+                if (bopened){
                     efuntion callback_fn = (efuntion)ECS_OFFSET(ptr, op->offset);
                     if (callback_fn)
                     {
@@ -176,8 +180,10 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                 CVec2 *value = (CVec2 *)ECS_OFFSET(ptr, op->offset);
                 float value_b[2] = {value->x, value->y};
 
-                if (igDragFloat2(field_label, value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0))
-                {
+                imgui_labelPropBegin(field_label, i);
+                bool bopened = igDragFloat2(field_label, value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0);
+                imgui_labelPropEnd();
+                if (bopened){
                     *value = evect2_new(value_b[0], value_b[1]);
                 }
                 i += (op->op_count - 1);
@@ -187,18 +193,12 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                 CVec3 *value = (CVec3 *)ECS_OFFSET(ptr, op->offset);
                 float value_b[3] = {value->x, value->y, value->z};
 
-                igColumns(2, 0, false);
-                igSetColumnWidth(0, 80.0f);
-                igText(field_label);
-                igNextColumn();
-                igSetColumnWidth(1, inspector_width);
-                igPushID_Int(op->op_count);
-                if (igDragFloat3("", value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0))
-                {
+                imgui_labelPropBegin(field_label, i);
+                bool bopened = igDragFloat3("", value_b, 0.01f, 0.0f, 0.0f, "%.2f", 0);
+                imgui_labelPropEnd();
+                if (bopened){
                     *value = evect3_new(value_b[0], value_b[1], value_b[2]);
                 }
-                igPopID();
-                igColumns(1, 0, false);
                 i += (op->op_count - 1);
             }
             else if (strcmp(field_type_name, "CColor") == 0)
@@ -208,29 +208,48 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                     CColor *value_color = (CColor *)ECS_OFFSET(ptr, op->offset);
                     float color_buffer[4] = {value_color[u].r, value_color[u].g, value_color[u].b, value_color->a};
 
-                    igPushID_Int(i);
-                    if (igColorEdit4(field_label, color_buffer, ImGuiColorEditFlags_Float))
-                    {
+                    imgui_labelPropBegin(field_label, u+i);
+                    bool bopened = igColorEdit4("", color_buffer, ImGuiColorEditFlags_Float);
+                    imgui_labelPropEnd();
+                    if (bopened){
                         value_color[u] = ecolor_new(color_buffer[0], color_buffer[1], color_buffer[2], color_buffer[3]);
                     }
-                    igPopID();
                 }
                 i += (op->op_count - 1);
             }
             else if (strcmp(field_type_name, "f32") == 0)
             {
-                float *value_f = (float *)ECS_OFFSET(ptr, op->offset);
-                igDragFloat(field_label, value_f, 0.01f, 0.0f, 0.0f, "%.2f", 0);
+                for (int u = 0; u < op->count; u++)
+                {
+                    char *name_field = op->count > 1 ? STRDUPPF("%s%d", field_label, u) : field_label;
+                    float *value_f = (float *)ECS_OFFSET(ptr, op->offset);
+                    imgui_labelPropBegin(name_field, u+i);
+                    igDragFloat("", value_f, 0.01f, 0.0f, 0.0f, "%.2f", 0);
+                    imgui_labelPropEnd();
+                }
             }
             else if (strcmp(field_type_name, "i8") == 0)
             {
-                int *value = (int *)ECS_OFFSET(ptr, op->offset);
-                igDragInt(field_label, value, 0.5f, 0, 0, "%i", 0);
+                for (int u = 0; u < op->count; u++)
+                {
+                    char *name_field = op->count > 1 ? STRDUPPF("%s%d", field_label, u) : field_label;
+                    int *fieldv = (int *)ECS_OFFSET(ptr, op->offset);
+                    imgui_labelPropBegin(name_field, u+i);
+                    // igDragInt("", &fieldv[u], 0.5f, 0, 0, "%i", 0);
+                    if(igInputInt("", &fieldv[u], 1, 2, 0)){}
+                    imgui_labelPropEnd();
+                }
             }
             else if (strcmp(field_type_name, "bool") == 0)
             {
-                bool *value_b = (bool *)ECS_OFFSET(ptr, op->offset);
-                igCheckbox(field_label, value_b);
+                for (int u = 0; u < op->count; u++)
+                {
+                    char *name_field = op->count > 1 ? STRDUPPF("%s%d", field_label, u) : field_label;
+                    bool *value_b = (bool *)ECS_OFFSET(ptr, op->offset);
+                    imgui_labelPropBegin(name_field, u+i);
+                    igCheckbox("", value_b);
+                    imgui_labelPropEnd();
+                }
             }
             else if (strcmp(field_type_name, "string") == 0)
             {
@@ -243,18 +262,12 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                     strncpy(buffer, p, sizeof(buffer));
                 }
 
-                igColumns(2, 0, false);
-                igSetColumnWidth(0, 80.0f);
-                igText(field_label);
-                igNextColumn();
-                igSetColumnWidth(1, inspector_width);
-                igPushID_Int(op->op_count);
+                imgui_labelPropBegin(field_label, i);
                 if (igInputText("", buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
                 {
                     *nbuffer = g_strdup(buffer);
                 }
-                igPopID();
-                igColumns(1, 0, false);
+                imgui_labelPropEnd();
 
                 if (igBeginDragDropTarget())
                 {
@@ -268,6 +281,7 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
             }
             else
             {
+                // recurise inputs
                 for (int u = 0; u < op->count; u++)
                 {
                     char *name_field = op->count > 1 ? STRDUPPF("%s%d", field_label, u) : field_label;

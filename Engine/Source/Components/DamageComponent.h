@@ -5,7 +5,7 @@
 #include "ermine-flower.h"
 
 ECS_STRUCT(DamageComponent, {
-    int8_t TotalDamage;
+    int8_t TotalDamage[2];
     float DamageTimeInSeconds;
     float DamagePerSecond;
 });

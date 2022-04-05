@@ -1,5 +1,5 @@
-CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
- D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c \
+CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: \
+ D:/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.c \
  C:/msys64/mingw64/include/stdio.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
@@ -135,5 +135,4 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h \
  D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
- D:/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.h \
- D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
+ D:/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.h
