@@ -135,4 +135,5 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
  C:/msys64/mingw64/include/assert.h \
  D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
+ D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-string.h \
  D:/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.h

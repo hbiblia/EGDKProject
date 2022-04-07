@@ -5,6 +5,11 @@
 #include <ermine.h>
 #include "ermine-flower.h"
 
+#undef ECS_META_IMPL
+#ifndef AnimateSpriteComponent_EXPORTS
+#define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
+#endif
+
 ECS_STRUCT(CAnimation, {
     char *slot;
     int8_t startFrame;
@@ -14,7 +19,7 @@ ECS_STRUCT(CAnimation, {
 });
 
 ECS_STRUCT(AnimateSpriteComponent,{
-    CAnimation animation[5];
+    CAnimation animation[2];
 });
 
 EAPI void AnimateSpriteComponentImport(ecs_world_t *world);

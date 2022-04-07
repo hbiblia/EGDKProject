@@ -990,6 +990,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/custom-imgui.c.obj: ../Engine/Sou
   D:/Github/EGDKProyect/Engine/Source/ThirdParty/flecs/flecs.h \
   C:/msys64/mingw64/include/assert.h \
   D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
+  D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-string.h \
   D:/Github/EGDKProyect/Engine/Source/Editor/custom-imgui.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/editor.c.obj: ../Engine/Source/Editor/editor.c \
@@ -1570,8 +1571,7 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_hierarchy.c.obj: ../Engine/
   D:/Github/EGDKProyect/Engine/Source/Components/component.base.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-scene.h \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-flower.h \
-  D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h \
-  D:/Github/EGDKProyect/Engine/Source/Components/InfoComponent.h
+  D:/Github/EGDKProyect/Engine/Source/Editor/editor-internal.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Editor/panel_inspector.c.obj: ../Engine/Source/Editor/panel_inspector.c \
   D:/Github/EGDKProyect/Engine/Source/Editor/panel_inspector.c \
@@ -2284,7 +2284,9 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-flower.c.obj: ../Engine/So
   D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h \
   D:/Github/EGDKProyect/Engine/Source/Components/DamageComponent.h \
   D:/Github/EGDKProyect/Engine/Source/Components/SpriteRendererComponent.h \
-  D:/Github/EGDKProyect/Engine/Source/Components/AnimateSpriteComponent.h
+  D:/Github/EGDKProyect/Engine/Source/Components/AnimateSpriteComponent.h \
+  D:/Github/EGDKProyect/Engine/Source/Components/InfoComponent.h \
+  D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h
 
 CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-input.c.obj: ../Engine/Source/Ermine/ermine-input.c \
   D:/Github/EGDKProyect/Engine/Source/Ermine/ermine-input.c \

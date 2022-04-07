@@ -1,6 +1,8 @@
 #include "ermine.h"
 #include "ermine-flower.h"
 #include "components.h"
+#include "InfoComponent.h"
+#include "TransformComponent.h"
 
 static ecs_world_t *world;
 

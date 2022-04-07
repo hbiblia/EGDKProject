@@ -1,12 +1,11 @@
 // #include "SpriteRendererComponent.h"
 
-#define ECS_META_IMPLEMENT
+#define AnimateSpriteComponent_EXPORTS
 #include "AnimateSpriteComponent.h"
 
 static void system__init_fn(ecs_iter_t *it)
 {
     AnimateSpriteComponent *animate = ecs_term_w_size(it, sizeof(AnimateSpriteComponent), 1);
-
     for (int i = 0; i < it->count; i++)
     {
     }
@@ -16,7 +15,6 @@ static void system__update_fn(ecs_iter_t *it)
 {
     // AnimateSpriteComponent *animate = ecs_term_w_size(it, sizeof(AnimateSpriteComponent), 1);
     // SpriteRendererComponent *sprite = ecs_term_w_size(it, sizeof(SpriteRendererComponent), 2);
-
     // for (int i = 0; i < it->count; i++)
     // {
     // }

@@ -21,3 +21,5 @@ void imgui_EndPopup(void);
 void imgui_labelPropBegin(const char *label, int id);
 
 void imgui_labelPropEnd(void);
+
+void imgui_labelPropReset(void);

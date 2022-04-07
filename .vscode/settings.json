@@ -72,6 +72,8 @@
         "ermine-flower.h": "c",
         "ermine-scene.h": "c",
         "ermine-assets-manager.h": "c",
-        "editor-internal.h": "c"
+        "editor-internal.h": "c",
+        "custom-imgui.h": "c",
+        "ermine-string.h": "c"
     }
 }

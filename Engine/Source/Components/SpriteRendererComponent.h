@@ -5,6 +5,11 @@
 #include <flecs/flecs.h>
 #include "ermine-flower.h"
 
+#undef ECS_META_IMPL
+#ifndef SpriteRendererComponent_EXPORTS
+#define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
+#endif
+
 ECS_STRUCT(SpriteRendererComponent, {
     char *key;
     CColor color;

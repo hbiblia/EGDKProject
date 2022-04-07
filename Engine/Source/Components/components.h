@@ -10,7 +10,6 @@
 #include "DamageComponent.h"
 #include "SpriteRendererComponent.h"
 #include "AnimateSpriteComponent.h"
-#include "InfoComponent.h"
 
 void components_init(void)
 {

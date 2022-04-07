@@ -142,4 +142,6 @@ CMakeFiles/EGDKEditor.dir/Engine/Source/Ermine/ermine-flower.c.obj: \
  D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h \
  D:/Github/EGDKProyect/Engine/Source/Components/DamageComponent.h \
  D:/Github/EGDKProyect/Engine/Source/Components/SpriteRendererComponent.h \
- D:/Github/EGDKProyect/Engine/Source/Components/AnimateSpriteComponent.h
+ D:/Github/EGDKProyect/Engine/Source/Components/AnimateSpriteComponent.h \
+ D:/Github/EGDKProyect/Engine/Source/Components/InfoComponent.h \
+ D:/Github/EGDKProyect/Engine/Source/Components/TransformComponent.h

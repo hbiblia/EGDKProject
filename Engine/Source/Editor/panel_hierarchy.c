@@ -1,9 +1,10 @@
+
 #include <stdio.h>
 #include <stdbool.h>
 
 #define CIMGUI_IMPL
-#include <ermine.h>
-#include <ermine-flower.h>
+#include "ermine.h"
+#include "ermine-flower.h"
 #include "ermine-scene.h"
 #include "editor-internal.h"
 
@@ -12,8 +13,9 @@
 // temporal world hierarchy
 static ecs_world_t *world;
 
-// Realizamos la consulta para obtener los hijos de una entidad.
 static ecs_iter_t hierarchy_get_children(ecs_entity_t entity);
+static void hierarchy_draw_children(ecs_entity_t entity);
+static int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2);
 
 // Hierarchy init
 void panel_hierarchy_init(void)
@@ -84,7 +86,7 @@ void hierarchy_set_selected(ecs_entity_t entity)
 }
 
 // mantenemos el orden de las entidades segun su identificacion.
-static int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2)
+int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2)
 {
     (void)e1;
     (void)e2;
@@ -101,8 +103,8 @@ void hierarchy_draw_children(ecs_entity_t entity)
     // Guardamos todas las entidades
     // de los hijos del entity-parent
     // ---------------------------
-    ecs_entity_t *entities[100];
-    int entities_count = 0;
+    ecs_entity_t *entities;
+    int64_t entities_count = 0;
 
     // ---------------------------
     // Una consulta para obtener
@@ -121,11 +123,8 @@ void hierarchy_draw_children(ecs_entity_t entity)
     ecs_iter_t it = ecs_query_iter(world, q);
     while (ecs_query_next(&it))
     {
-        for (int i = 0; i < it.count; i++)
-        {
-            entities[entities_count] = it.entities[i];
-            entities_count++;
-        }
+        entities = it.entities;
+        entities_count = it.count;
     }
     ecs_query_fini(q);
 
@@ -178,7 +177,8 @@ void hierarchy_draw_children(ecs_entity_t entity)
         {
             for (int i = 0; i < entities_count; i++)
             {
-                hierarchy_draw_children(entities[i]);
+                ecs_entity_t list_e = (ecs_entity_t)entities[i];
+                hierarchy_draw_children(list_e);
             }
             igTreePop();
         }

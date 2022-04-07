@@ -5,6 +5,11 @@
 #include <ermine.h>
 #include "ermine-flower.h"
 
+#undef ECS_META_IMPL
+#ifndef InfoComponent_EXPORTS
+#define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
+#endif
+
 ECS_STRUCT(InfoComponent, {
     char *name;
     ECS_PRIVATE

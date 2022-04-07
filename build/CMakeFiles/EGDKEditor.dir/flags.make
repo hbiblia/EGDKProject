@@ -6,5 +6,5 @@ C_DEFINES = -DSOKOL_D3D11
 
 C_INCLUDES = -I/d/Github/EGDKProyect/C:/msys64/mingw64/include/glib-2.0 -I/d/Github/EGDKProyect/C:/msys64/mingw64/lib/glib-2.0/include -I/d/Github/EGDKProyect/C:/msys64/mingw64/include -I/d/Github/EGDKProyect/Engine/Source/Ermine -I/d/Github/EGDKProyect/Engine/Source/ThirdParty -I/d/Github/EGDKProyect/Engine/Source/Components
 
-C_FLAGS =   -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include -std=gnu11
+C_FLAGS =   -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include -std=gnu99
 

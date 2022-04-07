@@ -3,7 +3,7 @@
 #define CIMGUI_IMPL
 #include <ermine.h>
 #include <ermine-flower.h>
-
+#include "ermine-string.h"
 #include "custom-imgui.h"
 
 static int popup_queue = 0;
@@ -57,7 +57,6 @@ void imgui_labelPropBegin(const char *label, int id)
 {
     igColumns(2, 0, false);
     igSetColumnWidth(0, 100.0f);
-    // igText(label);
     igTextWrapped(label);
     igNextColumn();
     igPushItemWidth(-1);
