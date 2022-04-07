@@ -8,6 +8,7 @@
 #include "ermine-scene.h"
 #include "editor-internal.h"
 
+#define InfoComponent_EXPORTS
 #include "InfoComponent.h"
 
 // temporal world hierarchy

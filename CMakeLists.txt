@@ -49,7 +49,8 @@ Engine/Source/Game/main.c
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "MINGW64_NT")
     add_definitions(-DSOKOL_D3D11)
-    set(LINK_RENDER -lkernel32 -luser32 -lshell32 -ldxgi -ld3d11 -lole32 -lgdi32 -lcimgui -lWs2_32)
+    set(LINK_RENDER -lkernel32 -luser32 -lshell32 -ldxgi -ld3d11 -lole32 -lgdi32 -lWs2_32)
+    set(CIMGUI cimgui.dll)
     # En windows con Msys2 estaba dando problema
     add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include )
     message("Windows Build")
@@ -57,7 +58,8 @@ endif()
     
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     add_definitions(-DSOKOL_GLCORE33)
-    set(LINK_RENDER -lGL -ldl -lm -lX11 -lasound -lXi -lXcursor -lcimgui)
+    set(LINK_RENDER -lGL -ldl -lm -lX11 -lasound -lXi -lXcursor -pthread)
+    set(CIMGUI cimgui.so)
     message("Linux Build")
 endif()
 
@@ -65,9 +67,11 @@ endif()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
 
+# make cimgui
+
+
 include_directories(${GLIB_INCLUDE_DIRS} Engine/Source/Ermine/ Engine/Source/ThirdParty/ Engine/Source/Components/)
-link_directories(${GLIB_LIBRARY_DIRS} Engine/Source/ThirdParty/cimgui)
+link_directories(${GLIB_LIBRARY_DIRS} Engine/Source/ThirdParty/cimgui/)
 
 add_executable(EGDKEditor ${SOUCE_ERMINE} ${SOUCE_EDITOR})
-target_link_libraries(EGDKEditor PUBLIC ${LINK_RENDER} -lcimgui -lWs2_32 ${GLIB_LIBRARIES})
-
+target_link_libraries(EGDKEditor PUBLIC ${LINK_RENDER} ${GLIB_LIBRARIES} ${CIMGUI})
