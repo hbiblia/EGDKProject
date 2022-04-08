@@ -74,6 +74,8 @@
         "ermine-assets-manager.h": "c",
         "editor-internal.h": "c",
         "custom-imgui.h": "c",
-        "ermine-string.h": "c"
+        "ermine-string.h": "c",
+        "component.base.h": "c",
+        "ermine-config.h": "c"
     }
 }

@@ -1,0 +1,1 @@
+add_library(sokol STATIC sokol_impl.c)

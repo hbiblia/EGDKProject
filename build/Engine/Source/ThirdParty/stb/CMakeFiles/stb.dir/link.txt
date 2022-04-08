@@ -1,0 +1,2 @@
+/mingw64/bin/ar.exe qc libstb.a CMakeFiles/stb.dir/stb_impl.c.obj
+/mingw64/bin/ranlib.exe libstb.a

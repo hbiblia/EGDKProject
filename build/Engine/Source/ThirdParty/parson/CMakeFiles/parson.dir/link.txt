@@ -1,0 +1,2 @@
+/mingw64/bin/ar.exe qc libparson.a CMakeFiles/parson.dir/parson.c.obj
+/mingw64/bin/ranlib.exe libparson.a
