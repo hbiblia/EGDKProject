@@ -25,31 +25,8 @@ set(SOUCE_ERMINE
     src/Components/InfoComponent.c
 )
 
-set(HEADER_ERMINE
-    "include/ermine.h"
-    "include/ermine-assets-manager.h"
-    "include/ermine-config.h"
-    "include/ermine-flower.h"
-    "include/ermine-hash.h"
-    "include/ermine-input.h"
-    "include/ermine-renderer.h"
-    "include/ermine-resource.h"
-    "include/ermine-scene.h"
-    "include/ermine-util.h"
-)
-
-set(ERMINE_DEPS
-    cimgui
-    flecs
-    parson
-    sokol
-    stb
-    array_dynamic
-)
-
 add_library(Ermine SHARED ${SOUCE_ERMINE})
 target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${EGDK_LIBS})
-target_include_directories(Ermine PRIVATE ${HEADER_ERMINE})
 
 if(EGDK_PLATFORM STREQUAL WINDOWS)
     target_compile_options(Ermine PRIVATE /W3)
