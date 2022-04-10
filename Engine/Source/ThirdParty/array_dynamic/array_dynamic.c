@@ -20,7 +20,7 @@ struct array *array_append(struct array *a, void *data)
 {
     size_t len = a[0].length;
     size_t l = (len == 0 ? 1 : len);
-    a = (struct array*)realloc(a, l + 1);
+    a = (struct array*)realloc(a, sizeof(struct array *) * (l + 1));
     a[len].data = data;
     a[0].length++;
     return a;

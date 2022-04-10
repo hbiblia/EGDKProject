@@ -50,7 +50,7 @@ static void assets_ui_folder_list_dir(JSON_Array *folders);
 
 static bool assets_create_folder(const char *name);
 
-static bool assets_create_component(const char *name);
+static bool assets_create_component_file(const char *name);
 
 bool assets_create_scene(const char *name);
 
@@ -115,7 +115,7 @@ void panel_assets_main(void)
         // ------------------------
         assets_ui_modal_create("Folder", "Create new folder", "Error occurred while creating a folder", assets_create_folder);
         assets_ui_modal_create("Rename", "Rename file", "Error occurred while creating a folder", assets_create_folder);
-        assets_ui_modal_create("Component", "Create new component", "Error occurred while creating a component", assets_create_component);
+        assets_ui_modal_create("Component", "Create new component", "Error occurred while creating a component", assets_create_component_file);
         assets_ui_modal_create("Scene", "Create new scene", "Error occurred while creating a scene", assets_create_scene);
     }
     igEnd();
@@ -516,7 +516,7 @@ bool assets_create_folder(const char *name)
     }
 }
 
-bool assets_create_component(const char *name)
+bool assets_create_component_file(const char *name)
 {
     printf("INFO: Create component [%s]", name);
 

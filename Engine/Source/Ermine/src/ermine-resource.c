@@ -20,13 +20,15 @@ static etexture texture_resource_data[MAX_RESOURCE_FILE];
 
 void ermine_resource_init(const char *path_project)
 {
+    printf("ermine_resource_init\n");
+    
     hash_table = hash_table_new();
 
     // path resource del proyecto.
     path_resource[RESOURCE_PATH_PROJECT] = PATH_BUILD(path_project);
     path_resource[RESOURCE_PATH] = PATH_BUILD(path_project, "resource");
     path_resource[RESOURCE_PATH_ENGINE] = PATH_BUILD(ermine_path_get_current(), "resource");
-
+    
     path_resource[RESOURCE_NAME_PROJECT] = STRDUP(ermine_file_get_name(path_project));
 
     // assets.json
@@ -38,18 +40,21 @@ void ermine_resource_init(const char *path_project)
 
 void ermine_resource_close(void)
 {
+    printf("ermine_resource_close\n");
     hash_table_destroy(hash_table);
 }
 
 const char *ermine_resource_get_path(int path_id)
 {
+    printf("ermine_resource_get_path\n");
     return path_resource[path_id];
 }
 
 void ermine_resource_load(const char *filename, const char *key,  int path_type)
 {
-    int id_temporal = -1;
+    printf("ermine_resource_load\n");
 
+    int id_temporal = -1;
     char *file_name_path = PATH_BUILD(path_resource[path_type], filename);
 
     if (ermine_file_is_extension(filename, ".png") || ermine_file_is_extension(filename, ".jpg"))
@@ -68,6 +73,7 @@ void ermine_resource_load(const char *filename, const char *key,  int path_type)
 
 etexture ermine_resource_get_texture(const char *key)
 {
+    printf("ermine_resource_get_texture\n");
     int id = hash_table_lookup(hash_table, key);
     return texture_resource_data[id];
 }

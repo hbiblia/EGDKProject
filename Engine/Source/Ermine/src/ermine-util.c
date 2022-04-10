@@ -61,12 +61,12 @@ const char *ermine_file_get_name(const char *filepath)
 {
     printf("ermine_file_get_name\n");
 
-    char* path = (filepath == NULL ? "" : filepath);
-    char* base = strrchr(path, SEPARATOR_OS);
+    char *path = (filepath == NULL ? "" : filepath);
+    char *base = strrchr(path, SEPARATOR_OS);
     return base ? base + 1 : path;
 }
 
-char *ermine_strncpy(char* dest, const char* src, size_t n)
+char *ermine_strncpy(char *dest, const char *src, size_t n)
 {
     printf("ermine_strncpy\n");
 
@@ -77,9 +77,9 @@ char *ermine_strncpy(char* dest, const char* src, size_t n)
 #endif
 }
 
-char* ermine_strdup(const char* str)
+char *ermine_strdup(const char *str)
 {
-    printf("ermine_strdup\n");
+    printf("ermine_strdup: %s\n", str);
 
 #if defined(_WIN32)
     return _strdup(str);
@@ -88,10 +88,10 @@ char* ermine_strdup(const char* str)
 #endif
 }
 
-char *ermine_strdup_printf(const char * format, ...)
+char *ermine_strdup_printf(const char *format, ...)
 {
     printf("ermine_strdup_printf\n");
-    char buffer[256] = { 0 };
+    char buffer[256] = {0};
 
     va_list args;
     va_start(args, format);
@@ -142,13 +142,15 @@ char *ermine_str_replace(char *string, const char *substr, const char *replaceme
     }
 
     free(string);
-    return newstr;
+
+    return ermine_strdup(newstr);
 }
 
 char *ermine_path_normalize(const char *path)
 {
     printf("ermine_path_normalize\n");
-    char* new_path = NULL;
+
+    char *new_path = NULL;
 #if defined(_WIN32)
     new_path = ermine_str_replace(path, "/", "\\");
 #else
@@ -160,6 +162,7 @@ char *ermine_path_normalize(const char *path)
 const char *ermine_path_get_current(void)
 {
     printf("ermine_path_get_current\n");
+
     char buffer[FILENAME_MAX];
 
 #if defined(_WIN32)
@@ -171,18 +174,27 @@ const char *ermine_path_get_current(void)
     return ermine_strdup(buffer);
 }
 
-const char *ermine_path_build_filename(const char * format, ...)
+const char *ermine_path_build_filename(const char *format, ...)
 {
     printf("ermine_path_build_filename\n");
-;    char buffer[256] = { 0 };
 
+    char buffer[256] = {0};
     va_list args;
     va_start(args, format);
     {
-        vsprintf(buffer, format, args);
+        strcat(buffer, format);
+
+        while (1)
+        {
+            const char *path = va_arg(args, char *);
+            if (path == NULL)
+                break;
+            strcat(buffer, SEPARATOR_OS == '/' ? "/" : "\\");
+            strcat(buffer, path);
+        }
     }
     va_end(args);
-    return ermine_strdup(buffer);
+    return ermine_path_normalize(ermine_strdup(buffer));
 }
 
 void ermine_tracelog(int t, const char *text, ...)

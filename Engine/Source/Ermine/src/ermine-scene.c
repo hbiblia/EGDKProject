@@ -64,6 +64,8 @@ void ermine_scene_save(void)
 
 void ermine_scene_open(const char *name)
 {
+    printf("ermine_scene_open\n");
+    
     JSON_Object *folder_scenes = ermine_assetsm_find_by("id", "3");
     JSON_Array *folder = json_object_get_array(folder_scenes, "children");
     JSON_Object *scene = ermine_assetsm_find_by_custom("name", name, folder);

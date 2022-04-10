@@ -25,6 +25,16 @@ set(SOUCE_ERMINE
     src/Components/InfoComponent.c
 )
 
+set(ERMINE_DEPS
+    cimgui
+    flecs
+    parson
+    sokol
+    stb
+    array_dynamic
+    Ermine
+)
+
 add_library(Ermine SHARED ${SOUCE_ERMINE})
 target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${EGDK_LIBS})
 

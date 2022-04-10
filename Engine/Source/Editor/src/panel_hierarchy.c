@@ -8,15 +8,15 @@
 #include "ermine-scene.h"
 #include "editor-internal.h"
 
-// #define InfoComponent_EXPORTS
-// #include "InfoComponent.h"
+#define InfoComponent_EXPORTS
+#include "Components/InfoComponent.h"
 
 // temporal world hierarchy
 static ecs_world_t *world;
 
 static ecs_iter_t hierarchy_get_children(ecs_entity_t entity);
 static void hierarchy_draw_children(ecs_entity_t entity);
-// static int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2);
+static int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2);
 
 // Hierarchy init
 void panel_hierarchy_init(void)
@@ -87,12 +87,12 @@ void hierarchy_set_selected(ecs_entity_t entity)
 }
 
 // mantenemos el orden de las entidades segun su identificacion.
-// int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2)
-// {
-//     (void)e1;
-//     (void)e2;
-//     return ptr1->id - ptr2->id;
-// }
+int hierarchy_private_order_by(ecs_entity_t e1, const InfoComponent *ptr1, ecs_entity_t e2, const InfoComponent *ptr2)
+{
+    (void)e1;
+    (void)e2;
+    return ptr1->id - ptr2->id;
+}
 
 // Obtenemos los hijos de una entidad y lo mostramos.
 // La idea es buscar los hijos de RootEntity -> entity -> e...
@@ -112,14 +112,17 @@ void hierarchy_draw_children(ecs_entity_t entity)
     // los hijos de entitys y ver
     // las entidades deshabilitadas
     // ---------------------------
+
+    ecs_entity_t component_info = flower_lookup("InfoComponent");
+
     ecs_query_t *q = ecs_query_init(world, &(ecs_query_desc_t){
         .filter.terms = {
             {.id = ecs_childof(entity)},
             {.id = EcsDisabled, .oper = EcsOptional},
-            {.id = flower_lookup("InfoComponent")},
+            {.id = component_info},
         },
-        // .order_by = hierarchy_private_order_by,
-        .order_by_component = flower_lookup("InfoComponent"),
+        .order_by = hierarchy_private_order_by,
+        .order_by_component = component_info,
     });
     ecs_iter_t it = ecs_query_iter(world, q);
     while (ecs_query_next(&it))
