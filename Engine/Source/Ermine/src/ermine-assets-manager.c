@@ -1,5 +1,5 @@
 #include "ermine-assets-manager.h"
-#include "ermine-string.h"
+#include "ermine-util.h"
 #include "ermine-resource.h"
 
 static JSON_Value *jroot_value = NULL;
@@ -12,7 +12,7 @@ void ermine_assets_manager_init(const char *file_name)
     jroots = json_value_get_array(jroot_value);
 
     // path default file
-    jpath = g_strdup(file_name);
+    jpath = STRDUP(file_name);
 
     // cargamos los assets al inicio
     ermine_assetsm_resource_load_content();
@@ -75,7 +75,7 @@ JSON_Object *ermine_assetsm_find_by(const char *id, const char *value)
 
 JSON_Value *ermine_assetsm_new_object(const char *name, const char *type, const char *ext)
 {
-    int uid = eutil_genrandom_number(4);
+    int uid = ermine_random_number_len(4);
 
     JSON_Value *data = json_value_init_object();
 

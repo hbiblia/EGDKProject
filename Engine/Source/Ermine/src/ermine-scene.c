@@ -1,7 +1,7 @@
 #include "ermine-scene.h"
 #include "ermine-assets-manager.h"
 #include "ermine-resource.h"
-#include "ermine-string.h"
+#include "ermine-util.h"
 
 static bool scenem_openscene = false;
 static bool scenem_savescene = false;

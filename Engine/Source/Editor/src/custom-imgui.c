@@ -3,7 +3,7 @@
 #define CIMGUI_IMPL
 #include <ermine.h>
 #include <ermine-flower.h>
-#include "ermine-string.h"
+#include "ermine-util.h"
 #include "custom-imgui.h"
 
 static int popup_queue = 0;

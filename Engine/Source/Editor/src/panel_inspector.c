@@ -1,8 +1,11 @@
 #include <stdio.h>
 
+#define flecs_EXPORTS
+
 #define CIMGUI_IMPL
-#include <ermine.h>
-#include <ermine-flower.h>
+#include "ermine.h"
+#include "ermine-flower.h"
+#include "ermine-util.h"
 #include "custom-imgui.h"
 
 #include "editor-internal.h"
@@ -13,8 +16,8 @@ static ecs_world_t *world;
 
 static float inspector_width = 0;
 
-static void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component);
-static void inspector_process_component_data(void *ptr, ecs_entity_t component);
+static void inspector_draw_component(const char *name, const void *ptr, ecs_entity_t component);
+static void inspector_process_component_data(const void *ptr, ecs_entity_t component);
 
 const ImGuiTreeNodeFlags flagsTreeNode = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_SpanAvailWidth | ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;
 
@@ -61,7 +64,7 @@ void panel_inspector_main(void)
             {
                 ecs_id_t id = ids[i];
                 ecs_entity_t component = ecs_pair_second(world, id);
-                char *name_component = ecs_get_name(world, component);
+                const char *name_component = ecs_get_name(world, component);
                 const void *component_ptr = ecs_get_id(world, entiti_seleted, component);
 
                 if (!component_ptr)
@@ -89,20 +92,18 @@ void panel_inspector_main(void)
 
                 // Add components menu-popups
                 // ---------------------
-                // igSetNextWindowSize((ImVec2){0, 300}, 0);
                 if (igBeginPopup("AddComponent", ImGuiWindowFlags_AlwaysAutoResize))
                 {
                     ecs_entity_t seleted = hierarchy_get_selected();
 
-                    GSList *components = flower_component_get_list();
-                    while ((char *)g_slist_nth_data(components, 0) != NULL)
+                    struct array *components = flower_component_get_list();
+                    for (int i = 0; i < array_length(components); i++)
                     {
-                        char *name = g_strdup((char *)g_slist_nth_data(components, 0));
+                        char *name = array_get(components, i);
                         if (igMenuItem_Bool(name, "", false, true))
                         {
-                            flower_set_component_empty(seleted, actor_get_lookup(name));
+                            flower_set_component_empty(seleted, flower_get_lookup(name));
                         }
-                        components = components->next;
                     }
                     igEndPopup();
                 }
@@ -113,7 +114,7 @@ void panel_inspector_main(void)
     igEnd();
 }
 
-void inspector_draw_component(const char *name, void *ptr, ecs_entity_t component)
+void inspector_draw_component(const char *name, const void *ptr, ecs_entity_t component)
 {
     ImVec2 region = {0};
     igGetContentRegionAvail(&region);
@@ -141,7 +142,7 @@ void inspector_draw_component(const char *name, void *ptr, ecs_entity_t componen
     }
 }
 
-void inspector_process_component_data(void *ptr, ecs_entity_t component)
+void inspector_process_component_data(const void *ptr, ecs_entity_t component)
 {
     const EcsMetaTypeSerialized *ser = ecs_get(world, component, EcsMetaTypeSerialized);
     ecs_meta_type_op_t *ops = ecs_vector_first(ser->ops, ecs_meta_type_op_t);
@@ -156,7 +157,7 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
             ecs_entity_t element_type = op->type;
             const char *field_type_name = ecs_get_name(world, element_type);
             const char *field_label = op->name;
-            void *value_ptr = (void *)ECS_OFFSET(ptr, op->offset);
+            const void *value_ptr = (void *)ECS_OFFSET(ptr, op->offset);
 
             // DEBUG
             // printf("DEBUG INSPECTOR: %s -> %s\n", field_type_name, field_label);
@@ -271,22 +272,22 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                     ecs_string_t *fieldv = (ecs_string_t *)value_ptr;
                     char buffer[256] = "\0";
                     if (fieldv[u])
-                        strncpy(buffer, fieldv[u], sizeof(buffer));
+                        ermine_strncpy(buffer, fieldv[u], sizeof(buffer));
 
                     imgui_labelPropBegin(name_field, u + i);
                     if (igInputText("", buffer, sizeof(buffer), ImGuiInputTextFlags_EnterReturnsTrue, NULL, NULL))
                     {
-                        *fieldv = g_strdup(buffer);
+                        *fieldv = ermine_strdup(buffer);
                     }
                     imgui_labelPropEnd();
 
                     // Recibinos datos del assets browser
                     if (igBeginDragDropTarget())
                     {
-                        ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_RESOURCE_ITEM", 0);
+                        const ImGuiPayload *drop = igAcceptDragDropPayload("ASSETS_RESOURCE_ITEM", 0);
                         if (drop)
                         {
-                            *fieldv = g_strdup(eutil_file_get_name(drop->Data));
+                            *fieldv = ermine_strdup(ermine_file_get_name(drop->Data));
                         }
                         igEndDragDropTarget();
                     }
@@ -303,7 +304,7 @@ void inspector_process_component_data(void *ptr, ecs_entity_t component)
                         bool open = igTreeNodeEx_Str(name_field, flagsTreeNode);
                         if (open)
                         {
-                            void *other_ptr = (op->count == 1 ? ptr : &ptr[u]);
+                            const void* other_ptr = value_ptr;
                             inspector_process_component_data(other_ptr, flower_lookup(field_type_name));
                             igTreePop();
                         }

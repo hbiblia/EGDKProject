@@ -1,5 +1,5 @@
 
-#include "component.base.h"
+#include "Components/component.base.h"
 
 void ComponentBaseImport(ecs_world_t *world)
 {

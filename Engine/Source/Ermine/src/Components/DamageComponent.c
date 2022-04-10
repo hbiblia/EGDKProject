@@ -1,5 +1,5 @@
 #define DamageComponent_EXPORTS
-#include "DamageComponent.h"
+#include "Components/DamageComponent.h"
 
 static void system__init_fn(ecs_iter_t *it)
 {
@@ -12,7 +12,7 @@ static void system__init_fn(ecs_iter_t *it)
 
 void DamageComponentInit(ecs_world_t *world)
 {
-    FLOWER_COMPONENT_INIT(DamageComponent);
+    FLOWER_COMPONENT_INIT(world, DamageComponent);
 
     // ecs_observer_init(world, &(ecs_observer_desc_t){
     //     .filter.terms = {{.id = ecs_id(DamageComponent)}},

@@ -2,13 +2,16 @@
 
 #define CIMGUI_IMPL
 #include <ermine.h>
-#include <ermine-flower.h>
+
+#include "ermine-flower.h"
 #include "ermine-assets-manager.h"
 #include "ermine-resource.h"
 #include "ermine-scene.h"
+#include "ermine-util.h"
 #include "parson/parson.h"
 
 #include "editor-internal.h"
+#include "custom-imgui.h"
 
 
 // ---------------------------
@@ -29,7 +32,7 @@ static JSON_Array *folder_data_selected = NULL;
 // OTROS
 // ---------------------------
 static bool bcolumn0_width = false;
-static int column0_default_size_width = 150;
+static double column0_default_size_width = 150.0;
 
 // ---------------------------
 // FUNCs
@@ -94,9 +97,9 @@ void panel_assets_main(void)
             // BUG IMGUI:Columns Size Width
             if (!bcolumn0_width)
             {
-                int width = ceil(igGetColumnWidth(0));
+                double width = ceil(igGetColumnWidth(0));
                 bcolumn0_width = width >= column0_default_size_width - 1 ? true : false;
-                igSetColumnWidth(0, column0_default_size_width);
+                igSetColumnWidth(0, (float)column0_default_size_width);
             }
 
             // ------------------------
@@ -344,7 +347,7 @@ void assets_ui_list_folder_column1(void)
                     igSeparator();
                     if (igSelectable_Bool("Copiar", false, 0, (ImVec2){0, 0}))
                     {
-                        file_copy_name = strdup(name);
+                        file_copy_name = ermine_strdup(name);
                     }
                     if (igSelectable_Bool("Duplicar", false, 0, (ImVec2){0, 0}))
                     {
@@ -395,13 +398,13 @@ void assets_ui_modal_create(const char *name, const char *title, const char *tex
 
     if (igBeginPopupModal(name, NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove))
     {
-        static char buffer[100];
+        static char *buffer;
         static int state = 0;
 
         igText(title);
 
         // igSetKeyboardFocusHere(0);
-        igInputText("Name", &buffer, sizeof(buffer), 0, NULL, NULL);
+        igInputText("Name", buffer, sizeof(buffer), 0, NULL, NULL);
 
         if (state == -1)
         {
@@ -416,7 +419,7 @@ void assets_ui_modal_create(const char *name, const char *title, const char *tex
             {
                 if (callback_fn(buffer) && strlen(buffer) > 0)
                 {
-                    sprintf(buffer, "");
+                    buffer = ermine_strdup_printf("");
                     igCloseCurrentPopup();
                     state = 0;
                 }
@@ -525,7 +528,7 @@ bool assets_create_component(const char *name)
     if (assets_is_virtual_item(children, name, "component"))
         goto error;
 
-    int count_old = json_array_get_count(children);
+    size_t count_old = json_array_get_count(children);
 
     // Creamos el item para assets.json
     JSON_Value *new_item = ermine_assetsm_new_object(name, "component", "json");
@@ -567,7 +570,7 @@ bool assets_create_scene(const char *name)
     if (assets_is_virtual_item(children, name, "scene"))
         goto error;
 
-    int count_old = json_array_get_count(children);
+    size_t count_old = json_array_get_count(children);
 
     // Creamos el item para assets.json
     JSON_Value *new_item = ermine_assetsm_new_object(name, "scene", "scene");

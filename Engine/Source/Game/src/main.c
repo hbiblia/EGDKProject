@@ -12,10 +12,10 @@ int main(int argc, char *argv[])
 {
     printf("EGDKGame v1.0-dev \n");
 
-    ewindow_init((ewindow_desc){
-        .title = "EGDKEGame - none",
-        .width = 1024,
-        .height = 768,
-        .update_fn = update,
-    });
+    //ewindow_init((ewindow_desc){
+    //    .title = "EGDKEGame - none",
+    //    .width = 1024,
+    //    .height = 768,
+    //    .update_fn = update,
+    //});
 }

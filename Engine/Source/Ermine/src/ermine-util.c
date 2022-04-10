@@ -1,14 +1,19 @@
-#include "ermine.h"
+#include "ermine-util.h"
 #include <stdarg.h>
 #include <string.h>
-#include <glib.h>
 
-/*
- * Utility
- *
- */
+#if defined(_WIN32)
+#include <direct.h>
+#else
+#include <unistd.h>
+#endif
 
-unsigned char *eutil_loadfile_data(const char *filename, unsigned int *bytes)
+#define SEPARATOR_OS '/'
+#if defined(_WIN32)
+#define SEPARATOR_OS '\\'
+#endif
+
+unsigned char *ermine_file_load_data(const char *filename, unsigned int *bytes)
 {
     unsigned char *data = NULL;
     *bytes = 0;
@@ -36,96 +41,163 @@ unsigned char *eutil_loadfile_data(const char *filename, unsigned int *bytes)
     return data;
 }
 
-/*
- * PATH STRING
- *
- */
-
-char *eutil_path_normalize(const char *path)
+const char *ermine_file_get_extension(const char *filename)
 {
-    GString *str = g_string_new(path);
-    g_string_replace(str, "/", "\\", 0);
-    return g_string_free(str, false);
-}
+    printf("ermine_file_get_extension\n");
 
-/*
- * GET FILE EXTENSION
- *
- */
-
-const char *eutil_file_get_extension(const char *filename)
-{
     const char *d = strrchr(filename, '.');
     return (!d || d == filename) ? NULL : d;
 }
 
-bool eutil_isfile_extension(const char *filename, const char *ext)
+bool ermine_file_is_extension(const char *filename, const char *ext)
 {
-    char *ext_o = eutil_file_get_extension(filename);
+    printf("ermine_file_is_extension\n");
+
+    char *ext_o = ermine_file_get_extension(filename);
     return strcmp(ext_o, ext) == 0 ? true : false;
 }
 
-const char *eutil_file_get_name(const char *filepath)
+const char *ermine_file_get_name(const char *filepath)
 {
-    return g_path_get_basename(filepath);
+    printf("ermine_file_get_name\n");
+
+    char* path = (filepath == NULL ? "" : filepath);
+    char* base = strrchr(path, SEPARATOR_OS);
+    return base ? base + 1 : path;
 }
 
-/*
- * LOG
- *
- */
-
-void etracelog(int t, const char *text, ...)
+char *ermine_strncpy(char* dest, const char* src, size_t n)
 {
-    va_list args;
-    va_start(args, text);
-#if defined(SUPPORT_TRACELOG)
+    printf("ermine_strncpy\n");
 
-    char buffer[MAX_TRACELOG_MSG_LENGTH] = {0};
-
-    switch (t)
-    {
-    case ELOG_TRACE:
-        strcpy(buffer, "TRACE: ");
-        break;
-    case ELOG_DEBUG:
-        strcpy(buffer, "DEBUG: ");
-        break;
-    case ELOG_INFO:
-        strcpy(buffer, "INFO: ");
-        break;
-    case ELOG_WARNING:
-        strcpy(buffer, "WARNING: ");
-        break;
-    case ELOG_ERROR:
-        strcpy(buffer, "ERROR: ");
-        break;
-    case ELOG_FATAL:
-        strcpy(buffer, "FATAL: ");
-        break;
-    default:
-        break;
-    }
-    strcat(buffer, text);
-    strcat(buffer, "\n");
-    vprintf(buffer, args);
+#if defined(_WIN32)
+    return strncpy_s(dest, 0, src, n);
+#else
+    return strncpy(dest, src, n);
 #endif
-    va_end(args);
 }
 
+char* ermine_strdup(const char* str)
+{
+    printf("ermine_strdup\n");
 
-/*
- * Generamos numeros 
- *
- */
-int eutil_genrandom_number(int length)
+#if defined(_WIN32)
+    return _strdup(str);
+#else
+    return strdup(str);
+#endif
+}
+
+char *ermine_strdup_printf(const char * format, ...)
+{
+    printf("ermine_strdup_printf\n");
+    char buffer[256] = { 0 };
+
+    va_list args;
+    va_start(args, format);
+    {
+        vsprintf(buffer, format, args);
+    }
+    va_end(args);
+    return ermine_strdup(buffer);
+}
+
+char *ermine_str_replace(char *string, const char *substr, const char *replacement)
+{
+    printf("ermine_str_replace\n");
+    char *tok = NULL;
+    char *newstr = NULL;
+    char *oldstr = NULL;
+    int oldstr_len = 0;
+    int substr_len = 0;
+    int replacement_len = 0;
+
+    newstr = ermine_strdup(string);
+    substr_len = strlen(substr);
+    replacement_len = strlen(replacement);
+
+    if (substr == NULL || replacement == NULL)
+    {
+        return newstr;
+    }
+
+    while ((tok = strstr(newstr, substr)))
+    {
+        oldstr = newstr;
+        oldstr_len = strlen(oldstr);
+        newstr = (char *)malloc(sizeof(char) * (oldstr_len - substr_len + replacement_len + 1));
+
+        if (newstr == NULL)
+        {
+            free(oldstr);
+            return NULL;
+        }
+
+        memcpy(newstr, oldstr, tok - oldstr);
+        memcpy(newstr + (tok - oldstr), replacement, replacement_len);
+        memcpy(newstr + (tok - oldstr) + replacement_len, tok + substr_len, oldstr_len - substr_len - (tok - oldstr));
+        memset(newstr + oldstr_len - substr_len + replacement_len, 0, 1);
+
+        free(oldstr);
+    }
+
+    free(string);
+    return newstr;
+}
+
+char *ermine_path_normalize(const char *path)
+{
+    printf("ermine_path_normalize\n");
+    char* new_path = NULL;
+#if defined(_WIN32)
+    new_path = ermine_str_replace(path, "/", "\\");
+#else
+    new_path = ermine_str_replace(path, "\\", "/");
+#endif
+    return new_path;
+}
+
+const char *ermine_path_get_current(void)
+{
+    printf("ermine_path_get_current\n");
+    char buffer[FILENAME_MAX];
+
+#if defined(_WIN32)
+    _getcwd(buffer, FILENAME_MAX);
+#else
+    getcwd(buffer, FILENAME_MAX);
+#endif
+
+    return ermine_strdup(buffer);
+}
+
+const char *ermine_path_build_filename(const char * format, ...)
+{
+    printf("ermine_path_build_filename\n");
+;    char buffer[256] = { 0 };
+
+    va_list args;
+    va_start(args, format);
+    {
+        vsprintf(buffer, format, args);
+    }
+    va_end(args);
+    return ermine_strdup(buffer);
+}
+
+void ermine_tracelog(int t, const char *text, ...)
+{
+}
+
+int ermine_random_number_len(int length)
 {
     char *pool_number = "91234567897412589630159753852";
-    char *numbers = malloc(sizeof(*numbers) * (length+1));
+    char *numbers = malloc(sizeof(*numbers) * (length + 1));
 
-    for(int i = 0; i<length; i++){
-        numbers[i] = pool_number[rand() % (sizeof((pool_number))/sizeof((pool_number[0])))];
+    for (int i = 0; i < length; i++)
+    {
+        numbers[i] = pool_number[rand() % (sizeof((pool_number)) / sizeof((pool_number[0])))];
     }
     numbers[length] = '\0';
-    return atoi(numbers);
+    return (int)atoi(numbers);
 }

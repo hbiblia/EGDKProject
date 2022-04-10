@@ -30,7 +30,7 @@ static void init_default(void)
     wdefault.pass_action = (sg_pass_action){
         .colors[0] = {.action = SG_ACTION_CLEAR, .value = {0.0f, 0.0f, 0.0f, 1.0}}};
 
-    ecs_flecs_init();
+    ermine_flower_init();
     ermine_resource_init(wdefault.path_project);
 
     if (wdefault.init_fn)

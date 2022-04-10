@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 #define CIMGUI_IMPL
-#include <ermine.h>
-#include <ermine-flower.h>
+#include "ermine.h"
+#include "ermine-flower.h"
 
 #include "ermine-scene.h"
+#include "ermine-util.h"
 
 static ecamera default_cam;
 
@@ -21,7 +22,7 @@ static void viewport_ui_toolbar(void);
 
 void panel_viewport_init(void)
 {
-    default_cam = ecamera_make();
+    default_cam = ermine_camera_make();
 }
 
 // ------------------------
@@ -62,12 +63,12 @@ void drawing_window(const ImDrawList *dl, const ImDrawCmd *cmd)
     const int cw = (int)(cmd->ClipRect.z - cmd->ClipRect.x);
     const int ch = (int)(cmd->ClipRect.w - cmd->ClipRect.y);
 
-    erender_camera_set_viewport(&default_cam, cx, cy, cw, ch, true);
-    ebegin_mode(default_cam);
+    ermine_camera_set_viewport(&default_cam, cx, cy, cw, ch, true);
+    ermine_begin_mode(default_cam);
     {
         flower_internal_system_run("EventSystemOnRender");
     }
-    eend_mode();
+    ermine_end_mode();
 }
 
 // ------------------------

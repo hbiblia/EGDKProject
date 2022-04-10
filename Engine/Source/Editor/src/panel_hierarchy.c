@@ -148,7 +148,7 @@ void hierarchy_draw_children(ecs_entity_t entity)
     if (!bparent)
     {
         // #no-parent-entity
-        igPushID_Int(entity);
+        igPushID_Int((int)entity);
         if (igSelectable_Bool(name, selected, ImGuiSelectableFlags_None | ImGuiTreeNodeFlags_SpanAvailWidth, (ImVec2){0}))
         {
             hierarchy_set_selected(entity);

@@ -1,24 +1,26 @@
+#include <assert.h>
+
 #include "ermine.h"
+#include "ermine-util.h"
 #include "ermine-flower.h"
+#include "array_dynamic/array_dynamic.h"
+
 #include "Components/base.h"
-#include "Components/InfoComponent.h"
-#include "Components/TransformComponent.h"
 
 static ecs_world_t *world;
 
 static int entity_len_world = 0;
 
-static GSList *list_components = NULL;
+static struct array *list_components = NULL;
 
 //
 // ------------------
-void ecs_flecs_init(void)
+void ermine_flower_init(void)
 {
-    // Flecs init
-    world = ecs_init();
+    list_components = array_new();
 
-    // iniciamos los componentes por defecto.
-    components_init();
+    world = ecs_init();
+   components_init();
 }
 
 void flower_reset_entity_world_len(void)
@@ -44,18 +46,27 @@ ecs_world_t *flower_get_world(void)
 void flower_component_append_list(const char *name)
 {
     if (strcmp(name, "InfoComponent") == 0)
-    {
         return;
+
+    for (int i = 0; i < array_length(list_components); i++)
+    {
+        char *old_name = array_get(list_components, i);
+        if (strcmp(name, old_name) == 0)
+        {
+            printf("WARNING: component already exists [%s]\n", name);
+            return;
+        }
     }
-    list_components = g_slist_append(list_components, name);
+
+    array_append(list_components, name);
 }
 
-GSList *flower_component_get_list(void)
+struct array *flower_component_get_list(void)
 {
     return list_components;
 }
 
-ecs_entity_t actor_get_lookup(const char *name)
+ecs_entity_t flower_get_lookup(const char *name)
 {
     return ecs_lookup(world, name);
 }
@@ -96,7 +107,7 @@ void flower_enable(ecs_entity_t entity, bool enabled)
 
 void flower_set_component_ptr(ecs_entity_t entity, const char *name, size_t size, void *components)
 {
-    ecs_entity_t cmp = actor_get_lookup(name);
+    ecs_entity_t cmp = flower_get_lookup(name);
     if (cmp > 0)
     {
         ecs_set_id(world, entity, cmp, size, components);
@@ -147,8 +158,8 @@ ecs_entity_t flower_entity_new_custom(const char *name, ecs_entity_t parent, boo
         ecs_add_pair(world, entity, EcsChildOf, parent);
     }
     // Todos tienen el mismo componente.
-    actor_set(entity, InfoComponent, {.name = new_name, .id = entity_len_world});
-    actor_set(entity, TransformComponent, {.scale = {1, 1, 1}});
+    //actor_set(entity, InfoComponent, {.name = new_name, .id = entity_len_world});
+    //actor_set(entity, TransformComponent, {.scale = {1, 1, 1}});
 
     entity_len_world++;
 
@@ -194,7 +205,7 @@ char *flower_info_get_name(ecs_entity_t entity)
 void flower_info_set_name(ecs_entity_t entity, const char *name)
 {
     InfoComponent *component_ptr = ecs_get_id(world, entity, flower_lookup("InfoComponent"));
-    component_ptr->name = g_strdup(name);
+    component_ptr->name = STRDUP(name);
 }
 
 /*
@@ -275,11 +286,11 @@ JSON_Value *flower_internal_serialize(ecs_entity_t entity, JSON_Value *parent)
 
     // QUERY_ENTITY_CHILDREN
     ecs_query_t *querys = ecs_query_init(world, &(ecs_query_desc_t){
-        .filter.terms = {
-            {.id = ecs_childof(entity), .inout = EcsIn},
-            {.id = EcsDisabled, .oper = EcsOptional},
-        },
-    });
+                                                    .filter.terms = {
+                                                        {.id = ecs_childof(entity), .inout = EcsIn},
+                                                        {.id = EcsDisabled, .oper = EcsOptional},
+                                                    },
+                                                });
 
     ecs_iter_t it = ecs_query_iter(world, querys);
     while (ecs_query_next(&it))
@@ -323,7 +334,7 @@ void flower_internal_deserialize(JSON_Value *value)
 
     // actor a = actor_new("Entity11");
     // // procesador de componentes
-    // ecs_entity_t cmp = actor_get_lookup("CPosition");
+    // ecs_entity_t cmp = flower_get_lookup("CPosition");
     // void *ptr = ecs_get_mut_id(world, a, cmp, 0);
 
     // // procesador de datos de componentes

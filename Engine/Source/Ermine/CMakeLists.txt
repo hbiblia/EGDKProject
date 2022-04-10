@@ -9,12 +9,13 @@ set(SOUCE_ERMINE
     src/ermine-shape.c
     src/ermine-texture.c
     src/ermine-color.c
-    src/ermine-render.c
+    src/ermine-renderer.c
     src/ermine-input.c
     src/ermine-scene.c
     src/ermine-camera.c
     src/ermine-math.c
     src/ermine-flower.c
+    src/ermine-hash.c
 
     src/Components/component.base.c
     src/Components/TransformComponent.c
@@ -24,32 +25,35 @@ set(SOUCE_ERMINE
     src/Components/InfoComponent.c
 )
 
+set(HEADER_ERMINE
+    "include/ermine.h"
+    "include/ermine-assets-manager.h"
+    "include/ermine-config.h"
+    "include/ermine-flower.h"
+    "include/ermine-hash.h"
+    "include/ermine-input.h"
+    "include/ermine-renderer.h"
+    "include/ermine-resource.h"
+    "include/ermine-scene.h"
+    "include/ermine-util.h"
+)
+
 set(ERMINE_DEPS
     cimgui
     flecs
     parson
     sokol
     stb
+    array_dynamic
 )
 
-# PKG_CONFIG
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(GLIB REQUIRED glib-2.0)
+add_library(Ermine SHARED ${SOUCE_ERMINE})
+target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${EGDK_LIBS})
+target_include_directories(Ermine PRIVATE ${HEADER_ERMINE})
 
 if(EGDK_PLATFORM STREQUAL WINDOWS)
-    set(ERMINE_DEPS ${ERMINE_DEPS} kernel32 user32 shell32 dxgi d3d11 ole32 gdi32 Ws2_32)
-    # MIN64
-    add_definitions(-IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -mms-bitfields -IC:/msys64/mingw64/include)
+    target_compile_options(Ermine PRIVATE /W3)
 elseif(EGDK_PLATFORM STREQUAL LINUX)
-    set(ERMINE_DEPS ${ERMINE_DEPS} GL dl m X11 asound Xi Xcursor pthread Ws2_32)
+    target_compile_options(Ermine PRIVATE -Wall -Wextra -Wpedantic)
 elseif(EGDK_PLATFORM STREQUAL DARWIN)
 endif()
-
-add_compile_definitions(BUILD_LIBTYPE_SHARED)
-
-include_directories(${GLIB_INCLUDE_DIRS})
-link_directories(${GLIB_LIBRARY_DIRS})
-
-add_library(Ermine SHARED ${SOUCE_ERMINE})
-
-target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${GLIB_LIBRARIES})

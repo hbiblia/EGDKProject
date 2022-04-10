@@ -2,13 +2,15 @@
 #include "ermine.h"
 #include "ermine-flower.h"
 #include "ermine-assets-manager.h"
-#include "ermine-string.h"
+#include "ermine-util.h"
+#include "ermine-hash.h"
+#include "ermine-resource.h"
 
 #define MAX_RESOURCE_FILE 1000
 
 static char *path_resource[RESOURCE_LAST];
 
-static GHashTable *hash_table;
+static struct hashtable *hash_table;
 
 static int texture_id_resource = 0;
 
@@ -18,14 +20,14 @@ static etexture texture_resource_data[MAX_RESOURCE_FILE];
 
 void ermine_resource_init(const char *path_project)
 {
-    hash_table = g_hash_table_new(g_str_hash, g_str_equal);
+    hash_table = hash_table_new();
 
     // path resource del proyecto.
     path_resource[RESOURCE_PATH_PROJECT] = PATH_BUILD(path_project);
     path_resource[RESOURCE_PATH] = PATH_BUILD(path_project, "resource");
-    path_resource[RESOURCE_PATH_ENGINE] = PATH_BUILD(g_get_current_dir(), "resource");
+    path_resource[RESOURCE_PATH_ENGINE] = PATH_BUILD(ermine_path_get_current(), "resource");
 
-    path_resource[RESOURCE_NAME_PROJECT] = STRDUP(BASENAME(path_project));
+    path_resource[RESOURCE_NAME_PROJECT] = STRDUP(ermine_file_get_name(path_project));
 
     // assets.json
     ermine_assets_manager_init(PATH_BUILD(path_resource[RESOURCE_PATH], "assets.json"));
@@ -36,7 +38,7 @@ void ermine_resource_init(const char *path_project)
 
 void ermine_resource_close(void)
 {
-    g_hash_table_destroy(hash_table);
+    hash_table_destroy(hash_table);
 }
 
 const char *ermine_resource_get_path(int path_id)
@@ -50,22 +52,22 @@ void ermine_resource_load(const char *filename, const char *key,  int path_type)
 
     char *file_name_path = PATH_BUILD(path_resource[path_type], filename);
 
-    if (eutil_isfile_extension(filename, ".png") || eutil_isfile_extension(filename, ".jpg"))
+    if (ermine_file_is_extension(filename, ".png") || ermine_file_is_extension(filename, ".jpg"))
     {
         id_temporal = texture_id_resource;
         texture_resource_data[texture_id_resource] = etexture_load(file_name_path);
         texture_id_resource += 1;
-        printf("INFO: Resource load texture [%s]\n", filename);
+        printf("LOAD: Resource load texture [%s]\n", filename);
     }
 
     if (id_temporal != -1)
     {
-        g_hash_table_insert(hash_table, key, id_temporal);
+        hash_table_insert(hash_table, key, id_temporal);
     }
 }
 
 etexture ermine_resource_get_texture(const char *key)
 {
-    int id = g_hash_table_lookup(hash_table, key);
+    int id = hash_table_lookup(hash_table, key);
     return texture_resource_data[id];
 }

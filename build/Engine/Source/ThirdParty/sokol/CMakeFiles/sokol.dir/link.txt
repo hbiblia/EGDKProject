@@ -1,2 +1,0 @@
-/mingw64/bin/ar.exe qc libsokol.a CMakeFiles/sokol.dir/sokol_impl.c.obj
-/mingw64/bin/ranlib.exe libsokol.a

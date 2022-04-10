@@ -1,9 +1,9 @@
 #include "ermine-resource.h"
 
-#include "TransformComponent.h"
+#include "Components/TransformComponent.h"
 
 #define SpriteRendererComponent_EXPORTS
-#include "SpriteRendererComponent.h"
+#include "Components/SpriteRendererComponent.h"
 
 static int sprites_sortingOrder(ecs_entity_t e1, const SpriteRendererComponent *s1,
 ecs_entity_t e2, const SpriteRendererComponent *s2){

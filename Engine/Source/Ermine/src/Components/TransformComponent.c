@@ -1,5 +1,5 @@
 
-#include "TransformComponent.h"
+#include "Components/TransformComponent.h"
 
 
 static void system__update_fn(ecs_iter_t *it)

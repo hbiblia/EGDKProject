@@ -4,7 +4,7 @@
 #include <ermine.h>
 #include <ermine-flower.h>
 #include "ermine-scene.h"
-#include "ermine-string.h"
+#include "ermine-util.h"
 
 #include "editor-internal.h"
 
@@ -12,6 +12,7 @@ void editor_main_render();
 
 void init()
 {
+    printf("INIT\n");
     // CONFIG IMGUI
     // -------------
 
@@ -45,10 +46,17 @@ void before_update()
 
 int main(int argc, char *argv[])
 {
-    printf("EGDKEditor v1.0-dev \n");
+    printf("EGDKEditor v1.0-dev\n");
+
+    char* projects = argv[1];
+
+    if (projects == NULL) {
+        printf("WARNING: No project\n");
+        exit(-1);
+    }
 
     ewindow_init((ewindow_desc){
-        .title = STRDUPPF("EGDKEditor - %s", BASENAME(argv[1])),
+        .title = STRDUPPF("EGDKEditor - %s", ermine_file_get_name(projects)),
         .width = 1280,
         .height = 700,
         .init_fn = init,

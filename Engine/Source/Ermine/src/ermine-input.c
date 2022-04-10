@@ -104,6 +104,8 @@ bool is_mouse_button_down(int button)
     bool down = false;
     if (Input.Mouse.currentButtonState[button] == 1)
         down = true;
+
+    return down;
 }
 
 // INPUT GAMEDPAD
