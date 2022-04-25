@@ -9,11 +9,6 @@ This version of EGDK is under development and is being changed from Gtk+ to (cIm
 
 The change is based on the fact that Gtk+ only has support for (Vulka) and the idea of EGDK is that it works everywhere according to the render of its own platform (Metal, DirectX and OpenGL).
 
-What is EGDK?
-===
-A data-driven game engine where everything is a component. The idea is to make it a pretty good 2D game development engine, just like using UE4/UE5.
-
-What I mean by UE4/UE5 is that the engine will have the best tools to build games as fast as possible depending on what you want.
 <!-- ### Mecenas activas (Gracias por apoyar) -->
 <!-- * Yonson Carbonel -->
 
