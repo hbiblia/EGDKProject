@@ -22,6 +22,8 @@ set(SOUCE_ERMINE
     src/ermine-ctransform.c
     src/ermine-ctexture.c
     src/ermine-cbaseinfo.c
+
+    src/ermine-c-background.c
 )
 
 set(ERMINE_DEPS

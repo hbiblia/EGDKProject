@@ -63,6 +63,7 @@
         "memory": "c",
         "ermine-ccolor.h": "c",
         "ermine-ctransform.h": "c",
-        "ermine-cmath.h": "c"
+        "ermine-cmath.h": "c",
+        "ui_docked_hierarchy.h": "c"
     }
 }

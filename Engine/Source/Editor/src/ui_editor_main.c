@@ -2,6 +2,7 @@
 #include "ui_editor_menubar.h"
 #include "ui_docked_hierarchy.h"
 #include "ui_docked_inspector.h"
+#include "ui_docked_browser.h"
 
 #define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include "cimgui/cimgui.h"
@@ -33,6 +34,7 @@ void editor_main_init(void)
 
     ui_docked_hierarchy_init();
     ui_docked_inspector_init();
+    ui_docked_browser_init();
 }
 
 void editor_main_render(void)
@@ -56,7 +58,7 @@ void editor_main_render(void)
     panel_viewport_main();
     ui_docked_hierarchy_render();
     ui_docked_inspector_render();
-    panel_assets_main();
+    ui_docked_browser_render();
 }
 
 ImGuiViewport *dockspace_begin(void)
@@ -108,7 +110,7 @@ void dockspace_build(ImGuiViewport *viewport)
             igDockBuilderDockWindow("Hierarchy", panel_left);
             igDockBuilderDockWindow("Viewport", dockspace_id);
             igDockBuilderDockWindow("Inspector", panel_right);
-            igDockBuilderDockWindow("Assets", panel_bottom);
+            igDockBuilderDockWindow("Content Browser", panel_bottom);
         }
     }
     igDockBuilderFinish(dockspace_id);

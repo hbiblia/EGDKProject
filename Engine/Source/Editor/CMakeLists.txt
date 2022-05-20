@@ -7,6 +7,7 @@ set(SOUCE_EDITOR
     src/ui_editor_menubar.c
     src/ui_docked_hierarchy.c
     src/ui_docked_inspector.c
+    src/ui_docked_browser.c
 
     src/editor-internal.c
     src/panel_assets.c

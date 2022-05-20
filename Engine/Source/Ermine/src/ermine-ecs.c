@@ -9,6 +9,7 @@
 #include "ermine-crenderer.h"
 #include "ermine-ctexture.h"
 #include "ermine-cbaseinfo.h"
+#include "ermine-c-background.h"
 
 #include "ermine-string.h"
 
@@ -33,6 +34,7 @@ void ermine_ecs_init(void)
     ComponentBaseColorImport(world);
     ComponentTexture(world);
     ComponentBaseShapesImport(world);
+    ComponentBackgroundTilingImport(world);
 
     // Root create
     EcsRootOf = ermine_entity_new();
