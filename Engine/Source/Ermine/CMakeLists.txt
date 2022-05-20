@@ -2,44 +2,57 @@
 
 # ERMINE LIBS
 set(SOUCE_ERMINE
-    src/ermine-util.c
-    src/ermine-assets-manager.c
-    src/ermine-resource.c
+    src/ermine-core.c
+    src/ermine-ecs.c
     src/ermine-window.c
-    src/ermine-shape.c
-    src/ermine-texture.c
-    src/ermine-color.c
-    src/ermine-renderer.c
-    src/ermine-input.c
-    src/ermine-scene.c
+    src/ermine-gfx-renderer.c
+    src/ermine-string.c
+    src/ermine-path.c
+    src/ermine-file.c
+    src/ermine-resource.c
+    src/ermine-ui.c
     src/ermine-camera.c
+    src/ermine-dialog.c
     src/ermine-math.c
-    src/ermine-flower.c
-    src/ermine-hash.c
-
-    src/Components/component.base.c
-    src/Components/TransformComponent.c
-    src/Components/SpriteRendererComponent.c
-    src/Components/AnimateSpriteComponent.c
-    src/Components/DamageComponent.c
-    src/Components/InfoComponent.c
+    # Component base
+    src/ermine-crenderer.c
+    src/ermine-ccolor.c
+    src/ermine-cshapes.c
+    src/ermine-cmath.c
+    src/ermine-ctransform.c
+    src/ermine-ctexture.c
+    src/ermine-cbaseinfo.c
 )
 
 set(ERMINE_DEPS
-    cimgui
-    flecs
-    parson
-    sokol
     stb
-    array_dynamic
-    Ermine
+    parson
+    flecs
+    sokol
+    cimgui
+    # nuklear
 )
 
+# FIX BUG MSYS2
+set(multipledefinition -Wl,--allow-multiple-definition)
+set(CXX_FLAGS -DBUILD_LIBTYPE_SHARED)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GLIB REQUIRED glib-2.0)
+
 add_library(Ermine SHARED ${SOUCE_ERMINE})
-target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${EGDK_LIBS})
+
+target_link_libraries(Ermine PRIVATE ${ERMINE_DEPS} ${EGDK_LIBS} ${GLIB_LIBRARIES} ${multipledefinition})
+
+target_include_directories(Ermine PRIVATE ${GLIB_INCLUDE_DIRS})
+
+target_compile_options(Ermine PRIVATE ${CXX_FLAGS})
 
 if(EGDK_PLATFORM STREQUAL WINDOWS)
-    target_compile_options(Ermine PRIVATE /W3)
+    # VS
+    # target_compile_options(Ermine PRIVATE /W3)
+    # MSYS2
+    target_compile_options(Ermine PRIVATE -w -Wall -Wextra -Wpedantic)
 elseif(EGDK_PLATFORM STREQUAL LINUX)
     target_compile_options(Ermine PRIVATE -Wall -Wextra -Wpedantic)
 elseif(EGDK_PLATFORM STREQUAL DARWIN)

@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "ermine.h"
+#include "ermine-ecs.h"
+
 // -------------
 // VIEWPORT
 // -------------
@@ -23,15 +26,6 @@ void panel_inspector_main(void);
 // HIERARCHY
 // -------------
 
-void panel_hierarchy_init(void);
-
-void panel_hierarchy_main(void);
-
-const char *hierarchy_get_selected_name(void);
-
-ecs_entity_t hierarchy_get_selected(void);
-
-void hierarchy_set_selected(ecs_entity_t selected);
 
 // -------------
 // ASSETS

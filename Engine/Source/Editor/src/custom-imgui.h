@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 // ------------------------
 // Popup
@@ -10,7 +11,7 @@ bool imgui_BeginPopup(const char* str_id);
 
 bool imgui_BeginPopupModal(const char* str_id);
 
-bool imgui_BeginPopupContextItem(const char* str_id,ImGuiPopupFlags popup_flags);
+bool imgui_BeginPopupContextItem(const char* str_id, int popup_flags);
 
 void imgui_EndPopup(void);
 

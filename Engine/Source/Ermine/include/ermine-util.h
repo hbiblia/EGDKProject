@@ -2,12 +2,11 @@
 #define ERMINE_STRING_H
 
 #include <stdlib.h>
-//#include <libgen.h>
 #include <string.h>
 #include <stdbool.h>
+#include <glib.h>
 
 #include "ermine.h"
-#include "ermine-config.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -1,79 +1,91 @@
-
-#include "ermine.h"
-#include "ermine-flower.h"
-#include "ermine-assets-manager.h"
-#include "ermine-util.h"
-#include "ermine-hash.h"
 #include "ermine-resource.h"
+#include "ermine-string.h"
+#include "ermine-path.h"
+#include "ermine-file.h"
 
-#define MAX_RESOURCE_FILE 1000
+#include "ermine-ctexture.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb/stb_image.h"
+
+#include "sokol/sokol_gfx.h"
+
+static JSON_Value *resource_object[RESOURCE_OBJ_LAST];
 static char *path_resource[RESOURCE_LAST];
 
-static struct hashtable *hash_table;
+// Se cargo bien el proyecto
+static bool bproject = false;
 
-static int texture_id_resource = 0;
-
-static etexture texture_resource_data[MAX_RESOURCE_FILE];
-
-// funcs
-
-void ermine_resource_init(const char *path_project)
+void ermine_resource_init(const char *path_str)
 {
-    printf("ermine_resource_init\n");
-    
-    hash_table = hash_table_new();
+    printf("RESOURCE: %s\n", path_str);
 
-    // path resource del proyecto.
-    path_resource[RESOURCE_PATH_PROJECT] = PATH_BUILD(path_project);
-    path_resource[RESOURCE_PATH] = PATH_BUILD(path_project, "resource");
-    path_resource[RESOURCE_PATH_ENGINE] = PATH_BUILD(ermine_path_get_current(), "resource");
-    
-    path_resource[RESOURCE_NAME_PROJECT] = STRDUP(ermine_file_get_name(path_project));
+    // ENGINE
+    path_resource[RESOURCE_PATH_ENGINE] = ermine_path_build(ermine_path_get_current(), "resource", NULL);
+}
 
-    // assets.json
-    ermine_assets_manager_init(PATH_BUILD(path_resource[RESOURCE_PATH], "assets.json"));
+void ermine_resource_project(const char *project_path_str)
+{
+    // PROJECTS
+    path_resource[RESOURCE_PATH_PROJECT] = ermine_strdup(project_path_str);
+    path_resource[RESOURCE_PATH] = ermine_path_build(project_path_str, "resource", NULL);
 
-    printf("INFO: Resource path: [%s]\n", path_resource[RESOURCE_PATH]);
-    printf("INFO: Resource path engine [%s]\n", path_resource[RESOURCE_PATH_ENGINE]);
+    path_resource[RESOURCE_PROJECT] = ermine_path_build(path_resource[RESOURCE_PATH_PROJECT], "project.json", NULL);
+    path_resource[RESOURCE_ASSETS] = ermine_path_build(path_resource[RESOURCE_PATH], "src", "assets.json", NULL);
+
+    // Obtenemos el archivo de config del proyecto [assets, project]
+    resource_object[RESOURCE_OPROJECT] = json_parse_file(path_resource[RESOURCE_PROJECT]);
+    resource_object[RESOURCE_OASSETS] = json_parse_file(path_resource[RESOURCE_ASSETS]);
 }
 
 void ermine_resource_close(void)
 {
-    printf("ermine_resource_close\n");
-    hash_table_destroy(hash_table);
-}
-
-const char *ermine_resource_get_path(int path_id)
-{
-    printf("ermine_resource_get_path\n");
-    return path_resource[path_id];
-}
-
-void ermine_resource_load(const char *filename, const char *key,  int path_type)
-{
-    printf("ermine_resource_load\n");
-
-    int id_temporal = -1;
-    char *file_name_path = PATH_BUILD(path_resource[path_type], filename);
-
-    if (ermine_file_is_extension(filename, ".png") || ermine_file_is_extension(filename, ".jpg"))
+    for (int i = 0; i < RESOURCE_OBJ_LAST; i++)
     {
-        id_temporal = texture_id_resource;
-        texture_resource_data[texture_id_resource] = etexture_load(file_name_path);
-        texture_id_resource += 1;
-        printf("LOAD: Resource load texture [%s]\n", filename);
+        if (resource_object[i] != NULL)
+            json_value_free(resource_object[i]);
+    }
+    for (int i = 0; i < RESOURCE_LAST; i++)
+    {
+        if (path_resource[i] != NULL)
+            free(path_resource[i]);
     }
 
-    if (id_temporal != -1)
-    {
-        hash_table_insert(hash_table, key, id_temporal);
-    }
+    printf("INFO: Resource free\n");
 }
 
-etexture ermine_resource_get_texture(const char *key)
+const char *ermine_resource_get_path(int id)
 {
-    printf("ermine_resource_get_texture\n");
-    int id = hash_table_lookup(hash_table, key);
-    return texture_resource_data[id];
+    return path_resource[id];
+}
+
+JSON_Value *ermine_resource_get_object(int id)
+{
+    return resource_object[id];
+}
+
+
+etexture ermine_resource_texture_file_load(const char *filename)
+{
+    etexture texture = {0};
+
+    int comp;
+    stbi_uc *data = stbi_load(filename, &texture.width, &texture.height, &comp, STBI_rgb_alpha);
+
+    if (data != NULL)
+    {
+        sg_image d = sg_make_image(&(sg_image_desc){
+            .width = texture.width,
+            .height = texture.height,
+            .data.subimage[0][0] = {
+                .ptr = data,
+                .size = (size_t){texture.width * texture.height * 4},
+            },
+        });
+        texture.id = d.id;
+
+        stbi_image_free(data);
+    }
+
+    return texture;
 }

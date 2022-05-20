@@ -1,10 +1,8 @@
-#include <stdio.h>
-
-#define CIMGUI_IMPL
-#include <ermine.h>
-#include <ermine-flower.h>
-#include "ermine-util.h"
 #include "custom-imgui.h"
+#include "ermine-string.h"
+
+#define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+#include "cimgui/cimgui.h"
 
 static int popup_queue = 0;
 
@@ -34,7 +32,7 @@ bool imgui_BeginPopupModal(const char *str_id)
     return result;
 }
 
-bool imgui_BeginPopupContextItem(const char* str_id,ImGuiPopupFlags popup_flags)
+bool imgui_BeginPopupContextItem(const char* str_id, int popup_flags)
 {
     bool result = igBeginPopupContextItem(str_id, popup_flags);
     popup_queue = result ? 1 : 0;
@@ -61,6 +59,7 @@ void imgui_labelPropBegin(const char *label, int id)
     igNextColumn();
     igPushItemWidth(-1);
     igPushID_Int(id);
+    // igPushID_Str(ermine_strdup_printf("%s%d\n",label,id));
 }
 
 void imgui_labelPropEnd(void)

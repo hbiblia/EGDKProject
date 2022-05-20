@@ -1,0 +1,1 @@
+add_library(nuklear STATIC nk_impl.c)

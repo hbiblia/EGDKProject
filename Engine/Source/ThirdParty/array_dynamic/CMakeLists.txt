@@ -1,1 +1,0 @@
-add_library(array_dynamic STATIC array_dynamic.c)

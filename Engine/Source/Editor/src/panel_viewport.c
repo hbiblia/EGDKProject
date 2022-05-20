@@ -1,13 +1,9 @@
 #include <stdio.h>
+#include "ermine-camera.h"
+#include "ermine-string.h"
 
-#define CIMGUI_IMPL
-#include "ermine.h"
-#include "ermine-flower.h"
-
-#include "ermine-scene.h"
-#include "ermine-util.h"
-
-static ecamera default_cam;
+#define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+#include "cimgui/cimgui.h"
 
 // ---------------------------
 // FUNCs
@@ -22,7 +18,6 @@ static void viewport_ui_toolbar(void);
 
 void panel_viewport_init(void)
 {
-    default_cam = ermine_camera_make();
 }
 
 // ------------------------
@@ -31,7 +26,7 @@ void panel_viewport_init(void)
 
 void panel_viewport_main(void)
 {
-    const char *title = STRDUPPF("Viewport - %s", ermine_scene_active_get_name());
+    const char *title = ermine_strdup("Viewport- None");
     igPushStyleVar_Vec2(ImGuiStyleVar_WindowPadding, (ImVec2){0.0f, 0.0f});
     // igPushID_Str("Viewport");
     if (igBegin("Viewport", false, ImGuiWindowFlags_NoMove))
@@ -63,12 +58,22 @@ void drawing_window(const ImDrawList *dl, const ImDrawCmd *cmd)
     const int cw = (int)(cmd->ClipRect.z - cmd->ClipRect.x);
     const int ch = (int)(cmd->ClipRect.w - cmd->ClipRect.y);
 
-    ermine_camera_set_viewport(&default_cam, cx, cy, cw, ch, true);
-    ermine_begin_mode(default_cam);
+    ermine_camera_set(
+        (ecamera){
+            .viewport = {
+                .w = cw,
+                .h = ch,
+                .x = cx,
+                .y = cy,
+            },
+        },
+        CAMERA2);
+
+    ermine_camera_manager_begin(CAMERA2);
     {
-        flower_internal_system_run("EventSystemOnRender");
+
     }
-    ermine_end_mode();
+    ermine_camera_manager_end();
 }
 
 // ------------------------
@@ -79,7 +84,7 @@ void viewport_ui_toolbar(void)
 {
     if (igButton("Save", (ImVec2){0, 0}))
     {
-        ermine_scene_save();
+        // ermine_scene_save();
     }
     igSameLine(0.0f, 5.0f);
     if (igButton("Play", (ImVec2){0, 0}))

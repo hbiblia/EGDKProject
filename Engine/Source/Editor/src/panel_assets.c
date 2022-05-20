@@ -1,18 +1,20 @@
 #include <stdio.h>
+#include <math.h>
 
-#define CIMGUI_IMPL
-#include <ermine.h>
-
-#include "ermine-flower.h"
-#include "ermine-assets-manager.h"
+#include "ermine-ecs.h"
 #include "ermine-resource.h"
-#include "ermine-scene.h"
-#include "ermine-util.h"
+#include "ermine-string.h"
+#include "ermine-path.h"
+#include "ermine-ctexture.h"
 #include "parson/parson.h"
+
+#include "ermine-dialog.h"
 
 #include "editor-internal.h"
 #include "custom-imgui.h"
 
+#define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+#include "cimgui/cimgui.h"
 
 // ---------------------------
 // FILE o FOLDER SELECTED
@@ -125,6 +127,11 @@ void panel_assets_main(void)
 // UI del toolbar
 // ------------------------
 
+void assets_import_file(const char *file)
+{
+    printf("ImportFile: %s\n", file);
+}
+
 void assets_ui_toolbar(void)
 {
     // if (igButton("Borrar", (ImVec2){0.0f, 0.0f}))
@@ -143,6 +150,7 @@ void assets_ui_toolbar(void)
     {
         if (igSelectable_Bool("Import file...", false, 0, (ImVec2){0, 0}))
         {
+            ermine_file_chooser_dialog_new("Import file...", "All\0*.*\0", assets_import_file);
         }
 
         igSeparator();
@@ -181,7 +189,7 @@ void assets_ui_folder_list_column0()
     if (igBeginChild_Str("assets_folders_content", (ImVec2){0, 0}, 0, ImGuiWindowFlags_HorizontalScrollbar))
     {
         // ImGuiTreeNodeFlags_Leaf : Elimina el arrow
-        assets_ui_folder_list_dir(ermine_assetsm_get_roots());
+        // assets_ui_folder_list_dir(ermine_assetsm_get_roots());
     }
     igEndChild();
 }
@@ -282,38 +290,38 @@ void assets_ui_list_folder_column1(void)
                 // ----------------------
                 // Iconos internos
                 // ----------------------
-                if (strcmp(type, "scene") == 0)
-                {
-                    icon = ermine_resource_get_texture("resource::iconScene");
-                }
-                else if (strcmp(type, "folder") == 0)
-                {
-                    icon = ermine_resource_get_texture("resource::iconFolder");
-                }
-                else if (strcmp(type, "prefab") == 0)
-                {
-                    icon = ermine_resource_get_texture("resource::iconPrefab");
-                }
-                else if (strcmp(type, "component") == 0)
-                {
-                    icon = ermine_resource_get_texture("resource::iconComponent");
-                }
-                else if (strcmp(type, "system") == 0)
-                {
-                    icon = ermine_resource_get_texture("resource::iconSystem");
-                }
-                else
-                {
-                    icon = ermine_resource_get_texture(name);
-                }
+                // if (strcmp(type, "scene") == 0)
+                // {
+                //     icon = ermine_resource_get_texture("resource::iconScene");
+                // }
+                // else if (strcmp(type, "folder") == 0)
+                // {
+                //     icon = ermine_resource_get_texture("resource::iconFolder");
+                // }
+                // else if (strcmp(type, "prefab") == 0)
+                // {
+                //     icon = ermine_resource_get_texture("resource::iconPrefab");
+                // }
+                // else if (strcmp(type, "component") == 0)
+                // {
+                //     icon = ermine_resource_get_texture("resource::iconComponent");
+                // }
+                // else if (strcmp(type, "system") == 0)
+                // {
+                //     icon = ermine_resource_get_texture("resource::iconSystem");
+                // }
+                // else
+                // {
+                //     icon = ermine_resource_get_texture(name);
+                // }
 
-                igPushStyleColor_Vec4(ImGuiCol_Button, (ImVec4){0, 0, 0, 0});
-                if (igImageButton((ImTextureID)(uintptr_t)icon.id, (ImVec2){thumbnailSize, thumbnailSize}, (ImVec2){0, 0}, (ImVec2){1, 1}, -1, (ImVec4){0, 0, 0, 0}, (ImVec4){1, 1, 1, 1}))
-                {
-                    item_selected = commit;
-                    item_selected_id_folder = i;
-                    printf("INFO: Selected item [%s]\n", name);
-                }
+                // igPushStyleColor_Vec4(ImGuiCol_Button, (ImVec4){0, 0, 0, 0});
+                // if (igImageButton((ImTextureID)(uintptr_t)icon.id, (ImVec2){thumbnailSize, thumbnailSize}, (ImVec2){0, 0}, (ImVec2){1, 1}, -1, (ImVec4){0, 0, 0, 0}, (ImVec4){1, 1, 1, 1}))
+                // {
+                //     item_selected = commit;
+                //     item_selected_id_folder = i;
+                //     printf("INFO: Selected item [%s]\n", name);
+                // }
 
                 // ----------------------
                 // Draggable source
@@ -358,7 +366,7 @@ void assets_ui_list_folder_column1(void)
                     if (strcmp(type, "folder") == 0 && file_copy_name != NULL)
                     {
                         igSeparator();
-                        if (igSelectable_Bool(STRDUPPF("Pegar... %s", file_copy_name), false, 0, (ImVec2){0, 0}))
+                        if (igSelectable_Bool(ermine_strdup_printf("Pegar... %s", file_copy_name), false, 0, (ImVec2){0, 0}))
                         {
                         }
                     }
@@ -484,7 +492,7 @@ void assets_delete_selected_item(void)
         printf("INFO: Delete item [%s]\n", name);
 
         // Actualizamos el assets.json
-        JSON_Status status = ermine_assetsm_save_file();
+        // JSON_Status status = ermine_assetsm_save_file();
     }
 }
 
@@ -492,106 +500,106 @@ bool assets_create_folder(const char *name)
 {
     printf("INFO: Create folder [%s]", name);
 
-    if (assets_is_virtual_item(folder_data_selected, name, "folder"))
-    {
-        goto error;
-    }
+    // if (assets_is_virtual_item(folder_data_selected, name, "folder"))
+    // {
+    //     goto error;
+    // }
 
-    JSON_Value *data = ermine_assetsm_new_object(name, "folder", "");
-    json_array_append_value(folder_data_selected, data);
+    // JSON_Value *data = ermine_assetsm_new_object(name, "folder", "");
+    // json_array_append_value(folder_data_selected, data);
 
-    // Actualizamos el assets.json
-    JSON_Status status = ermine_assetsm_save_file();
-    if (!status)
-    {
-        printf("[OK]\n");
-        return true;
-    }
-    else
-    {
-    error:
+    // // Actualizamos el assets.json
+    // JSON_Status status = ermine_assetsm_save_file();
+    // if (!status)
+    // {
+    //     printf("[OK]\n");
+    //     return true;
+    // }
+    // else
+    // {
+    // error:
 
-        printf("[No]\n");
-        return false;
-    }
+    //     printf("[No]\n");
+    //     return false;
+    // }
 }
 
 bool assets_create_component_file(const char *name)
 {
-    printf("INFO: Create component [%s]", name);
+//     printf("INFO: Create component [%s]", name);
 
-    JSON_Object *folder = ermine_assetsm_find_by("id", "1");
-    if (!json_object_has_value(folder, "children"))
-        goto error;
-    JSON_Array *children = json_object_get_array(folder, "children");
+//     JSON_Object *folder = ermine_assetsm_find_by("id", "1");
+//     if (!json_object_has_value(folder, "children"))
+//         goto error;
+//     JSON_Array *children = json_object_get_array(folder, "children");
 
-    if (assets_is_virtual_item(children, name, "component"))
-        goto error;
+//     if (assets_is_virtual_item(children, name, "component"))
+//         goto error;
 
-    size_t count_old = json_array_get_count(children);
+//     size_t count_old = json_array_get_count(children);
 
-    // Creamos el item para assets.json
-    JSON_Value *new_item = ermine_assetsm_new_object(name, "component", "json");
-    JSON_Status status = json_array_append_value(children, new_item);
-    int uid = (int)json_object_get_number(json_object(new_item), "id");
+//     // Creamos el item para assets.json
+//     JSON_Value *new_item = ermine_assetsm_new_object(name, "component", "json");
+//     JSON_Status status = json_array_append_value(children, new_item);
+//     int uid = (int)json_object_get_number(json_object(new_item), "id");
 
-    if (status == JSONFailure)
-        goto error;
+//     if (status == JSONFailure)
+//         goto error;
 
-    // Creamos el objecto para el json-file
-    const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
-    JSON_Value *data = json_value_init_object();
-    json_object_set_string(json_object(data), "name", name);
-    json_object_set_value(json_object(data), "property", json_parse_string("[]"));
-    json_serialize_to_file(data, PATH_BUILD(resource_path, STRDUPPF("c%d.json", uid)));
+//     // Creamos el objecto para el json-file
+//     const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
+//     JSON_Value *data = json_value_init_object();
+//     json_object_set_string(json_object(data), "name", name);
+//     json_object_set_value(json_object(data), "property", json_parse_string("[]"));
+//     json_serialize_to_file(data, ermine_path_build(resource_path, ermine_strdup_printf("c%d.json", uid), NULL));
 
-    // Actualizamos el assets.json
-    status = ermine_assetsm_save_file();
-    if (status == JSONSuccess)
-    {
-        printf("[OK]\n");
-        return true;
-    }
+//     // Actualizamos el assets.json
+//     status = ermine_assetsm_save_file();
+//     if (status == JSONSuccess)
+//     {
+//         printf("[OK]\n");
+//         return true;
+//     }
 
-error:
-    printf("[No]\n");
-    return false;
+// error:
+//     printf("[No]\n");
+//     return false;
 }
 
 bool assets_create_scene(const char *name)
 {
     printf("INFO: Create scene [%s]", name);
 
-    JSON_Object *folder = ermine_assetsm_find_by("id", "3");
-    if (!json_object_has_value(folder, "children"))
-        goto error;
-    JSON_Array *children = json_object_get_array(folder, "children");
+//     JSON_Object *folder = ermine_assetsm_find_by("id", "3");
+//     if (!json_object_has_value(folder, "children"))
+//         goto error;
+//     JSON_Array *children = json_object_get_array(folder, "children");
 
-    if (assets_is_virtual_item(children, name, "scene"))
-        goto error;
+//     if (assets_is_virtual_item(children, name, "scene"))
+//         goto error;
 
-    size_t count_old = json_array_get_count(children);
+//     size_t count_old = json_array_get_count(children);
 
-    // Creamos el item para assets.json
-    JSON_Value *new_item = ermine_assetsm_new_object(name, "scene", "scene");
-    JSON_Status status = json_array_append_value(children, new_item);
-    int uid = (int)json_object_get_number(json_object(new_item), "id");
+//     // Creamos el item para assets.json
+//     JSON_Value *new_item = ermine_assetsm_new_object(name, "scene", "scene");
+//     JSON_Status status = json_array_append_value(children, new_item);
+//     int uid = (int)json_object_get_number(json_object(new_item), "id");
 
-    if (status == JSONFailure)
-        goto error;
+//     if (status == JSONFailure)
+//         goto error;
     
-    const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
-    json_serialize_to_file(json_parse_string("{}"), PATH_BUILD(resource_path, STRDUPPF("r%d.scene", uid)));
+//     const char *resource_path = ermine_resource_get_path(RESOURCE_PATH);
+//     json_serialize_to_file(json_parse_string("{}"), ermine_path_build(resource_path, ermine_strdup_printf("r%d.scene", uid), NULL));
 
-    // Actualizamos el assets.json
-    status = ermine_assetsm_save_file();
-    if (status == JSONSuccess)
-    {
-        printf("[OK]\n");
-        return true;
-    }
+//     // Actualizamos el assets.json
+//     status = ermine_assetsm_save_file();
+//     if (status == JSONSuccess)
+//     {
+//         printf("[OK]\n");
+//         return true;
+//     }
 
-error:
-    printf("[No]\n");
-    return false;
+// error:
+//     printf("[No]\n");
+//     return false;
 }
