@@ -2,76 +2,16 @@
 #include "editor_data.h"
 #include "custom-imgui.h"
 #include "ermine-string.h"
+#include "ermine-ui.h"
 
 #define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include "cimgui/cimgui.h"
 
-static void ui_docked_browser_modal_create_file(const char *name, const char *title, 
-    const char *text_error, bool (*fn)(const char *name))
-{
-    ImGuiViewport *viewport = igGetMainViewport();
-    ImVec2 center;
-
-    ImGuiViewport_GetCenter(&center, viewport);
-    igSetNextWindowPos(center, ImGuiCond_Appearing, (ImVec2){0.5f, 0.5f});
-    igSetNextWindowSize((ImVec2){300.0f, 0.0f}, ImGuiCond_None);
-
-    if (igBeginPopupModal(name, NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove))
-    {
-        char *buffer = ermine_strdup("new folder");
-        static int state = 0;
-
-        igText(title);
-
-        // igSetKeyboardFocusHere(0);
-        igInputText("Name", buffer, 256, 0, NULL, NULL);
-
-        if (state == -1)
-        {
-            igTextColored((ImVec4){1.0f, 0.0f, 0.0f, 1.0f}, text_error);
-        }
-
-        igSeparator();
-
-        if (igButton("Create", (ImVec2){0, 0}))
-        {
-            printf("LOG: %s\n",buffer);
-            if (fn)
-            {
-                if (fn(buffer) && strlen(buffer) > 0)
-                {
-                    buffer = "\0";
-                    igCloseCurrentPopup();
-                    state = 0;
-                }
-                else
-                {
-                    state = -1;
-                }
-            }
-            else
-            {
-                state = 0;
-                igCloseCurrentPopup();
-            }
-        }
-
-        igSameLine(0.0f, 10.0f);
-
-        if (igButton("Cancel", (ImVec2){0, 0}))
-        {
-            state = 0;
-            igCloseCurrentPopup();
-        }
-
-        igEndPopup();
-    }
-}
+const char *filtro_file_import = "All\0*.*\0Texture (*.png)\0*.png\0Texture (*.jpg)\0*.jpg\0Texture (*.jpeg)\0*.jpeg\0JSON file (*.json)\0*.json\0TrueType Font (*.ttf)\0*.ttf\0Wave Audio File (*.wav)\0*.wav\0";
 
 static void docked_browser_import_file(void)
 {
-    ermine_file_chooser_dialog_new("Import file...",
-                                   "Texture (*.png)\0*.png\0Texture (*.jpg)\0*.jpg\0Texture (*.jpeg)\0*.jpeg\0JSON file (*.json)\0*.json\0TrueType Font (*.ttf)\0*.ttf\0Wave Audio File (*.wav)\0*.wav\0", NULL);
+    ermine_file_chooser_dialog_new("Import file...",filtro_file_import, NULL);
 }
 
 static void ui_docked_browser_menubar(void)
@@ -87,7 +27,11 @@ static void ui_docked_browser_menubar(void)
 
         if (igSelectable_Bool("New Folder", false, 0, (ImVec2){0, 0}))
         {
-            imgui_OpenPopup("Folder");
+            ermine_ui_dialog_input_new(&(ermine_ui_dialog_desc_t){
+                .title = "Folder",
+                .desc="Create new folder",
+                .text_error = "Error occurred while creating a folder"
+            });
         }
 
         igSeparator();
@@ -139,13 +83,12 @@ void ui_docked_browser_init(void)
 
 void ui_docked_browser_render(void)
 {
+    
     igSetNextWindowSize((ImVec2){200, 200}, 0);
     if (igBegin("Content Browser", false, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar))
     {
+        ermine_ui_process();
         ui_docked_browser_toolbar();
-
-        // modals
-        ui_docked_browser_modal_create_file("Folder", "Create new folder", "Error occurred while creating a folder", NULL);
     }
     igEnd();
 }
